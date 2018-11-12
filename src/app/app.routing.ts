@@ -14,42 +14,44 @@ export const AppRoutes: Routes = [
         children: [
             {
                 path: '',
-                loadChildren: './dashboard/dashboard.module#DashboardModule'
+                loadChildren: './dashboard/dashboard.module#DashboardModule',
             }, {
                 path: 'components',
-                loadChildren: './components/components.module#ComponentsModule'
+                loadChildren: './components/components.module#ComponentsModule',
             }, {
                 path: 'forms',
-                loadChildren: './forms/forms.module#Forms'
+                loadChildren: './forms/forms.module#Forms',
             }, {
                 path: 'tables',
-                loadChildren: './tables/tables.module#TablesModule'
+                loadChildren: './tables/tables.module#TablesModule',
             }, {
                 path: 'maps',
-                loadChildren: './maps/maps.module#MapsModule'
+                loadChildren: './maps/maps.module#MapsModule',
             }, {
                 path: 'widgets',
-                loadChildren: './widgets/widgets.module#WidgetsModule'
+                loadChildren: './widgets/widgets.module#WidgetsModule',
             }, {
                 path: 'charts',
-                loadChildren: './charts/charts.module#ChartsModule'
+                loadChildren: './charts/charts.module#ChartsModule',
             }, {
                 path: 'calendar',
-                loadChildren: './calendar/calendar.module#CalendarModule'
+                loadChildren: './calendar/calendar.module#CalendarModule',
             }, {
                 path: '',
-                loadChildren: './userpage/user.module#UserModule'
+                loadChildren: './userpage/user.module#UserModule',
             }, {
                 path: '',
-                loadChildren: './timeline/timeline.module#TimelineModule'
+                loadChildren: './timeline/timeline.module#TimelineModule',
             }
-        ]
+        ],
+        runGuardsAndResolvers: 'always'
     }, {
         path: '',
         component: AuthLayoutComponent,
         children: [{
             path: 'pages',
-            loadChildren: './pages/pages.module#PagesModule'
-        }]
+            loadChildren: './pages/pages.module#PagesModule',
+        }],
+        runGuardsAndResolvers: 'always'
     }
 ];
