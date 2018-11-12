@@ -44,7 +44,6 @@ export const AppRoutes: Routes = [
                 loadChildren: './timeline/timeline.module#TimelineModule',
             }
         ],
-        runGuardsAndResolvers: 'always'
     }, {
         path: '',
         component: AuthLayoutComponent,
@@ -52,6 +51,5 @@ export const AppRoutes: Routes = [
             path: 'pages',
             loadChildren: './pages/pages.module#PagesModule',
         }],
-        runGuardsAndResolvers: 'always'
     }
 ];

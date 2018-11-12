@@ -92,7 +92,7 @@ export class MaterialModule { }
     CommonModule,
     BrowserAnimationsModule,
     FormsModule,
-    RouterModule.forRoot(AppRoutes, { onSameUrlNavigation: 'reload' }),
+    RouterModule.forRoot(AppRoutes, { useHash: true }),
     HttpModule,
     MaterialModule,
     MatNativeDateModule,
