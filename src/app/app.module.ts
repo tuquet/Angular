@@ -92,7 +92,7 @@ export class MaterialModule { }
     CommonModule,
     BrowserAnimationsModule,
     FormsModule,
-    RouterModule.forRoot(AppRoutes, { useHash: true }),
+    RouterModule.forRoot(AppRoutes),
     HttpModule,
     MaterialModule,
     MatNativeDateModule,
