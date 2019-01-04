@@ -195,5 +195,3 @@ material-dashboard-pro-angular
 ├── typings
 └── typings.json
 ```
-
-Instagram: <https://instagram.com/creativetimofficial>
