@@ -1,0 +1,28 @@
+import { Injectable } from '@angular/core';
+import { HttpRequest, HttpHandler, HttpEvent, HttpInterceptor } from '@angular/common/http';
+import { Observable, throwError } from 'rxjs';
+import { catchError } from 'rxjs/operators';
+import { AuthenticationService } from '../services/authentication.service';
+import { InnerSubscriber } from 'rxjs/internal/InnerSubscriber';
+
+@Injectable()
+export class ErrorInterceptor implements HttpInterceptor {
+    constructor(private authenticationService: AuthenticationService) {}
+
+    intercept(request: HttpRequest<any>, next: HttpHandler): Observable<HttpEvent<any>> {
+        console.log('1111');
+        return next.handle(request).pipe(catchError(err => {
+            if (err.status === 401) {
+                // auto logout if 401 response returned from api
+                console.log('err ', err);
+                this.authenticationService.logout();
+                // location.reload(true);
+            }
+            
+            const error = err.error.message || err.statusText;
+            return new Observable((observer: InnerSubscriber<any, any> ) => {
+                observer.next(null);
+            });
+        }))
+    }
+}

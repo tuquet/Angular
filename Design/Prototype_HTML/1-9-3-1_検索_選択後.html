@@ -1,0 +1,133 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="shortcut icon" href="favicon.ico" />
+    <!-- start: MAIN CSS -->
+    <link rel="stylesheet" href="includes/site-styles.css">    
+    <!-- end: MAIN CSS -->
+    <!-- start: CSS REQUIRED FOR THIS PAGE ONLY -->    
+    <!-- end: CSS REQUIRED FOR THIS PAGE ONLY -->
+    <title>1-9-3-1_検索_選択後</title>
+  </head>
+  <body>
+    <!-- BEGIN Site Wrapper -->
+    <div class="site-wrapper">      
+      <div id="site-content" class="site-content">
+        <div class="card">
+          <div class="card-body pt-1 pb-1">
+            <form action="#" method="get">
+              <div class="d-flex">
+                <button class="btn btn-none pl-0"><span class="oi oi-x"></span></button>
+                <div class="input-wrap flex-grow-1">
+                  <input type="text" class="form-control" value="飯田橋" placeholder="">
+                  <button class="btn btn-none btn-close" style="display: block;"><span class="oi oi-x"></span></button>
+                </div>
+              </div>
+            </form>
+          </div>
+        </div>
+        <div class="card bg-white mb-2" style="min-height: 240px">
+          <div class="card-body">
+            <div class="form-group">
+              <label><strong>賃料</strong></label>
+              <div class="d-flex align-items-center">
+                <div>
+                  <select class="form-control">
+                    <option value="1">下限なし</option>
+                    <option value="2">下限なし 1</option>
+                    <option value="2">下限なし 2</option>
+                  </select>
+                </div>                
+                <div class="pl-2 pr-2">~</div>
+                <div>
+                  <select class="form-control">
+                    <option value="1">上限なし</option>
+                    <option value="2">上限なし 1</option>
+                    <option value="2">下限なし 2</option>
+                  </select>
+                </div>
+              </div>
+              
+            </div>
+            <div class="form-group">
+              <label><strong>収容サイズ</strong></label>
+              <div class="d-flex justify-content-between">
+                <label class="label-icheck flex-grow-1 mb-0 border border-right-0 rounded-left p-2"><input type="checkbox" name="checkbox-a"> 大型車</label>
+                <label class="label-icheck flex-grow-1 mb-0 border rounded-right p-2"><input type="checkbox" name="checkbox-b"> ハイルーフ</label>
+              </div>
+            </div>
+            <div class="form-group">
+              <label><strong>屋内外</strong></label>
+              <div class="d-flex justify-content-between">
+                <label class="label-icheck flex-grow-1 mb-0 border border-right-0 rounded-left p-2"><input type="checkbox" name="checkbox-c"> 屋内</label>
+                <label class="label-icheck flex-grow-1 mb-0 border rounded-right p-2"><input type="checkbox" name="checkbox-d"> 屋外</label>
+              </div>
+            </div>
+            <div class="form-group">
+              <label><strong>設備</strong></label>
+              <div class="d-flex justify-content-between">
+                <label class="label-icheck flex-grow-1 mb-0 border border-right-0 rounded-left p-2"><input type="checkbox" name="checkbox-e"> 平面式</label>
+                <label class="label-icheck flex-grow-1 mb-0 border rounded-right p-2"><input type="checkbox" name="checkbox-f"> 機械式</label>
+              </div>
+            </div>
+            <div class="form-group">
+              <label><strong>駐車タイプ</strong></label>
+              <div class="d-flex justify-content-between">
+                <label class="label-icheck flex-grow-1 mb-0 border border-right-0 rounded-left p-2"><input type="checkbox" name="checkbox-g"> 車用</label>
+                <label class="label-icheck flex-grow-1 mb-0 border rounded-right p-2"><input type="checkbox" name="checkbox-h"> バイク用</label>
+              </div>
+            </div>
+            <div class="form-group">
+              <div class="row no-gutters">
+                <div class="col-4">
+                  <button type="button" class="btn btn-light btn-block">キャンセル</a>
+                </div>
+                <div class="col-8">
+                  <button type="button" class="btn btn-primary btn-block ml-1">検索する</a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="keyboard-wrapper text-center">
+          <img src="images/temp/keyboard-fake.png" alt="" style="width: 100%">
+        </div>
+      </div>
+    </div><!-- BEGIN Site Wrapper -->
+
+    <!-- start: MAIN JAVASCRIPTS -->
+    <script type="text/javascript" src="includes/js-libs.js"></script>  
+    <script src="js/main.js"></script>
+    <!-- end: MAIN JAVASCRIPTS -->
+    <!-- start: JS REQUIRED FOR THIS PAGE ONLY -->    
+    <!-- end: JS REQUIRED FOR THIS PAGE ONLY -->
+    <script type="text/javascript">
+      jQuery(document).ready(function($){
+
+        function view(){
+          var window_height = $(window).height();        
+          var keyboard_height = $('.keyboard-wrapper').height();
+          $('#site-content').css({
+            'min-height': window_height,
+            'padding-bottom':keyboard_height
+          });
+
+          $('.keyboard-wrapper').css({
+            'position':'absolute',
+            'left':'0',
+            'bottom':'0',
+            'width':'100%'
+          });
+        }
+        view();        
+
+        $(window).resize(function(){
+          view();
+        })
+      })
+    </script>
+  </body>
+</html>

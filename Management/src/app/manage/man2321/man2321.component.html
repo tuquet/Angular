@@ -1,0 +1,219 @@
+<!-- BEGIN MAN023 -->
+
+<div class="container-fluid bg-primary-hard-light">
+    <a href="#" class="p-2 d-block"><span class="oi oi-caret-left"></span> 駐車場管理一覧へ戻る</a>
+</div>
+<section class="pt-3">
+    <div class="container-fluid">
+        <div class="pl-2 pr-2">
+            <div class="d-flex align-items-center mb-3">
+                <div class="mr-2">
+                    <div class="parking-avatar rounded-circle">P</div>
+                </div>
+                <div>
+                    <h5 class="mb-0">小田急パーキング清水1丁目第1</h5>
+                    <div class="text-secondary">東京都杉並区清水1-15付近</div>
+                </div>
+            </div>
+            <ul class="nav nav-tabs" role="tablist">
+                <li class="nav-item">
+                    <a class="nav-link" id="basic-info-tab" data-toggle="tab" href="#basic-info" role="tab"
+                        aria-controls="拠点情報" aria-selected="true">拠点情報</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link active" id="parcel-tab" data-toggle="tab" href="#parcel" role="tab"
+                        aria-controls="区画" aria-selected="false">区画</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</section>
+<section class="bg-white pt-3 pb-3">
+    <div class="container-fluid">
+        <div class="pl-2 pr-2">
+            <div class="tab-content">
+                <div class="tab-pane fade" id="basic-info" role="tabpanel" aria-labelledby="basic-info-tab">
+                    <div class="d-flex justify-content-between align-items-center mb-3">
+                        <select id="status_select" class="form-control" style="max-width: 140px">
+                            <option value="公開中">公開中</option>
+                            <option value="非公開">非公開</option>
+                        </select>
+                        <button class="btn btn-primary-light" type="button"><span class="oi oi-pencil"></span> 編集する</button>
+                    </div>
+                    <div class="d-md-flex justify-content-between mb-3">
+                        <div>
+                            <div class="form-group">
+                                <label class="smalltext text-secondary mb-0">拠点管理番号</label>
+                                <p>PK123456789</p>
+                            </div>
+                            <div class="form-group">
+                                <label class="smalltext text-secondary mb-0">自社拠点管理番号</label>
+                                <p>{{detailParkingLot?.management_number}}</p>
+                            </div>
+                            <div class="form-group">
+                                <label class="smalltext text-secondary mb-0">拠点名</label>
+                                <p>{{detailParkingLot?.parking_lot_name}}</p>
+                            </div>
+                        </div>
+                        <div>
+                            <div class="d-flex">
+                                <div class="upload-area uploaded d-inline-flex align-items-center">
+                                    <img src="{{detailParkingLot?.image_1}}" alt="" class="preview">
+                                </div>
+                                <div class="upload-area uploaded d-inline-flex align-items-center">
+                                    <img src="{{detailParkingLot?.image_2}}" alt="" class="preview">
+                                </div>
+                                <div class="upload-area uploaded d-inline-flex align-items-center mr-0">
+                                    <img src="{{detailParkingLot?.image_3}}" alt="" class="preview">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <hr>
+                    <div class="d-md-flex justify-content-between mb-3">
+                        <div class="form-group">
+                            <label class="smalltext text-secondary mb-0">所在地</label>
+                            <p>{{detailParkingLot?.post_code}}<br>{{detailParkingLot?.address}}</p>
+                        </div>
+                        <div style="width: 100%;max-width:580px;">
+                            <div class="google-maps">
+                                <!-- <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d7098.94326104394!2d78.0430654485247!3d27.172909818538997!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1sen!2s!4v1385710909804"
+                                    width="600" height="450" frameborder="0" style="border:0"></iframe> -->
+                                <agm-map #AgmMap [latitude]="originMarker.lat" [longitude]="originMarker.lng"
+                                    [scrollwheel]="true" [zoom]="18" style="height: 500px">
+                                    <agm-marker  [latitude]="originMarker.lat"
+                                        [longitude]="originMarker.lng" [markerDraggable]="originMarker.draggable"
+                                        [iconUrl]="originMarker.iconUrl" >
+                                        <agm-info-window>
+                                            <strong>{{originMarker.label}}</strong>
+                                        </agm-info-window>
+                                    </agm-marker>
+                                </agm-map>
+                            </div>
+                        </div>
+                    </div>
+                    <hr>
+                    <div class="form-group">
+                        <label class="smalltext text-secondary mb-0">更新期間</label>
+                        <p>{{detailParkingLot?.renewal_period == 1 ? '1年': '2年'}}</p>
+                    </div>
+                    <div class="form-group">
+                        <label class="smalltext text-secondary mb-0">備考</label>
+                        <p>個人契約の場合、保証会社利用必須となります。（保証会社：株式会社エポスカード）<br>途中解約は解約月1ヶ月以上前のお申し出となります。（日割精算なし）</p>
+                    </div>
+                </div>
+                <div class="tab-pane fade show active" id="parcel" role="tabpanel" aria-labelledby="parcel-tab">
+                    <div class="d-flex justify-content-between align-items-center mb-3">
+                        <strong>区画グループおよび区画一覧</strong>
+                        <button class="btn btn-primary-light" type="button" routerLink="/manage/parkinglot_division"
+                            [queryParams]="{parking_lot_id: parking_lot_id}"><span class="icon-plus-circled"></span>
+                            区画グループを新規登録する</button>
+                    </div>
+                    <div class="card border rounded mb-3" *ngFor="let item of listPartitionGroup">
+                        <div class="card-header bg-white">
+                            <div class="row align-items-center">
+                                <div class="col-lg-4">
+                                    <table class="table no-border s-cell mb-0" cellpadding="0" cellspacing="0">
+                                        <tbody>
+                                            <tr>
+                                                <td width="200" class="text-secondary">区画グループ番号</td>
+                                                <td>G1000002</td>
+                                            </tr>
+                                            <tr>
+                                                <td class="text-secondary">自社区画グループ管理番号</td>
+                                                <td>{{item.group_control_number}}</td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                                <div class="col-lg-3">
+                                    <table class="table no-border s-cell mb-0" cellpadding="0" cellspacing="0">
+                                        <tbody>
+                                            <tr>
+                                                <td width="60" class="text-secondary">種別</td>
+                                                <td>{{item.partition_type == 1? '平置き': item.partition_type == 2
+                                                    ?'機械式':'立体'}}</td>
+                                            </tr>
+                                            <tr>
+                                                <td class="text-secondary">特徴</td>
+                                                <td>{{item.roof== 1 ? '屋根なし' : '屋根あり'}} /
+                                                    {{item.ground==1?'アスファルト':'砂利'}} / {{item.use_24_hours
+                                                    ==1?'24時間可':'24利用不可'}}</td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                                <div class="col-lg-3">
+                                    <table class="table no-border s-cell mb-0" cellpadding="0" cellspacing="0">
+                                        <tbody>
+                                            <tr>
+                                                <td width="100" class="text-secondary">区画総台数</td>
+                                                <td>{{item.number_of_unit}}</td>
+                                            </tr>
+                                            <tr>
+                                                <td class="text-secondary">賃料</td>
+                                                <td>{{item.rent}}</td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                                <div class="col-lg-2 text-right">
+                                    <a [routerLink]="['/manage/parkinglot_division']" [queryParams]="{prop: item.id}">
+                                        <button class="btn btn-primary-light" type="button"><span class="oi oi-pencil"></span>
+                                            編集する</button>
+                                    </a>
+
+                                </div>
+                            </div>
+                        </div>
+                
+                        <div class="card-body bg-gray-light pt-3">
+                            <div class="mb-2 p-2 d-flex rounded bg-white">
+                                <table class="table no-border s-cell mb-0" cellpadding="0" cellspacing="0" >
+                                    <tbody>
+                                        <tr id="" *ngFor="let parcel of item.parcel_list; let i=index">
+                                                    <td width="50">
+                                                            <img src="assets/parking/images/temp/img-2a.png" alt="" class="border rounded">
+                                                        </td>
+                                                        <td>
+                                                            <div>0{{i+1}}</div>
+                                                            <div class="text-secondary">{{parcel.management_number}}</div>
+                                                        </td>
+                                                        <td width="140">
+                                                            <select id="status-select" class="status-select form-control"></select>
+                                                        </td>
+                                                        <td width="50" class="text-right">
+                                                            <div class="btn-group">
+                                                                <button class="btn btn-none text-secondary" data-toggle="dropdown"
+                                                                    aria-haspopup="true" aria-expanded="false"><span class="oi oi-ellipses"></span></button>
+                                                                <div class="dropdown-menu dropdown-menu-right">
+                                                                    <button class="dropdown-item" type="button"><span class="oi oi-pencil"></span>
+                                                                        編集</button>
+                                                                    <button class="dropdown-item" type="button"><span class="oi oi-trash text-danger"></span>
+                                                                        削除</button>
+                                                                </div>
+                                                            </div>
+                                                        </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                            <div class="text-right" *ngIf="item.parcel_list.length +1 < item.number_of_unit">
+                                <a href="#" [routerLink]="['/manage/division_grouplist']" [queryParams]="{partition_group_id: item.id}" ><span class="icon-plus-circled"></span>&nbsp;区画を登録する</a>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- BEGIN 2-3-2-2_駐車場拠点詳細_区画_empty -->
+                    <div class="p-2 rounded border border-dotted">
+                        <p>&nbsp;</p>
+                        <p class="text-center text-secondary pt-3">区画グループがありません。</p>
+                        <p>&nbsp;</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+<!-- END MAN023 -->

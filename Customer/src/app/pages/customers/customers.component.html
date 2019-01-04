@@ -1,0 +1,110 @@
+<div id="contact" class="site-content" appIcheck>
+    <div class="card bg-primary-hard-light">
+      <div class="card-body">
+        <strong>お問い合わせ</strong>
+      </div>
+    </div>
+    <div class="card bg-white">
+      <div class="card-body">
+        <form [formGroup]="ContactForm" (submit)="onSubmit()">
+          <p>PARK DIRECTで管理しいる駐車場にて、不正駐車・清掃・事故・騒音・その他関連事項は下記より問い合わせください。</p>
+          <div class="form-group">
+            <label><strong>駐車場名</strong> <span class="badge badge-danger">必須</span></label>
+            <input formControlName="parking_lot_name" type="text" class="form-control" [ngClass]="{'is-invalid': submitted && f.parking_lot_name?.errors}" value="" placeholder="パーク第一駐車場">
+            <div *ngIf="submitted && f.parking_lot_name?.errors" class="invalid-feedback">
+                <div *ngIf="f.parking_lot_name.errors?.Required">{{f.parking_lot_name.errors?.message}}</div>
+            </div>
+          </div>
+          <div class="form-group">
+            <label><strong>お問い合わせ種別</strong> <span class="badge badge-danger">必須</span></label>
+            <ul class="list-group">
+              <li class="list-group-item label-icheck current"><input type="radio" name="contact_type" value="0" formControlName="contact_type" checked> 不正駐車</li>
+              <li class="list-group-item label-icheck"><input type="radio" name="contact_type" formControlName="contact_type" value="1"> 清掃</li>
+              <li class="list-group-item label-icheck"><input type="radio" name="contact_type" formControlName="contact_type" value="2"> 事故</li> 
+              <li class="list-group-item label-icheck"><input type="radio" name="contact_type" formControlName="contact_type" value="3"> 騒音</li> 
+              <li class="list-group-item label-icheck"><input  type="radio" name="contact_type" formControlName="contact_type" value="4"> その他</li>                  
+            </ul>
+            <div *ngIf="submitted && f.contact_type?.errors" class="invalid-feedback">
+                <div *ngIf="f.contact_type.errors?.Required">{{f.contact_type.errors?.message}}</div>
+            </div>
+          </div>
+          <div class="form-group">
+            <label><strong>お名前</strong> <span class="badge badge-danger">必須</span></label>
+            <input [ngClass]="{'is-invalid': submitted && f.customer_name?.errors}" formControlName="customer_name" type="text" class="form-control" value="" placeholder="パーク太郎">
+            <div *ngIf="submitted && f.customer_name?.errors" class="invalid-feedback">
+                <div *ngIf="f.customer_name.errors?.Required">{{f.customer_name.errors?.message}}</div>
+            </div>
+          </div>
+          <div class="form-group">
+            <label><strong>メールアドレス</strong> <span class="badge badge-danger">必須</span></label>
+            <input name="email" formControlName="email" [ngClass]="{'is-invalid': submitted && f.email?.errors}" type="email" class="form-control" value="" placeholder="sample@parkdrive.com">
+            <div *ngIf="submitted && f.email?.errors" class="invalid-feedback">
+                <div *ngIf="f.email.errors?.Required">{{f.email.errors?.message}}</div>
+            </div>
+            <div *ngIf="submitted && f.email?.errors" class="invalid-feedback">
+                <div *ngIf="f.email.errors?.Email">{{f.email.errors?.message}}</div>
+            </div>
+          </div>
+          <div class="form-group">
+            <label><strong>電話番号</strong> <span class="badge badge-danger">必須</span></label>
+            <input name="phone_number" type="text" [ngClass]="{'is-invalid': submitted && f.email?.errors}" formControlName="phone_number" class="form-control" value="" placeholder="08012345678">
+            <div *ngIf="submitted && f.phone_number?.errors" class="invalid-feedback">
+                <div *ngIf="f.phone_number.errors?.Required">{{f.phone_number.errors?.message}}</div>
+            </div>
+          </div>
+          <div class="form-group">
+            <label><strong>お問い合わせ内容</strong> <span class="badge badge-danger">必須</span></label>
+            <textarea name="content"  [ngClass]="{'is-invalid': submitted && f.content?.errors}" formControlName="content" cols="1" rows="3" class="form-control"></textarea>
+            <div *ngIf="submitted && f.content?.errors" class="invalid-feedback">
+                <div *ngIf="f.content.errors?.Required">{{f.content.errors?.message}}</div>
+            </div>
+          </div>
+          <div class="form-group text-center">
+            <button type="submit" class="btn btn-warning pt-3 pb-3 btn-block" style="max-width: 50%;margin: 0 auto;">送信する</button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div><!-- END Site Wrapper -->
+
+  <div id="success" class="site-content" style="display:none">
+    <div class="card bg-white mb-2">
+      <div class="card-body text-center">
+        <p>&nbsp;</p>
+        <div class="text-center text-success mb-1" style="line-height: 1;"><i class="icon-check-circle" style="font-size: 64px;"></i></div>
+        <h4><strong>お問い合わせを受け付けました。</strong></h4>
+        <p>ご返答までにお時間を頂く可能性がございます。ご返答まで今しばらくお待ちください。</p>
+        <p><a href="#" class="btn btn-primary btn-block" style="max-width: 80%;margin: 0 auto;">TOPページへ戻る</a></p>
+      </div>
+    </div>
+    <div class="card bg-white">
+      <div class="card-body">
+        <h5 class="title-primary-left">駐車場をさがす</h5>
+        <form action="#" method="get">
+          <div class="form-group">
+            <div class="input-button-group icon-inside icon-left">
+              <button type="submit" class="btn btn-primary btn-icon"><span class="oi oi-magnifying-glass"></span></button>
+              <input type="text" class="form-control" placeholder="住所・駅名・駐車場名で検索">
+            </div>
+          </div>
+        </form>
+        <div class="d-flex align-content-stretch flex-wrap border">
+          <div class="text-center border-right p-2" style="flex: 1;">
+            <p class="text-primary mb-0 big-text"><span class="oi oi-location"></span></p>
+            <h5 class="mb-0"><strong>現在地</strong></h5>
+            <p class="smalltext mb-0">からさがす</p>
+          </div>
+          <div class="border-right text-center p-2" style="flex: 1;">
+            <p class="text-primary mb-0 big-text"><span class="oi oi-map-marker"></span></p>
+            <h5 class="mb-0"><strong>エリア</strong></h5>
+            <p class="smalltext mb-0">からさがす</p>
+          </div>
+          <div class="text-center p-2" style="flex: 1;">
+            <p class="text-primary mb-0 big-text"><span class="oi oi-map"></span></p>
+            <h5 class="mb-0"><strong>沿線・駅</strong></h5>
+            <p class="smalltext mb-0">からさがす</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div><!-- END Site Wrapper -->

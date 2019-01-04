@@ -1,0 +1,162 @@
+<!-- BEGIN MAN022 -->
+<div class="container-fluid bg-primary-hard-light">
+    <a routerLink="/manage" class="p-2 d-block"><span class="oi oi-caret-left"></span> 駐車場管理一覧へ戻る</a>
+</div>
+<section class="pt-3 pb-3">
+    <div class="container-fluid">
+        <div class="pl-2 pr-2">
+            <h4 class="mb-0">拠点新規登録</h4>
+            <div class="text-secondary">必要事項を入力し、駐車場の新規登録をしてください。</div>
+        </div>
+    </div>
+</section>
+<section class="bg-white pt-3 pb-3">
+    <div [formGroup]="registerForm" class="container-fluid">
+        <div class="pl-2 pr-2">
+            <div class="form-group">
+                <label><strong>公開ステータス</strong></label>
+                <div>
+                    <select formControlName="publicStatus" [ngClass]="{'is-invalid': isSubmittedForm && registerForm.controls['publicStatus'].errors}" id="status_select" class="form-control" style="max-width: 180px">
+                        <option value="愛知県">愛知県</option>
+                        <option value="青森県">青森県</option>
+                        <option value="愛媛県">愛媛県</option>
+                    </select>
+                </div>
+            </div>
+            <div class="form-group">
+                <label><strong>自社拠点管理番号</strong>&nbsp;<span class="badge badge-danger">必須</span></label>
+                <input formControlName="manageNumber" [ngClass]="{'is-invalid': isSubmittedForm && registerForm.controls['manageNumber'].errors}" type="text" placeholder="A123456789" value="" class="form-control"
+                    style="max-width: 480px">
+            </div>
+            <div class="form-group">
+                <label><strong>拠点名</strong>&nbsp;<span class="badge badge-danger">必須</span></label>
+                <input formControlName="baseName" [ngClass]="{'is-invalid': isSubmittedForm && registerForm.controls['baseName'].errors}" type="text" placeholder="小田急第一駐車場" value="" class="form-control"
+                    style="max-width: 480px">
+            </div>
+            <div class="form-group">
+                <label><strong>拠点画像</strong></label>
+                <div class="d-flex">
+                    <div class="upload-area d-inline-flex align-items-center">
+                        <div class="text-center text-primary p-3 ml-auto mr-auto">
+                            <span class="icon-plus-circled icon"></span><br>
+                            メイン写真<br>追加
+                        </div>
+                        <input type="file" name="myfile1" class="input-file">
+                    </div>
+                    <div class="upload-area d-inline-flex align-items-center">
+                        <div class="text-center text-primary p-3 ml-auto mr-auto">
+                            <span class="icon-plus-circled icon"></span><br>
+                            メイン写真<br>追加
+                        </div>
+                        <input type="file" name="myfile2" class="input-file">
+                    </div>
+                    <div class="upload-area d-inline-flex align-items-center">
+                        <div class="text-center text-primary p-3 ml-auto mr-auto">
+                            <span class="icon-plus-circled icon"></span><br>
+                            メイン写真<br>追加
+                        </div>
+                        <input type="file" name="myfile3" class="input-file">
+                    </div>
+                </div>
+                <div>&nbsp;</div>
+                <div class="d-flex">
+                    <div class="upload-area uploaded d-inline-flex align-items-center">
+                        <button type="button" class="btn btn-danger rounded-circle btn-close"><span class="oi oi-x"></span></button>
+                        <img src="assets/parking/images/temp/preview-1a.jpg" alt="" class="preview">
+                    </div>
+                    <div class="upload-area uploaded d-inline-flex align-items-center">
+                        <button type="button" class="btn btn-danger rounded-circle btn-close"><span class="oi oi-x"></span></button>
+                        <img src="assets/parking/images/temp/preview-1b.jpg" alt="" class="preview">
+                    </div>
+                    <div class="upload-area uploaded d-inline-flex align-items-center">
+                        <button type="button" class="btn btn-danger rounded-circle btn-close"><span class="oi oi-x"></span></button>
+                        <img src="assets/parking/images/temp/preview-1c.jpg" alt="" class="preview">
+                    </div>
+                </div>
+            </div>
+            <form [formGroup]="searchForm">
+                <div class="form-group">
+                    <label><strong>郵便番号</strong>&nbsp;<span class="badge badge-danger">必須</span></label>
+                    <div class="d-flex">
+                        <input [(ngModel)]="postalCode" formControlName="postalCode" [ngClass]="{'is-invalid': isSubmitted && searchForm.controls['postalCode'].errors}" type="text" placeholder=""
+                            value="" class="form-control mr-2" style="max-width: 180px">
+                        <button (click)="getAddressByPostalCode()" type="button" class="btn btn-primary">住所反映</button>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label><strong>都道府県</strong>&nbsp;<span class="badge badge-danger">必須</span></label>
+                    <div>
+                        <select formControlName="searchPrefecture" [ngClass]="{'is-invalid': isSubmitted && searchForm.controls['searchPrefecture'].errors}"
+                            id="status_select" class="form-control" style="max-width: 180px">
+                            <option value="愛知県">愛知県</option>
+                            <option value="青森県">青森県</option>
+                            <option value="愛媛県">愛媛県</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label><strong>市区町村</strong>&nbsp;<span class="badge badge-danger">必須</span></label>
+                    <input formControlName="searchCity" [ngClass]="{'is-invalid': isSubmitted && searchForm.controls['searchCity'].errors}"
+                        type="text" placeholder="" value="" class="form-control" style="max-width: 480px">
+                </div>
+                <div class="form-group">
+                    <label><strong>番地以降</strong>&nbsp;<span class="badge badge-danger">必須</span></label>
+                    <input formControlName="searchTown" [ngClass]="{'is-invalid': isSubmitted && searchForm.controls['searchTown'].errors}"
+                        type="text" placeholder="" value="" class="form-control" style="max-width: 480px">
+                </div>
+            </form>
+
+            <div class="form-group">
+                <label><strong>ピンの位置を登録する</strong>&nbsp;<span class="badge badge-danger">必須</span></label>
+                <div class="mb-3">
+                    <button type="button" (click)="SearchFormSubmmit()" class="btn btn-primary">上記の所在地にピンを刺す</button>
+                </div>
+                <div style="max-width:600px">
+                    <div class="google-maps">
+
+                        <agm-map #AgmMap [latitude]="latitude" [longitude]="longitude" [scrollwheel]="true" [zoom]="18"
+                            (mapClick)="mapClicked($event)" style="height: 500px">
+                            <!-- <agm-marker *ngFor="let m of markers; let i = index" (markerClick)="clickedMarker(m.label, i)"
+                                    [latitude]="m.lat" [longitude]="m.lng" [markerDraggable]="m.draggable" [iconUrl]="m.iconUrl"
+                                    (dragEnd)="markerDragEnd(m, $event)">
+                                    <agm-info-window>
+                                        <strong>{{m.label}}</strong>
+                                    </agm-info-window>
+                                </agm-marker> -->
+                            <agm-marker (markerClick)="clickedMarker(originMarker.label, i)" [latitude]="originMarker.lat"
+                                [longitude]="originMarker.lng" [markerDraggable]="originMarker.draggable" [iconUrl]="originMarker.iconUrl"
+                                (dragEnd)="markerDragEnd(originMarker, $event)">
+
+                                <agm-info-window>
+                                    <strong>{{originMarker.label}}</strong>
+                                </agm-info-window>
+
+                            </agm-marker>
+                            <!-- <agm-direction *ngIf="selectedMarker.lat != ''" [origin]="originMarker" [destination]="selectedMarker">
+                                </agm-direction>  -->
+                        </agm-map>
+
+                    </div>
+                </div>
+            </div>
+            <div class="form-group">
+                <label><strong>更新期間</strong>&nbsp;<span class="badge badge-danger">必須</span></label>
+                <div class="mb-2">
+                    <!-- <label class="container-radio mr-1 mb-1"><input type="radio" name="radio" checked> 1年</label> -->
+                    <label class="container-radio mr-1 mb-1">1年<input type="radio" formControlName="renewalPeriod" name="renewalPeriod" value="1" checked="checked"><span class="checkmark"></span></label>
+                    <label class="container-radio mr-1 mb-1">2年<input type="radio" formControlName="renewalPeriod" name="renewalPeriod" value="2"><span class="checkmark"></span></label>
+                </div>
+            </div>
+            <div class="form-group">
+                <label><strong>備考</strong></label>
+                <textarea formControlName="note" cols="1" rows="3" class="form-control" style="max-width: 600px"></textarea>
+            </div>
+        </div>
+    </div>
+</section>
+<div class="container-fluid">
+    <div class="p-2 mt-2 pb-3 text-right">
+        <button type="button" (click)="submitForm()" class="btn btn-warning" style="min-width: 160px">登録する</button>
+    </div>
+</div>
+<!-- END MAN022 -->

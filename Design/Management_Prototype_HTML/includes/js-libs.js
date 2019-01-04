@@ -1,0 +1,10 @@
+document.write( '<script src=\"js/jquery-3.3.1.min.js\"></script>\n' );
+document.write( '    <script src=\"js/popper.min.js\"></script>\n' );
+document.write( '    <script src=\"js/bootstrap.min.js\"></script>\n' );
+document.write( '    <script src=\"js/anime.min.js\"></script>\n' );
+document.write( '    <script src=\"js/jquery.smooth-scroll.js\"></script>' );
+document.write( '    <script src=\"js/jquery.nicescroll.min.js\"></script>' );
+document.write( '    <script src=\"js/icheck.min.js\"></script>' );
+document.write( '    <script src=\"js/jquery.validate.min.js\"></script>' );
+document.write( '    <script src=\"js/select2.full.min.js\"></script>' );
+document.write( '    <script src=\"js/datatables.min.js\"></script>' );

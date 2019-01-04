@@ -1,0 +1,76 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="shortcut icon" href="favicon.ico" />
+    <!-- start: MAIN CSS -->
+    <link rel="stylesheet" href="includes/site-styles.css">    
+    <!-- end: MAIN CSS -->
+    <!-- start: CSS REQUIRED FOR THIS PAGE ONLY -->    
+    <!-- end: CSS REQUIRED FOR THIS PAGE ONLY -->
+    <title>Park Direct - Map</title>
+  </head>
+  <body class="header-fixed">
+    <!-- BEGIN Site Wrapper -->
+    <div class="site-wrapper">
+      <script type="text/javascript" src="includes/header.js"></script>
+      <!-- BEGIN Site Wrapper -->
+      <div id="site-content" class="site-content">
+        <div class="map-wrapper">
+          <div class="map-top">
+            <div class="card bg-white">
+              <div class="card-body">
+                <div class="d-flex justify-content-between align-items-center">
+                  <div>
+                    <div>現在地付近</div>
+                    <div class="text-secondary">条件指定なし</div>
+                  </div>
+                  <div>
+                    <a href="#" class="btn btn-primary">条件変更</a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="google-maps" style="padding-bottom: 100%">
+            <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d7098.94326104394!2d78.0430654485247!3d27.172909818538997!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1sen!2s!4v1385710909804" width="600" height="450" frameborder="0" style="border:0"></iframe>
+          </div>
+          <div class="map-bottom">
+            <div class="card bg-white">
+              <div class="card-body">
+                ---
+              </div>
+            </div>
+          </div>
+        </div>
+      </div><!-- END Site Wrapper -->
+      
+      <script type="text/javascript" src="includes/site-menu.js"></script>
+    </div><!-- BEGIN Site Wrapper -->
+
+    <!-- start: MAIN JAVASCRIPTS -->
+    <script type="text/javascript" src="includes/js-libs.js"></script>  
+    <script src="js/main.js"></script>
+    <!-- end: MAIN JAVASCRIPTS -->
+    <!-- start: JS REQUIRED FOR THIS PAGE ONLY -->    
+    <!-- end: JS REQUIRED FOR THIS PAGE ONLY -->
+    <script type="text/javascript">
+      jQuery(document).ready(function($){
+        function resize_map(){
+          var map_width = $('.site-wrapper').width();
+          var map_height = $(window).height() - $('.header-wrapper').height();
+          var ratio = (map_height / map_width) * 100;
+
+          $('.map-wrapper .google-maps').css('padding-bottom', ratio + '%');
+        }
+        resize_map();
+
+        $(window).resize(function(){
+          resize_map();
+        })
+      });
+    </script>
+  </body>
+</html>

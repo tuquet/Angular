@@ -1,0 +1,108 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="shortcut icon" href="favicon.ico" />
+    <!-- start: MAIN CSS -->
+    <link rel="stylesheet" href="includes/site-styles.css">    
+    <!-- end: MAIN CSS -->
+    <!-- start: CSS REQUIRED FOR THIS PAGE ONLY -->    
+    <!-- end: CSS REQUIRED FOR THIS PAGE ONLY -->
+    <title>Park Direct - Message</title>
+  </head>
+  <body>
+    <!-- BEGIN Site Wrapper -->
+    <div class="site-wrapper">      
+      <!-- BEGIN Site Wrapper -->
+      <div id="site-content" class="site-content">
+        <div class="message-wrapper d-flex flex-column">
+          <div class="message-header">
+            <a href="#" class="btn-close"><span class="oi oi-x"></span></a>
+            <div class="card bg-primary-hard-light">
+              <div class="card-body text-center">
+                <strong>お申込みについて質問する</strong>
+              </div>
+            </div>
+          </div>
+          <div class="message-content scroll">
+            <div class="card">
+              <div class="card-body">
+                <p class="text-secondary text-center">お申込みについて気になる点などありましたら、<br>お気軽にお問い合わせください。</p>
+                <div class="message-item right mb-3">
+                  <div class="p-2 bg-primary text-white text-right rounded">
+                    緊急連絡先は、自分にしてもよいでしょうか？
+                  </div>
+                  <div class="text-right text-secondary">
+                    <small>11/01 11:41</small>
+                  </div>
+                </div>
+                <div class="card-body border bg-white mb-3">
+                  <h6><strong>通知を受け取る</strong></h6>
+                  <div>管理会社から返信があった場合に通知を受け取ることができます。ご希望の連絡先を入力してください。</div>
+                  <form action="#">
+                    <nav class="nav nav-bottom-line mb-3">
+                      <a class="nav-link active pl-0 pr-0 mr-2" href="#">メール</a>
+                      <a class="nav-link pl-0 pr-0" href="#">SMS</a>
+                    </nav>
+                    <div class="input-button-group d-flex align-items-center">
+                      <input type="text" class="form-control" placeholder="email@example.com">
+                      <button type="submit" class="btn btn-outline-light"><span class="oi oi-magnifying-glass"></span></button>
+                    </div>              
+                  </form>
+                </div>
+                <div class="message-item left mb-3">
+                  <div class="p-2 bg-white rounded">
+                    緊急連絡先は、自分にしてもよいでしょうか？
+                  </div>
+                  <div class="text-secondary">
+                    <small>11/01 11:41</small>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="message-footer mt-auto">
+            <div class="card bg-white">
+              <div class="card-body">
+                <div class="row no-gutters">
+                  <div class="col-9 pr-2">
+                    <input type="text" class="form-control pl-0 pr-0 border-none" value="" placeholder="メッセージを入力する">
+                  </div>
+                  <div class="col-3">
+                    <button type="button" class="btn btn-primary btn-block">送信</button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div><!-- END Site Wrapper -->      
+    </div><!-- BEGIN Site Wrapper -->
+
+    <!-- start: MAIN JAVASCRIPTS -->
+    <script type="text/javascript" src="includes/js-libs.js"></script>  
+    <script src="js/main.js"></script>
+    <!-- end: MAIN JAVASCRIPTS -->
+    <!-- start: JS REQUIRED FOR THIS PAGE ONLY -->    
+    <!-- end: JS REQUIRED FOR THIS PAGE ONLY -->
+    <script type="text/javascript">
+      jQuery(document).ready(function($){
+        function message_view(){          
+          var message_view_height = $(window).height();      
+          var message_content_height  = message_view_height - $('.message-wrapper .message-header').height() -  $('.message-wrapper .message-footer').height();
+
+          $('.message-wrapper').css('height',message_view_height);
+          $('.message-wrapper .message-content').css('height', message_content_height);
+
+        }
+        message_view();
+
+        $(window).resize(function(){
+          message_view();
+        })
+      });
+    </script>
+  </body>
+</html>

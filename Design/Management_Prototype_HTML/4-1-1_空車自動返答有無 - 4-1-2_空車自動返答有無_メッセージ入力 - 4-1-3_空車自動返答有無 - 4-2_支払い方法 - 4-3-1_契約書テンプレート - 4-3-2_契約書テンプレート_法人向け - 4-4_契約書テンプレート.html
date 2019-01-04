@@ -1,0 +1,298 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="shortcut icon" href="favicon.ico" />
+    <!-- start: MAIN CSS -->
+    <link rel="stylesheet" href="includes/site-styles.css"> 
+    <!-- end: MAIN CSS -->
+    <!-- start: CSS REQUIRED FOR THIS PAGE ONLY -->
+    <!-- end: CSS REQUIRED FOR THIS PAGE ONLY -->
+    <title>4-1-1_空車自動返答有無 - 4-1-2_空車自動返答有無_メッセージ入力 - 4-1-3_空車自動返答有無 - 4-2_支払い方法 - 4-3-1_契約書テンプレート - 4-3-2_契約書テンプレート_法人向け - 4-4_契約書テンプレート</title>
+</head>
+
+<body>
+    <div class="site-wrapper has-sidebar">
+        <div class="main-wrapper">
+            <script type="text/javascript" src="includes/sidebar.js"></script>
+            <script type="text/javascript" src="includes/header.js"></script>
+            <div class="site-content">
+                <section class="pt-3">
+                    <div class="container-fluid">
+                        <div class="pl-2 pr-2">
+                            <div class="mb-3">
+                                <h4 class="mb-0">設定</h4>
+                                <div class="text-secondary">空車自動返答・支払い方法・契約書や利用規則のテンプレート編集が行なえます。</div>
+                            </div>
+                            <ul class="nav nav-tabs" role="tablist">
+                                <li class="nav-item">
+                                    <a class="nav-link active" id="tab-one" data-toggle="tab" href="#pane-one" role="tab" aria-controls="空車自動返信有無" aria-selected="true">空車自動返信有無</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" id="tab-two" data-toggle="tab" href="#pane-two" role="tab" aria-controls="支払い方法" aria-selected="false">支払い方法</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" id="tab-three" data-toggle="tab" href="#pane-three" role="tab" aria-controls="契約書テンプレート" aria-selected="false">契約書テンプレート</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" id="tab-four" data-toggle="tab" href="#pane-four" role="tab" aria-controls="利用規則テンプレート" aria-selected="false">利用規則テンプレート</a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </section>
+                <section class="bg-white pt-3 pb-3">
+                    <div class="container-fluid">
+                        <div class="pl-2 pr-2">
+                            <div class="tab-content">
+                                <div class="tab-pane fade show active" id="pane-one" role="tabpanel" aria-labelledby="tab-one">
+                                    <div class="form-group">
+                                        <label><strong>自動返信</strong>&nbsp;<span class="badge badge-danger">必須</span></label>
+                                        <div>
+                                            <label class="label-icheck mr-3 mb-0"><input type="radio" value="1" name="radio-on-off" checked> ON</label>
+                                            <label class="label-icheck mr-3 mb-0"><input type="radio" value="0" name="radio-on-off"> OFF</label>
+                                        </div>
+                                    </div>
+                                    <div class="on-wrapper">
+                                        <div class="form-group">
+                                            <label><strong>自動返信メッセージ：空車あり</strong>&nbsp;<span class="badge badge-danger">必須</span></label>
+                                            <div class="card border rounded">
+                                                <input type="text" value="[PARK DIRECT] お申込みへお進みください。" placeholder="件名" class="form-control pl-3 pr-3 pt-2 pb-2 border-0 rounded-0">
+                                                <div class="card-header d-flex align-items-center border-top">
+                                                    <label class="mr-2 mb-0">変数挿入</label>
+                                                    <button type="button" class="btn btn-outline-light bg-white text-secondary mr-2">ユーザー名</button>
+                                                    <button type="button" class="btn btn-outline-light bg-white text-secondary mr-2">ユーザーメールアドレス</button>
+                                                    <button type="button" class="btn btn-outline-light bg-white text-secondary mr-2">法人名</button>
+                                                    <button type="button" class="btn btn-outline-light bg-white text-secondary mr-2">店舗名</button>
+                                                    <button type="button" class="btn btn-outline-light bg-white text-secondary mr-2">法人住所</button>
+                                                    <button type="button" class="btn btn-outline-light bg-white text-secondary mr-2">責任者名</button>
+                                                    <button type="button" class="btn btn-outline-light bg-white text-secondary mr-2">担当者名</button>
+                                                    <button type="button" class="btn btn-outline-light bg-white text-secondary mr-2">連絡先TEL</button>
+                                                    <button type="button" class="btn btn-outline-light bg-white text-secondary mr-2">申込用URL</button>
+                                                </div>
+                                                <div class="card-body nice-scroll" style="height: 360px">
+                                                    <div class="text-secondary">本文</div>
+                                                    <br>
+                                                    <p>{ユーザー名} 様</p>
+                                                    <p>{法人名}の{担当者名}です。</p>
+                                                    <p>
+                                                        空車お問い合わせありがとうございました。<br>
+                                                        空車の確認が取れましたので、下記よりお申し込みへお進みいただけます。
+                                                    </p>
+                                                    <p>{申込用URL}</p>
+                                                    <p>なにかご不明点などございましたら、お気軽にお問い合わせください。</p>
+                                                    <p>
+                                                        ====================<br>
+                                                        管理会社：{法人名} {店舗名}<br>
+                                                        担当者：{担当者名}<br>
+                                                        TEL：{連絡先TEL}<br>
+                                                        ====================
+                                                    </p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="form-group">
+                                            <label><strong>自動返信メッセージ：空車なし</strong>&nbsp;<span class="badge badge-danger">必須</span></label>
+                                            <div class="card border rounded">
+                                                <input type="text" value="[PARK DIRECT] 空車お問い合わせありがとうございました。" placeholder="件名" class="form-control pl-3 pr-3 pt-2 pb-2 border-0 rounded-0">
+                                                <div class="card-header d-flex align-items-center border-top">
+                                                    <label class="mr-2 mb-0">変数挿入</label>
+                                                    <button type="button" class="btn btn-outline-light bg-white text-secondary mr-2">ユーザー名</button>
+                                                    <button type="button" class="btn btn-outline-light bg-white text-secondary mr-2">ユーザーメールアドレス</button>
+                                                    <button type="button" class="btn btn-outline-light bg-white text-secondary mr-2">法人名</button>
+                                                    <button type="button" class="btn btn-outline-light bg-white text-secondary mr-2">店舗名</button>
+                                                    <button type="button" class="btn btn-outline-light bg-white text-secondary mr-2">法人住所</button>
+                                                    <button type="button" class="btn btn-outline-light bg-white text-secondary mr-2">責任者名</button>
+                                                    <button type="button" class="btn btn-outline-light bg-white text-secondary mr-2">担当者名</button>
+                                                    <button type="button" class="btn btn-outline-light bg-white text-secondary mr-2">連絡先TEL</button>
+                                                    <button type="button" class="btn btn-outline-light bg-white text-secondary mr-2">申込用URL</button>
+                                                </div>
+                                                <div class="card-body nice-scroll" style="height: 360px">
+                                                    <div class="text-secondary">本文</div>
+                                                    <br>
+                                                    <p>{ユーザー名} 様</p>
+                                                    <p>{法人名}の{担当者名}です。</p>
+                                                    <p>
+                                                        空車お問い合わせありがとうございました。<br>
+                                                        空車の確認が取れましたので、下記よりお申し込みへお進みいただけます。
+                                                    </p>
+                                                    <p>{申込用URL}</p>
+                                                    <p>なにかご不明点などございましたら、お気軽にお問い合わせください。</p>
+                                                    <p>
+                                                        ====================<br>
+                                                        管理会社：{法人名} {店舗名}<br>
+                                                        担当者：{担当者名}<br>
+                                                        TEL：{連絡先TEL}<br>
+                                                        ====================
+                                                    </p>
+                                                </div>
+                                            </div>
+                                        </div>                                        
+                                    </div>                                    
+                                    <div class="form-group">
+                                        <label><strong>受信用メールアドレス</strong></label>
+                                        <input type="text" class="form-control" value="" placeholder="sample@p-direct.com" style="max-width: 480px">
+                                    </div>
+                                </div>
+                                <div class="tab-pane fade" id="pane-two" role="tabpanel" aria-labelledby="tab-two">
+                                    <div class="form-group">
+                                        <label><strong>クレジットカード</strong>&nbsp;<span class="badge badge-danger">必須</span></label>
+                                        <div>
+                                            <label class="label-icheck mr-3 mb-0"><input type="radio" value="1" name="radio-2" checked> 有効</label>
+                                            <label class="label-icheck mr-3 mb-0"><input type="radio" value="0" name="radio-2"> 無効</label>
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <label><strong>口座振替</strong>&nbsp;<span class="badge badge-danger">必須</span></label>
+                                        <div>
+                                            <label class="label-icheck mr-3 mb-0"><input type="radio" value="1" name="radio-3" checked> 有効</label>
+                                            <label class="label-icheck mr-3 mb-0"><input type="radio" value="0" name="radio-3"> 無効</label>
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <label><strong>コンビニ決済</strong>&nbsp;<span class="badge badge-danger">必須</span></label>
+                                        <div>
+                                            <label class="label-icheck mr-3 mb-0"><input type="radio" value="1" name="radio-4" checked> 有効</label>
+                                            <label class="label-icheck mr-3 mb-0"><input type="radio" value="0" name="radio-4"> 無効</label>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="tab-pane fade" id="pane-three" role="tabpanel" aria-labelledby="tab-three">
+                                    <div class="card border rounded mb-2">
+                                        <div class="card-header d-flex justify-content-between">
+                                            <div>
+                                                <div class="dropdown d-inline-block">
+                                                    <button type="button" class="btn btn-none text-secondary dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">標準テキスト</button>
+                                                    <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+                                                        <a class="dropdown-item font-italic" href="#">Italic</a>
+                                                        <a class="dropdown-item" href="#">Normal</a>
+                                                    </div>
+                                                </div>
+                                                
+                                                <span class="text-secondary">|</span>
+                                                <button type="button" class="btn btn-none text-secondary"><span class="oi oi-bold"></span></button>
+                                                <button type="button" class="btn btn-none text-secondary"><span class="oi oi-list"></span></button>
+                                                <button type="button" class="btn btn-none text-secondary"><span class="oi oi-align-left"></span></button>
+                                                <button type="button" class="btn btn-none text-secondary"><span class="oi oi-align-right"></span></button>
+                                            </div>
+                                            <div class="btn-group btn-group-toggle" data-toggle="buttons">
+                                              <label class="btn btn-outline-light active">
+                                                <input type="radio" name="options" id="option1" autocomplete="off" checked> 個人向け
+                                              </label>
+                                              <label class="btn btn-outline-light">
+                                                <input type="radio" name="options" id="option2" autocomplete="off"> 法人向け
+                                              </label>
+                                            </div>
+                                        </div>
+                                        <div class="card-body nice-scroll" style="height: 360px">
+                                            <p>
+                                                <strong>第１条（契約の締結）</strong><br>
+                                                貸主（以下「甲」という。）および借主（以下「乙」という。）は、標記示物件（以下「本物件」という。）について、以下の条項により賃貸借契約（以下「本契約」という。）を締結した。
+                                            </p>
+                                            <p>
+                                                <strong>第２条（契約期間）</strong><br>
+                                                契約期間は標記表示の賃貸借期間とする<br>2.　本契約の更新は標記表示の通りとする。<br>3.　乙は、本条により本契約が更新される場合は、標記表示の更新料を甲に支払うものとする。
+                                            </p>
+                                            <p>
+                                                <strong>第３条（駐車料金）</strong><br>使用料金等は、月額を標記表示のとおりとし、乙は標記表示の支払期限、支払い方法にて一括して支払うものとする。なお、送金手数料は乙の負担とする。<br>
+                                                2.　甲は、公租公課または経済変動あるいは契約車種の変更により必要と認めるときは、契約期間中といえども、1ヶ月の予告期間をもって前項使用料金等の改定を請求することができる。<br>3.　契約の始期または終期もしくは前項による改定時における１ヶ月に満たない端数の期間にかかわる使用料金等はすべてその月の日割り計算によるものとする。
+                                            </p>
+                                            <p>
+                                                <strong>第４条（敷金）</strong><br>乙は、本契約締結と同時に、本契約に基づく債務を担保とするため敷金または保証金（以下「敷金」という．）として標記表示の金額を甲に預け入れるものとする。
+                                                2.　乙は、本物件を明け渡すまでの間、敷金をもって使用料金等の債務と相殺することができない。<br>
+                                                3.　本物件の明け渡しがあったときは、標記表示の金額を償却するものとする。また、甲は遅延なく、敷金の残額を無利息で乙に返還しなければならない。ただし、甲は、本物件の明け渡し時に使用料金の滞納、原状回復に要する費用の未払いその他の本契約から生じる乙の債務の不履行が存在する場合には、当該債務の額を敷金から差し引くことができる。<br>
+                                                また、支払いは乙が指定する銀行口座とし、その際の振込手数料は乙が負担するものとする。<br>4.　乙は、敷金に対する債権を第三者に譲渡または債務の担保の用に供してはならない。<br>5.　前条により使用料金等の改定があった場合は敷金もこれに準じて改定するものとする。
+                                            </p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="tab-pane fade" id="pane-four" role="tabpanel" aria-labelledby="tab-four">
+                                    <div class="card border rounded mb-2">
+                                        <div class="card-header">
+                                            <div class="dropdown d-inline-block">
+                                                <button type="button" class="btn btn-none text-secondary dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">標準テキスト</button>
+                                                <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+                                                    <a class="dropdown-item font-italic" href="#">Italic</a>
+                                                    <a class="dropdown-item" href="#">Normal</a>
+                                                </div>
+                                            </div>
+                                            <span class="text-secondary">|</span>
+                                            <button type="button" class="btn btn-none text-secondary"><span class="oi oi-bold"></span></button>
+                                            <button type="button" class="btn btn-none text-secondary"><span class="oi oi-list"></span></button>
+                                            <button type="button" class="btn btn-none text-secondary"><span class="oi oi-align-left"></span></button>
+                                            <button type="button" class="btn btn-none text-secondary"><span class="oi oi-align-right"></span></button>
+                                        </div>
+                                        <div class="card-body nice-scroll" style="height: 360px">
+                                            <p>
+                                               駐車場の利用者（以下「利用者」という。）は、この規約を承認のうえ当駐車場を利用するものとします。
+                                            </p>
+                                            <p>
+                                                <strong>1. 駐車できない車両</strong><br>
+                                                以下に該当する車両については、駐車することはできません。そのほか、当駐車場の管理上、支障あると認められる車両は駐車をお断りする場合があります。<br>長さ5.05m、幅1.95m、高さ1.55m、重量1.6tを超える車両。<br>
+                                                危険物、爆発物、悪臭を放つ物品を積載している車両。
+                                            </p>
+                                            <p>
+                                                <strong>2.目的外立入の禁止</strong><br>
+                                                当施設のご利用目的のお客様に限り、当駐車場をご利用頂けます。また、利用時間は、当施設の利用時間に準ずるものとします。なお、駐車以外での目的で、当駐車場に立ち入ることはできません。当駐車場において、駐車以外の行為（営業、宣伝、募金活動、署名活動等）をすることを禁止します。
+                                            </p>
+                                            <p>
+                                                <strong>3.遵守事項</strong><br>
+                                                当駐車場内では徐行し、追い越しをしないこと。また、出庫する車両の通行を優先します。<br>
+                                                警笛をみだりに使用することなく静かに運転します。<br>
+                                                当駐車場における喫煙及び火気の使用は厳禁です。<br>
+                                                当駐車場に駐車中は、必ずエンジンを停止して下さい。<br>
+                                                大音響でのカーステレオ、乱暴なドアの開閉、夜間の大きな話し声等、近隣の迷惑になる行為は禁止します。<br>
+                                                当駐車場においてビン、缶、紙屑、吸殻、雑誌、生活ゴミを捨てることは禁止します。<br>
+                                                当駐車場において飲酒、宿泊、洗車等、他の利用者の迷惑になるような行為は禁止します。
+                                            </p>
+                                            <p>
+                                                <strong>4.管理者の免責</strong><br>
+                                                当施設は、以下の事項について、一切責任を負いません。
+                                            </p>
+                                            <p>
+                                                当駐車場における事故、利用者同士のトラブル<br>
+                                                車両の盗難、損壊、損傷<br>
+                                                車両の形状や構造等が原因による車両破損等
+                                            </p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+                <div class="container-fluid">
+                    <div class="p-2 mt-2 pb-3 text-right">
+                        <button type="button" class="btn btn-warning" style="min-width: 160px">保存する</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <script type="text/javascript" src="includes/footer.js"></script>
+    </div>
+    <!-- start: MAIN JAVASCRIPTS -->
+    <script type="text/javascript" src="includes/js-libs.js"></script>  
+    <script src="js/main.js"></script>
+    <!-- end: MAIN JAVASCRIPTS -->
+    <script type="text/javascript">
+    jQuery(document).ready(function($) {
+        //Demo
+        $('.sidebar-nav .nav-item .nav-link').removeClass('active');
+        $('.sidebar-nav .nav-item:nth-child(5) .nav-link').addClass('active');
+
+        $('input[type=radio][name=radio-on-off]').on('ifChecked', function(event){
+          if (this.value == '1') {
+            $('.on-wrapper').show();
+          }
+          else if (this.value == '0') {             
+            $('.on-wrapper').hide();
+          }
+        });
+    });
+    </script>
+</body>
+
+</html>

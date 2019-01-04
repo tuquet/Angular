@@ -1,0 +1,131 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="shortcut icon" href="favicon.ico" />
+    <!-- start: MAIN CSS -->
+    <link rel="stylesheet" href="css/bootstrap.custom.min.css">
+    <link rel="stylesheet" href="css/open-iconic-bootstrap.css">
+    <link rel="stylesheet" href="css/parkdirect-icon.css">
+    <link rel="stylesheet" href="css/icheck-blue.css">
+    <link rel="stylesheet" href="css/select2.min.css">
+    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="css/custom.css">
+    <!-- end: MAIN CSS -->
+    <!-- start: CSS REQUIRED FOR THIS PAGE ONLY -->
+    <!-- end: CSS REQUIRED FOR THIS PAGE ONLY -->
+    <title>Park Direct - Login</title>
+</head>
+
+<body>
+    <div class="site-wrapper">
+        <div class="main-wrapper">
+            <div class="container login-container">
+                <div class="row align-items-center justify-content-center">
+                    <div class="col-md-7">
+                        <h2 class="text-center mb-1"><img src="images/logo.png" alt=""></h2>
+                        <p class="text-center text-secondary smalltext">拠点駐車場・顧客管理</p>
+                        <div class="card login-card mb-3">
+                            <div class="card-body">
+                                <form action="#" class="login-form" method="post">
+                                    <p class="text-center text-danger">
+                                        IDまたはパスワードが正しくありません。
+                                    </p>
+                                    <div class="form-group">
+                                        <label class="mb-1 text-secondary" for="username">ID</label>
+                                        <input type="text" class="form-control" id="username" name="username" value="" placeholder="sample">
+                                    </div>
+                                    <div class="form-group">
+                                        <label class="mb-1 text-secondary" for="password">パスワード</label>
+                                        <div class="input-button-group icon-inside icon-right">
+                                            <button type="button" class="btn btn-none btn-icon btn-password-showhide"><span class="oi oi-eye"></span></button>
+                                            <input type="password" class="form-control" id="password" name="password" value="" placeholder="">
+                                        </div>
+                                        <div class="d-flex justify-content-sm-between align-items-center smalltext mt-2">
+                                            <label class="label-icheck mb-0"><input type="checkbox" name="check" checked> 次回から入力を省略</label>
+                                            <a href="#">» パスワードを忘れた方はこちら</a>
+                                        </div>
+                                    </div>
+                                    <div class="text-center">
+                                        <button type="submit" class="btn btn-primary btn-block btn-submit pt-2 pb-2" style="margin: 0 auto;max-width: 50%;"><strong>ログイン</strong></button>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="alert alert-success alert-dismissible fade show d-inline-block fixed left bottom" role="alert">
+                <div style="line-height: 20px">
+                    <span class="icon-circle-20 bg-success"><span class="oi oi-info"></span></span> ログアウトが完了しました
+                </div>
+                <button type="button" class="close" data-dismiss="alert" aria-label="Close" style="line-height: 16px">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+        </div>
+        <script type="text/javascript" src="includes/footer.js"></script>
+    </div>
+    <!-- start: MAIN JAVASCRIPTS -->
+    <script type="text/javascript" src="includes/js-libs.js"></script> 
+    <script src="js/main.js"></script>
+    <!-- end: MAIN JAVASCRIPTS -->
+    <script type="text/javascript">
+    jQuery(document).ready(function($) {
+        function login_layout() {
+            var height = $(window).height() - $('.footer-wrapper').outerHeight();
+            $('.login-container > .row.align-items-center').css('min-height', height);
+        }
+        login_layout();
+
+        $(window).resize(function() {
+            login_layout();
+        });
+
+        //Validate
+        $(".login-form").validate({
+            rules: {
+                username: {
+                    required: true,
+                    minlength: 2
+                },
+                password: {
+                    required: true,
+                    minlength: 5
+                }
+            },
+            messages: {
+                username: {
+                    required: "Please enter a username",
+                    minlength: "Your username must consist of at least 2 characters"
+                },
+                password: {
+                    required: "Please provide a password",
+                    minlength: "Your password must be at least 5 characters long"
+                }
+            },
+            submitHandler: function() {
+                alert("submitted!");
+            }
+        });
+
+        $('.btn-password-showhide').click(function(e) {
+            e.preventDefault();
+            if (!$(this).hasClass('show') && ($(this).parent().find('input[name=password]').attr('type') == 'password')) {
+                $(this).addClass('show');
+                $(this).parent().find('input[name=password]').attr('type', 'text');
+
+            } else {
+                $(this).removeClass('show');
+                $(this).parent().find('input[name=password]').attr('type', 'password')
+            }
+
+        })
+    });
+    </script>
+</body>
+
+</html>

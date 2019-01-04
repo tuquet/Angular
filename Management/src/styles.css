@@ -1,0 +1,13 @@
+/* You can add global styles to this file, and also import other style files */
+body.header-fixed .header-wrapper {	
+	max-width: inherit;
+}
+.custom-select.is-invalid,
+.form-control.is-invalid {
+    border-color: #dc3545;
+}
+
+.is-invalid{
+    border: 1px solid!important;
+    border-color: #dc3545!important;
+}

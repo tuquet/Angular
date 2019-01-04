@@ -1,0 +1,77 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="shortcut icon" href="favicon.ico" />
+    <!-- start: MAIN CSS -->
+    <link rel="stylesheet" href="includes/site-styles.css">    
+    <!-- end: MAIN CSS -->
+    <!-- start: CSS REQUIRED FOR THIS PAGE ONLY -->    
+    <!-- end: CSS REQUIRED FOR THIS PAGE ONLY -->
+    <title>1-9-1_検索_init</title>
+  </head>
+  <body>
+    <!-- BEGIN Site Wrapper -->
+    <div class="site-wrapper">      
+      <div id="site-content" class="site-content">
+        <div class="card">
+          <div class="card-body pt-1 pb-1">
+            <form action="#" method="get">
+              <div class="d-flex">
+                <button class="btn btn-none pl-0"><span class="oi oi-x"></span></button>
+                <div class="input-wrap flex-grow-1">
+                  <input type="text" class="form-control" value="" placeholder="所・駅名・パーキング名 etc..">
+                  <button class="btn btn-none btn-close"><span class="oi oi-x"></span></button>
+                </div>
+              </div>
+            </form>
+          </div>
+        </div>
+        <div class="card bg-white mb-2" style="min-height: 240px">
+          <ul class="list-group flat">
+            <li class="list-group-item"><span class="oi oi-location icon text-primary"></span>現在地からさがす</li>
+            <li class="list-group-item"><span class="oi oi-map-marker icon text-primary"></span>エリアからさがす</li>
+            <li class="list-group-item"><span class="icon-bus icon text-primary"></span>沿線・駅からさがす</li>
+          </ul>
+        </div>
+        <div class="keyboard-wrapper text-center">
+          <img src="images/temp/keyboard-fake.png" alt="" style="width: 100%">
+        </div>
+      </div>
+    </div><!-- BEGIN Site Wrapper -->
+
+    <!-- start: MAIN JAVASCRIPTS -->
+    <script type="text/javascript" src="includes/js-libs.js"></script>  
+    <script src="js/main.js"></script>
+    <!-- end: MAIN JAVASCRIPTS -->
+    <!-- start: JS REQUIRED FOR THIS PAGE ONLY -->    
+    <!-- end: JS REQUIRED FOR THIS PAGE ONLY -->
+    <script type="text/javascript">
+      jQuery(document).ready(function($){
+
+        function view(){
+          var window_height = $(window).height();        
+          var keyboard_height = $('.keyboard-wrapper').height();
+          $('#site-content').css({
+            'min-height': window_height,
+            'padding-bottom':keyboard_height
+          });
+
+          $('.keyboard-wrapper').css({
+            'position':'absolute',
+            'left':'0',
+            'bottom':'0',
+            'width':'100%'
+          });
+        }
+        view();        
+
+        $(window).resize(function(){
+          view();
+        })
+      })
+    </script>
+  </body>
+</html>

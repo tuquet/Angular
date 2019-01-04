@@ -1,0 +1,13 @@
+document.write( '<!-- BEGIN Header Wrapper -->\n' );
+document.write( '      <div class=\"header-wrapper\">\n' );
+document.write( '        <div class=\"container-fluid\">\n' );
+document.write( '          <header id=\"header\" class=\"d-flex justify-content-between align-items-center\">\n' );
+document.write( '            <div class=\"header-brand\">\n' );
+document.write( '              <h1 class=\"logo\"><a href=\"#\" class=\"logo-link\"><img src=\"images/logo.png\" alt=\"Park Direct Logo\"></a></h1>\n' );
+document.write( '            </div>\n' );
+document.write( '            <div class=\"header-menu\">\n' );
+document.write( '              <a href=\"#\" class=\"menu-toggle\"><span class=\"oi oi-menu\"></span><span class=\"smalltext text-uppercase d-block\">メニュー</span></a>\n' );
+document.write( '            </div>\n' );
+document.write( '          </header>\n' );
+document.write( '        </div>\n' );
+document.write( '      </div><!-- END Header Wrapper -->' );

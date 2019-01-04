@@ -1,0 +1,108 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="shortcut icon" href="favicon.ico" />
+    <!-- start: MAIN CSS -->
+    <link rel="stylesheet" href="includes/site-styles.css">    
+    <!-- end: MAIN CSS -->
+    <!-- start: CSS REQUIRED FOR THIS PAGE ONLY -->    
+    <!-- end: CSS REQUIRED FOR THIS PAGE ONLY -->
+    <title>1-6-1_CS問い合わせFM - 1-6-2_CS問い合わせFM_err</title>
+  </head>
+  <body class="header-fixed">
+    <!-- BEGIN Site Wrapper -->
+    <div class="site-wrapper">
+      <script type="text/javascript" src="includes/header.js"></script>
+      <!-- BEGIN Site Wrapper -->
+      <div id="site-content" class="site-content">
+        <div class="card bg-primary-hard-light">
+          <div class="card-body">
+            <strong>お問い合わせ</strong>
+          </div>
+        </div>
+        <div class="card bg-white">
+          <div class="card-body">
+            <form action="/" id="contact-form" method="post">
+              <p>PARK DIRECTで管理しいる駐車場にて、不正駐車・清掃・事故・騒音・その他関連事項は下記より問い合わせください。</p>
+              <div class="form-group">
+                <label><strong>駐車場名</strong> <span class="badge badge-danger">必須</span></label>
+                <input name="parkingname" type="text" class="form-control" value="" placeholder="パーク第一駐車場">
+              </div>
+              <div class="form-group">
+                <label><strong>お問い合わせ種別</strong> <span class="badge badge-danger">必須</span></label>
+                <ul class="list-group">
+                  <li class="list-group-item label-icheck current"><input type="radio" name="type" value="0" checked> 不正駐車</li>
+                  <li class="list-group-item label-icheck"><input type="radio" name="type" value="1"> 清掃</li>
+                  <li class="list-group-item label-icheck"><input type="radio" name="type" value="2"> 事故</li> 
+                  <li class="list-group-item label-icheck"><input type="radio" name="type" value="3"> 騒音</li> 
+                  <li class="list-group-item label-icheck"><input type="radio" name="type" value="4"> その他</li>                  
+                </ul>
+              </div>
+              <div class="form-group">
+                <label><strong>お名前</strong> <span class="badge badge-danger">必須</span></label>
+                <input name="name" type="text" class="form-control" value="" placeholder="パーク太郎">
+              </div>
+              <div class="form-group">
+                <label><strong>メールアドレス</strong> <span class="badge badge-danger">必須</span></label>
+                <input name="email" type="text" class="form-control" value="" placeholder="sample@parkdrive.com">
+              </div>
+              <div class="form-group">
+                <label><strong>電話番号</strong> <span class="badge badge-danger">必須</span></label>
+                <input name="phone" type="text" class="form-control" value="" placeholder="08012345678">
+              </div>
+              <div class="form-group">
+                <label><strong>お問い合わせ内容</strong> <span class="badge badge-danger">必須</span></label>
+                <textarea name="message" cols="1" rows="3" class="form-control"></textarea>
+              </div>
+              <div class="form-group text-center">
+                <button type="submit" class="btn btn-warning pt-3 pb-3 btn-block" style="max-width: 50%;margin: 0 auto;">送信する</button>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div><!-- END Site Wrapper -->
+      <script type="text/javascript" src="includes/footer.js"></script>
+      <script type="text/javascript" src="includes/site-menu.js"></script>
+    </div><!-- BEGIN Site Wrapper -->
+
+    <!-- start: MAIN JAVASCRIPTS -->
+    <script type="text/javascript" src="includes/js-libs.js"></script>  
+    <script src="js/main.js"></script>
+    <!-- end: MAIN JAVASCRIPTS -->
+    <!-- start: JS REQUIRED FOR THIS PAGE ONLY -->    
+    <!-- end: JS REQUIRED FOR THIS PAGE ONLY -->
+     <script type="text/javascript">
+      jQuery(document).ready(function($){
+        $("#contact-form").validate({
+          rules: {
+            parkingname: "required",
+            name: "required",
+            type: "required",
+            email: {
+              required: true,
+              email: true
+            },
+            phone:{
+              required: true,
+              number: true
+            },
+            message: "required"
+          },
+          messages: {
+            parkingname: "駐車場名を入力してください。",
+            name: "お名前を入力してください。",            
+            email: "メールアドレスを入力してください。",
+            phone:"電話番号を入力してください。",
+            message: "お問い合わせ内容を入力してください。"
+            
+          },submitHandler: function() {
+            alert("submitted!");
+          }
+        });
+      });
+    </script>   
+  </body>
+</html>

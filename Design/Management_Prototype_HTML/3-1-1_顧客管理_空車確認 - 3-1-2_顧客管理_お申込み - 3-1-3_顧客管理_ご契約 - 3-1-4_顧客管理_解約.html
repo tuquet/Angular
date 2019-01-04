@@ -1,0 +1,1039 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="shortcut icon" href="favicon.ico" />
+    <!-- start: MAIN CSS -->
+    <link rel="stylesheet" href="includes/site-styles.css"> 
+    <!-- end: MAIN CSS -->
+    <!-- start: CSS REQUIRED FOR THIS PAGE ONLY -->
+    <!-- end: CSS REQUIRED FOR THIS PAGE ONLY -->
+    <title>3-1-1_顧客管理_空車確認</title>
+</head>
+
+<body>
+    <div class="site-wrapper has-sidebar">
+        <div class="main-wrapper">
+            <script type="text/javascript" src="includes/sidebar.js"></script>
+            <script type="text/javascript" src="includes/header.js"></script>
+            <div class="site-content">
+                <div class="container-fluid bg-primary-hard-light">
+                    <a href="#" class="p-2 d-block"><span class="oi oi-caret-left"></span> 顧客管理一覧へ戻る</a>
+                </div>
+                <section class="pt-3">
+                    <div class="container-fluid">
+                        <div class="d-flex justify-content-between align-items-center pl-2 pr-2 mb-3">
+                            <div>
+                                <h4 class="mb-0">顧客管理</h4>
+                                <div class="text-secondary">顧客情報をステータス別に閲覧・編集ができます。</div>
+                            </div>
+                            <div>
+                                <a href="#" class="btn btn-primary"><span class="icon-plus-circled"></span> 新規顧客登録</a>
+                            </div>
+                        </div> 
+                        <div class="pl-2 pr-2">
+                            <div class="d-flex flex-wrap align-items-center">
+                                <div class="mr-3 form-group">
+                                    <select class="form-control">
+                                        <option value="1">すべてのステータス</option>
+                                    </select>
+                                </div>
+                                <div class="form-group mr-3" style="flex-basis: 170px">
+                                    <div class="input-button-group icon-inside icon-right">
+                                      <button type="submit" class="btn btn-none btn-icon"><span class="oi oi-calendar"></span></button>
+                                      <input type="text" class="form-control" placeholder="" value="2018/10/01">
+                                    </div>
+                                </div>
+                                <div class="form-group mr-3"><span style="font-size: 150%;">~</span></div>
+                                <div class="form-group mr-3" style="flex-basis: 170px">
+                                    <div class="input-button-group icon-inside icon-right">
+                                      <button type="submit" class="btn btn-none btn-icon"><span class="oi oi-calendar"></span></button>
+                                      <input type="text" class="form-control" placeholder="" value="2018/11/30">
+                                    </div>
+                                </div>
+                                <div class="form-group mr-3" style="flex-basis: 400px;max-width: 100%;">
+                                    <div class="input-button-group icon-inside icon-left">
+                                      <button type="submit" class="btn btn-none btn-icon"><span class="icon-search"></span></button>
+                                      <input type="text" class="form-control" placeholder="住所・駅名・駐車場名で検索">
+                                    </div>
+                                </div>
+                            </div>
+                            <ul class="nav nav-tabs" role="tablist">
+                               <li class="nav-item">
+                                    <a class="nav-link active" id="tab-one" data-toggle="tab" href="#pane-one" role="tab" aria-controls="空車確認" aria-selected="true">空車確認</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" id="tab-two" data-toggle="tab" href="#pane-two" role="tab" aria-controls="お申込" aria-selected="false">お申込</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" id="tab-three" data-toggle="tab" href="#pane-three" role="tab" aria-controls="ご契約" aria-selected="false">ご契約</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" id="tab-four" data-toggle="tab" href="#pane-four" role="tab" aria-controls="支払い状況" aria-selected="false">解約</a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </section>
+                <section class="bg-white pt-3 pb-3">
+                    <div class="container-fluid">
+                        <div class="pl-2 pr-2">
+                            <div class="tab-content">
+                                <div class="tab-pane fade show active" id="pane-one" role="tabpanel" aria-labelledby="tab-one">
+                                    <div class="table-responsive">
+                                        <table id="table_a" class="table datatable" cellpadding="0" cellspacing="0">
+                                            <thead>
+                                                <tr>
+                                                    <th>ステータス</th>
+                                                    <th>受付日</th>
+                                                    <th>顧客情報</th>
+                                                    <th>駐車場</th>
+                                                    <th>利用予定車</th>                                                    
+                                                    <th>&nbsp;</th>  
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                <tr>
+                                                    <td><span class="badge bg-brick-orange badge-status">&nbsp;</span> 新規</td>
+                                                    <td>2018/10/14</td>
+                                                    <td>
+                                                        <div>田中商事 株式会社</div>
+                                                        <div>田中 圭佑</div>
+                                                    </td>
+                                                    <td>
+                                                        <div>JKK000000001</div>
+                                                        <div>小田急パーキング清水1丁目第1</div>
+                                                        <div class="smalltext text-secondary">東京都杉並区清水1-15付近</div>
+                                                    </td>
+                                                    <td>普通車 1台</td>
+                                                    
+                                                    <td class="text-right">
+                                                        <button type="button" class="btn btn-sm btn-primary-light"><span class="oi oi-envelope-closed"></span> 送る</button>
+                                                        <button type="button" class="btn btn-sm btn-primary-light"><span class="oi oi-spreadsheet"></span> 詳細へ</button>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td><span class="badge bg-brick-orange badge-status">&nbsp;</span> 新規</td>
+                                                    <td>2018/10/28</td>
+                                                    <td>
+                                                        <div>鈴木 健太郎</div>
+                                                    </td>
+                                                    <td>
+                                                        <div>JKK000000002</div>
+                                                        <div>小田急パーキング東村山駅前第1</div>
+                                                        <div class="smalltext text-secondary">東京都東村山市本町2-4-16付近</div>
+                                                    </td>
+                                                    <td>バイク 1台</td>                                                    
+                                                    <td class="text-right">
+                                                        <button type="button" class="btn btn-sm btn-primary-light"><span class="oi oi-envelope-closed"></span> 送る</button>
+                                                        <button type="button" class="btn btn-sm btn-primary-light"><span class="oi oi-spreadsheet"></span> 詳細へ</button>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td><span class="badge bg-brick-orange-light badge-status">&nbsp;</span> お申込み待ち</td>
+                                                    <td>2018/11/07</td>
+                                                    <td>
+                                                        <div>原田 敬</div>
+                                                    </td>
+                                                    <td>
+                                                        <div>JKK000000003</div>
+                                                        <div>小田急パーキング原町田</div>
+                                                        <div class="smalltext text-secondary">東京都町田市原町田2-19付近</div>
+                                                    </td>
+                                                    <td>普通車 1台</td>                                                    
+                                                    <td class="text-right">
+                                                        <button type="button" class="btn btn-sm btn-primary-light"><span class="oi oi-envelope-closed"></span> 送る</button>
+                                                        <button type="button" class="btn btn-sm btn-primary-light"><span class="oi oi-spreadsheet"></span> 詳細へ</button>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td><span class="badge bg-gray badge-status">&nbsp;</span> 対応不要</td>
+                                                    <td>2018/10/14</td>
+                                                    <td>
+                                                        <div>田中商事 株式会社</div>
+                                                        <div>田中 圭佑</div>
+                                                    </td>
+                                                    <td>
+                                                        <div>JKK000000004</div>
+                                                        <div>小田急パーキング清水1丁目第1</div>
+                                                        <div class="smalltext text-secondary">東京都杉並区清水1-15付近</div>
+                                                    </td>
+                                                    <td>普通車 1台</td>                                                    
+                                                    <td class="text-right">
+                                                        <button type="button" class="btn btn-sm btn-primary-light"><span class="oi oi-envelope-closed"></span> 送る</button>
+                                                        <button type="button" class="btn btn-sm btn-primary-light"><span class="oi oi-spreadsheet"></span> 詳細へ</button>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td><span class="badge bg-brick-orange-light badge-status">&nbsp;</span> お申込み待ち</td>
+                                                    <td>2018/10/28</td>
+                                                    <td>
+                                                        <div>鈴木 健太郎</div>                                   
+                                                    </td>
+                                                    <td>
+                                                        <div>JKK000000005</div>
+                                                        <div>小田急パーキング東村山駅前第1</div>
+                                                        <div class="smalltext text-secondary">東京都東村山市本町2-4-16付近</div>
+                                                    </td>
+                                                    <td>バイク 1台</td>                                                    
+                                                    <td class="text-right">
+                                                        <button type="button" class="btn btn-sm btn-primary-light"><span class="oi oi-envelope-closed"></span> 送る</button>
+                                                        <button type="button" class="btn btn-sm btn-primary-light"><span class="oi oi-spreadsheet"></span> 詳細へ</button>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td><span class="badge bg-brick-orange badge-status">&nbsp;</span> 新規</td>
+                                                    <td>2018/11/07</td>
+                                                    <td>
+                                                        <div>原田 敬</div>                                   
+                                                    </td>
+                                                    <td>
+                                                        <div>JKK000000006</div>
+                                                        <div>小田急パーキング原町田</div>
+                                                        <div class="smalltext text-secondary">東京都町田市原町田2-19付近</div>
+                                                    </td>
+                                                    <td>普通車 1台</td>                                                    
+                                                    <td class="text-right">
+                                                        <button type="button" class="btn btn-sm btn-primary-light"><span class="oi oi-envelope-closed"></span> 送る</button>
+                                                        <button type="button" class="btn btn-sm btn-primary-light"><span class="oi oi-spreadsheet"></span> 詳細へ</button>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td><span class="badge bg-brick-orange badge-status">&nbsp;</span> 新規</td>
+                                                    <td>2018/10/14</td>
+                                                    <td>
+                                                        <div>田中商事 株式会社</div>   
+                                                        <div>田中 圭佑</div>                                
+                                                    </td>
+                                                    <td>
+                                                        <div>JKK000000007</div>
+                                                        <div>小田急パーキング清水1丁目第1</div>
+                                                        <div class="smalltext text-secondary">東京都杉並区清水1-15付近</div>
+                                                    </td>
+                                                    <td>普通車 1台</td>                                                    
+                                                    <td class="text-right">
+                                                        <button type="button" class="btn btn-sm btn-primary-light"><span class="oi oi-envelope-closed"></span> 送る</button>
+                                                        <button type="button" class="btn btn-sm btn-primary-light"><span class="oi oi-spreadsheet"></span> 詳細へ</button>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td><span class="badge bg-brick-orange-light badge-status">&nbsp;</span> お申込み待ち</td>
+                                                    <td>2018/10/28</td>
+                                                    <td>
+                                                        <div>鈴木 健太郎</div>          
+                                                    </td>
+                                                    <td>
+                                                        <div>JKK000000008</div>
+                                                        <div>小田急パーキング東村山駅前第1</div>
+                                                        <div class="smalltext text-secondary">東京都東村山市本町2-4-16付近</div>
+                                                    </td>
+                                                    <td>バイク 1台</td>                                                    
+                                                    <td class="text-right">
+                                                        <button type="button" class="btn btn-sm btn-primary-light"><span class="oi oi-envelope-closed"></span> 送る</button>
+                                                        <button type="button" class="btn btn-sm btn-primary-light"><span class="oi oi-spreadsheet"></span> 詳細へ</button>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td><span class="badge bg-gray badge-status">&nbsp;</span> 対応不要</td>
+                                                    <td>2018/11/07</td>
+                                                    <td>
+                                                        <div>原田 敬</div>          
+                                                    </td>
+                                                    <td>
+                                                        <div>JKK000000009</div>
+                                                        <div>小田急パーキング原町田</div>
+                                                        <div class="smalltext text-secondary">東京都町田市原町田2-19付近</div>
+                                                    </td>
+                                                    <td>普通車 1台</td>                                                    
+                                                    <td class="text-right">
+                                                        <button type="button" class="btn btn-sm btn-primary-light"><span class="oi oi-envelope-closed"></span> 送る</button>
+                                                        <button type="button" class="btn btn-sm btn-primary-light"><span class="oi oi-spreadsheet"></span> 詳細へ</button>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td><span class="badge bg-brick-orange badge-status">&nbsp;</span> 新規</td>
+                                                    <td>2018/10/14</td>
+                                                    <td>
+                                                        <div>田中商事 株式会社</div> 
+                                                        <div>田中 圭佑</div>         
+                                                    </td>
+                                                    <td>
+                                                        <div>JKK000000010</div>
+                                                        <div>小田急パーキング清水1丁目第1</div>
+                                                        <div class="smalltext text-secondary">東京都杉並区清水1-15付近</div>
+                                                    </td>
+                                                    <td>普通車 1台</td>                                                    
+                                                    <td class="text-right">
+                                                        <button type="button" class="btn btn-sm btn-primary-light"><span class="oi oi-envelope-closed"></span> 送る</button>
+                                                        <button type="button" class="btn btn-sm btn-primary-light"><span class="oi oi-spreadsheet"></span> 詳細へ</button>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td><span class="badge bg-gray badge-status">&nbsp;</span> 対応不要</td>
+                                                    <td>2018/11/07</td>
+                                                    <td>
+                                                        <div>原田 敬</div>          
+                                                    </td>
+                                                    <td>
+                                                        <div>JKK000000011</div>
+                                                        <div>小田急パーキング原町田</div>
+                                                        <div class="smalltext text-secondary">東京都町田市原町田2-19付近</div>
+                                                    </td>
+                                                    <td>普通車 1台</td>                                                    
+                                                    <td class="text-right">
+                                                        <button type="button" class="btn btn-sm btn-primary-light"><span class="oi oi-envelope-closed"></span> 送る</button>
+                                                        <button type="button" class="btn btn-sm btn-primary-light"><span class="oi oi-spreadsheet"></span> 詳細へ</button>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td><span class="badge bg-brick-orange badge-status">&nbsp;</span> 新規</td>
+                                                    <td>2018/10/14</td>
+                                                    <td>
+                                                        <div>田中商事 株式会社</div> 
+                                                        <div>田中 圭佑</div>         
+                                                    </td>
+                                                    <td>
+                                                        <div>JKK000000012</div>
+                                                        <div>小田急パーキング清水1丁目第1</div>
+                                                        <div class="smalltext text-secondary">東京都杉並区清水1-15付近</div>
+                                                    </td>
+                                                    <td>普通車 1台</td>                                                    
+                                                    <td class="text-right">
+                                                        <button type="button" class="btn btn-sm btn-primary-light"><span class="oi oi-envelope-closed"></span> 送る</button>
+                                                        <button type="button" class="btn btn-sm btn-primary-light"><span class="oi oi-spreadsheet"></span> 詳細へ</button>
+                                                    </td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                </div>
+                                <div class="tab-pane fade" id="pane-two" role="tabpanel" aria-labelledby="tab-two">
+                                    <div class="table-responsive">
+                                        <table id="table_b" class="table datatable" cellpadding="0" cellspacing="0">
+                                            <thead>
+                                                <tr>
+                                                    <th>ステータス</th>
+                                                    <th>受付日</th>
+                                                    <th>顧客情報</th>
+                                                    <th>駐車場</th>
+                                                    <th>利用予定車</th>                                                    
+                                                    <th>&nbsp;</th>  
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                <tr>
+                                                    <td><span class="badge bg-yellow-dark badge-status">&nbsp;</span> 審査待ち</td>
+                                                    <td>2018/10/14</td>
+                                                    <td>
+                                                        <div>田中商事 株式会社</div>
+                                                        <div>田中 圭佑</div>
+                                                    </td>
+                                                    <td>
+                                                        <div>JKK000000001</div>
+                                                        <div>小田急パーキング清水1丁目第1</div>
+                                                        <div class="smalltext text-secondary">東京都杉並区清水1-15付近</div>
+                                                    </td>
+                                                    <td>普通車 1台</td>
+                                                    
+                                                    <td class="text-right">
+                                                        <button type="button" class="btn btn-sm btn-primary-light"><span class="oi oi-envelope-closed"></span> 送る</button>
+                                                        <button type="button" class="btn btn-sm btn-primary-light"><span class="oi oi-spreadsheet"></span> 詳細へ</button>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td><span class="badge bg-yellow-dark badge-status">&nbsp;</span> 審査待ち</td>
+                                                    <td>2018/10/28</td>
+                                                    <td>
+                                                        <div>鈴木 健太郎</div>
+                                                    </td>
+                                                    <td>
+                                                        <div>JKK000000002</div>
+                                                        <div>小田急パーキング東村山駅前第1</div>
+                                                        <div class="smalltext text-secondary">東京都東村山市本町2-4-16付近</div>
+                                                    </td>
+                                                    <td>バイク 1台</td>                                                    
+                                                    <td class="text-right">
+                                                        <button type="button" class="btn btn-sm btn-primary-light"><span class="oi oi-envelope-closed"></span> 送る</button>
+                                                        <button type="button" class="btn btn-sm btn-primary-light"><span class="oi oi-spreadsheet"></span> 詳細へ</button>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td><span class="badge bg-yellow badge-status">&nbsp;</span> ご契約待ち</td>
+                                                    <td>2018/11/07</td>
+                                                    <td>
+                                                        <div>原田 敬</div>
+                                                    </td>
+                                                    <td>
+                                                        <div>JKK000000003</div>
+                                                        <div>小田急パーキング原町田</div>
+                                                        <div class="smalltext text-secondary">東京都町田市原町田2-19付近</div>
+                                                    </td>
+                                                    <td>普通車 1台</td>                                                    
+                                                    <td class="text-right">
+                                                        <button type="button" class="btn btn-sm btn-primary-light"><span class="oi oi-envelope-closed"></span> 送る</button>
+                                                        <button type="button" class="btn btn-sm btn-primary-light"><span class="oi oi-spreadsheet"></span> 詳細へ</button>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td><span class="badge bg-yellow-dark badge-status">&nbsp;</span> 審査待ち</td>
+                                                    <td>2018/10/14</td>
+                                                    <td>
+                                                        <div>田中商事 株式会社</div>
+                                                        <div>田中 圭佑</div>
+                                                    </td>
+                                                    <td>
+                                                        <div>JKK000000004</div>
+                                                        <div>小田急パーキング清水1丁目第1</div>
+                                                        <div class="smalltext text-secondary">東京都杉並区清水1-15付近</div>
+                                                    </td>
+                                                    <td>普通車 1台</td>                                                    
+                                                    <td class="text-right">
+                                                        <button type="button" class="btn btn-sm btn-primary-light"><span class="oi oi-envelope-closed"></span> 送る</button>
+                                                        <button type="button" class="btn btn-sm btn-primary-light"><span class="oi oi-spreadsheet"></span> 詳細へ</button>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td><span class="badge bg-yellow badge-status">&nbsp;</span> ご契約待ち</td>
+                                                    <td>2018/10/28</td>
+                                                    <td>
+                                                        <div>鈴木 健太郎</div>                                   
+                                                    </td>
+                                                    <td>
+                                                        <div>JKK000000005</div>
+                                                        <div>小田急パーキング東村山駅前第1</div>
+                                                        <div class="smalltext text-secondary">東京都東村山市本町2-4-16付近</div>
+                                                    </td>
+                                                    <td>バイク 1台</td>                                                    
+                                                    <td class="text-right">
+                                                        <button type="button" class="btn btn-sm btn-primary-light"><span class="oi oi-envelope-closed"></span> 送る</button>
+                                                        <button type="button" class="btn btn-sm btn-primary-light"><span class="oi oi-spreadsheet"></span> 詳細へ</button>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td><span class="badge bg-yellow-dark badge-status">&nbsp;</span> 審査待ち</td>
+                                                    <td>2018/11/07</td>
+                                                    <td>
+                                                        <div>原田 敬</div>                                   
+                                                    </td>
+                                                    <td>
+                                                        <div>JKK000000006</div>
+                                                        <div>小田急パーキング原町田</div>
+                                                        <div class="smalltext text-secondary">東京都町田市原町田2-19付近</div>
+                                                    </td>
+                                                    <td>普通車 1台</td>                                                    
+                                                    <td class="text-right">
+                                                        <button type="button" class="btn btn-sm btn-primary-light"><span class="oi oi-envelope-closed"></span> 送る</button>
+                                                        <button type="button" class="btn btn-sm btn-primary-light"><span class="oi oi-spreadsheet"></span> 詳細へ</button>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td><span class="badge bg-gray badge-status">&nbsp;</span> 審査落ち</td>
+                                                    <td>2018/10/14</td>
+                                                    <td>
+                                                        <div>田中商事 株式会社</div>   
+                                                        <div>田中 圭佑</div>                                
+                                                    </td>
+                                                    <td>
+                                                        <div>JKK000000007</div>
+                                                        <div>小田急パーキング清水1丁目第1</div>
+                                                        <div class="smalltext text-secondary">東京都杉並区清水1-15付近</div>
+                                                    </td>
+                                                    <td>普通車 1台</td>                                                    
+                                                    <td class="text-right">
+                                                        <button type="button" class="btn btn-sm btn-primary-light"><span class="oi oi-envelope-closed"></span> 送る</button>
+                                                        <button type="button" class="btn btn-sm btn-primary-light"><span class="oi oi-spreadsheet"></span> 詳細へ</button>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td><span class="badge bg-yellow badge-status">&nbsp;</span> ご契約待ち</td>
+                                                    <td>2018/10/28</td>
+                                                    <td>
+                                                        <div>鈴木 健太郎</div>          
+                                                    </td>
+                                                    <td>
+                                                        <div>JKK000000008</div>
+                                                        <div>小田急パーキング東村山駅前第1</div>
+                                                        <div class="smalltext text-secondary">東京都東村山市本町2-4-16付近</div>
+                                                    </td>
+                                                    <td>バイク 1台</td>                                                    
+                                                    <td class="text-right">
+                                                        <button type="button" class="btn btn-sm btn-primary-light"><span class="oi oi-envelope-closed"></span> 送る</button>
+                                                        <button type="button" class="btn btn-sm btn-primary-light"><span class="oi oi-spreadsheet"></span> 詳細へ</button>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td><span class="badge bg-yellow-dark badge-status">&nbsp;</span> 審査待ち</td>
+                                                    <td>2018/11/07</td>
+                                                    <td>
+                                                        <div>原田 敬</div>          
+                                                    </td>
+                                                    <td>
+                                                        <div>JKK000000009</div>
+                                                        <div>小田急パーキング原町田</div>
+                                                        <div class="smalltext text-secondary">東京都町田市原町田2-19付近</div>
+                                                    </td>
+                                                    <td>普通車 1台</td>                                                    
+                                                    <td class="text-right">
+                                                        <button type="button" class="btn btn-sm btn-primary-light"><span class="oi oi-envelope-closed"></span> 送る</button>
+                                                        <button type="button" class="btn btn-sm btn-primary-light"><span class="oi oi-spreadsheet"></span> 詳細へ</button>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td><span class="badge bg-gray badge-status">&nbsp;</span> 審査落ち</td>
+                                                    <td>2018/10/14</td>
+                                                    <td>
+                                                        <div>田中商事 株式会社</div> 
+                                                        <div>田中 圭佑</div>         
+                                                    </td>
+                                                    <td>
+                                                        <div>JKK000000010</div>
+                                                        <div>小田急パーキング清水1丁目第1</div>
+                                                        <div class="smalltext text-secondary">東京都杉並区清水1-15付近</div>
+                                                    </td>
+                                                    <td>普通車 1台</td>                                                    
+                                                    <td class="text-right">
+                                                        <button type="button" class="btn btn-sm btn-primary-light"><span class="oi oi-envelope-closed"></span> 送る</button>
+                                                        <button type="button" class="btn btn-sm btn-primary-light"><span class="oi oi-spreadsheet"></span> 詳細へ</button>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td><span class="badge bg-yellow-dark badge-status">&nbsp;</span> 審査待ち</td>
+                                                    <td>2018/11/07</td>
+                                                    <td>
+                                                        <div>原田 敬</div>          
+                                                    </td>
+                                                    <td>
+                                                        <div>JKK000000011</div>
+                                                        <div>小田急パーキング原町田</div>
+                                                        <div class="smalltext text-secondary">東京都町田市原町田2-19付近</div>
+                                                    </td>
+                                                    <td>普通車 1台</td>                                                    
+                                                    <td class="text-right">
+                                                        <button type="button" class="btn btn-sm btn-primary-light"><span class="oi oi-envelope-closed"></span> 送る</button>
+                                                        <button type="button" class="btn btn-sm btn-primary-light"><span class="oi oi-spreadsheet"></span> 詳細へ</button>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td><span class="badge bg-gray badge-status">&nbsp;</span> 審査落ち</td>
+                                                    <td>2018/10/14</td>
+                                                    <td>
+                                                        <div>田中商事 株式会社</div> 
+                                                        <div>田中 圭佑</div>         
+                                                    </td>
+                                                    <td>
+                                                        <div>JKK000000012</div>
+                                                        <div>小田急パーキング清水1丁目第1</div>
+                                                        <div class="smalltext text-secondary">東京都杉並区清水1-15付近</div>
+                                                    </td>
+                                                    <td>普通車 1台</td>                                                    
+                                                    <td class="text-right">
+                                                        <button type="button" class="btn btn-sm btn-primary-light"><span class="oi oi-envelope-closed"></span> 送る</button>
+                                                        <button type="button" class="btn btn-sm btn-primary-light"><span class="oi oi-spreadsheet"></span> 詳細へ</button>
+                                                    </td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                </div>
+                                <div class="tab-pane fade" id="pane-three" role="tabpanel" aria-labelledby="tab-three">
+                                    <div class="table-responsive">
+                                        <table id="table_c" class="table datatable" cellpadding="0" cellspacing="0">
+                                            <thead>
+                                                <tr>
+                                                    <th>ステータス</th>
+                                                    <th>受付日</th>
+                                                    <th>顧客情報</th>
+                                                    <th>駐車場</th>
+                                                    <th>利用予定車</th>                                                    
+                                                    <th>&nbsp;</th>  
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                <tr>
+                                                    <td><span class="badge bg-green badge-status">&nbsp;</span> ご契約中</td>
+                                                    <td>2018/10/14</td>
+                                                    <td>
+                                                        <div>田中商事 株式会社</div>
+                                                        <div>田中 圭佑</div>
+                                                    </td>
+                                                    <td>
+                                                        <div>JKK000000001</div>
+                                                        <div>小田急パーキング清水1丁目第1</div>
+                                                        <div class="smalltext text-secondary">東京都杉並区清水1-15付近</div>
+                                                    </td>
+                                                    <td>普通車 1台</td>
+                                                    
+                                                    <td class="text-right">
+                                                        <button type="button" class="btn btn-sm btn-primary-light"><span class="oi oi-envelope-closed"></span> 送る</button>
+                                                        <button type="button" class="btn btn-sm btn-primary-light"><span class="oi oi-spreadsheet"></span> 詳細へ</button>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td><span class="badge bg-green badge-status">&nbsp;</span> ご契約中</td>
+                                                    <td>2018/10/28</td>
+                                                    <td>
+                                                        <div>鈴木 健太郎</div>
+                                                    </td>
+                                                    <td>
+                                                        <div>JKK000000002</div>
+                                                        <div>小田急パーキング東村山駅前第1</div>
+                                                        <div class="smalltext text-secondary">東京都東村山市本町2-4-16付近</div>
+                                                    </td>
+                                                    <td>バイク 1台</td>                                                    
+                                                    <td class="text-right">
+                                                        <button type="button" class="btn btn-sm btn-primary-light"><span class="oi oi-envelope-closed"></span> 送る</button>
+                                                        <button type="button" class="btn btn-sm btn-primary-light"><span class="oi oi-spreadsheet"></span> 詳細へ</button>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td><span class="badge bg-green badge-status">&nbsp;</span> ご契約中</td>
+                                                    <td>2018/11/07</td>
+                                                    <td>
+                                                        <div>原田 敬</div>
+                                                    </td>
+                                                    <td>
+                                                        <div>JKK000000003</div>
+                                                        <div>小田急パーキング原町田</div>
+                                                        <div class="smalltext text-secondary">東京都町田市原町田2-19付近</div>
+                                                    </td>
+                                                    <td>普通車 1台</td>                                                    
+                                                    <td class="text-right">
+                                                        <button type="button" class="btn btn-sm btn-primary-light"><span class="oi oi-envelope-closed"></span> 送る</button>
+                                                        <button type="button" class="btn btn-sm btn-primary-light"><span class="oi oi-spreadsheet"></span> 詳細へ</button>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td><span class="badge bg-blue-sky badge-status">&nbsp;</span> 更新予定</td>
+                                                    <td>2018/10/14</td>
+                                                    <td>
+                                                        <div>田中商事 株式会社</div>
+                                                        <div>田中 圭佑</div>
+                                                    </td>
+                                                    <td>
+                                                        <div>JKK000000004</div>
+                                                        <div>小田急パーキング清水1丁目第1</div>
+                                                        <div class="smalltext text-secondary">東京都杉並区清水1-15付近</div>
+                                                    </td>
+                                                    <td>普通車 1台</td>                                                    
+                                                    <td class="text-right">
+                                                        <button type="button" class="btn btn-sm btn-primary-light"><span class="oi oi-envelope-closed"></span> 送る</button>
+                                                        <button type="button" class="btn btn-sm btn-primary-light"><span class="oi oi-spreadsheet"></span> 詳細へ</button>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td><span class="badge bg-green badge-status">&nbsp;</span> ご契約中</td>
+                                                    <td>2018/10/28</td>
+                                                    <td>
+                                                        <div>鈴木 健太郎</div>                                   
+                                                    </td>
+                                                    <td>
+                                                        <div>JKK000000005</div>
+                                                        <div>小田急パーキング東村山駅前第1</div>
+                                                        <div class="smalltext text-secondary">東京都東村山市本町2-4-16付近</div>
+                                                    </td>
+                                                    <td>バイク 1台</td>                                                    
+                                                    <td class="text-right">
+                                                        <button type="button" class="btn btn-sm btn-primary-light"><span class="oi oi-envelope-closed"></span> 送る</button>
+                                                        <button type="button" class="btn btn-sm btn-primary-light"><span class="oi oi-spreadsheet"></span> 詳細へ</button>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td><span class="badge bg-blue-sea badge-status">&nbsp;</span> 初期費用待ち</td>
+                                                    <td>2018/11/07</td>
+                                                    <td>
+                                                        <div>原田 敬</div>                                   
+                                                    </td>
+                                                    <td>
+                                                        <div>JKK000000006</div>
+                                                        <div>小田急パーキング原町田</div>
+                                                        <div class="smalltext text-secondary">東京都町田市原町田2-19付近</div>
+                                                    </td>
+                                                    <td>普通車 1台</td>                                                    
+                                                    <td class="text-right">
+                                                        <button type="button" class="btn btn-sm btn-primary-light"><span class="oi oi-envelope-closed"></span> 送る</button>
+                                                        <button type="button" class="btn btn-sm btn-primary-light"><span class="oi oi-spreadsheet"></span> 詳細へ</button>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td><span class="badge bg-red badge-status">&nbsp;</span> 決済不備</td>
+                                                    <td>2018/10/14</td>
+                                                    <td>
+                                                        <div>田中商事 株式会社</div>   
+                                                        <div>田中 圭佑</div>                                
+                                                    </td>
+                                                    <td>
+                                                        <div>JKK000000007</div>
+                                                        <div>小田急パーキング清水1丁目第1</div>
+                                                        <div class="smalltext text-secondary">東京都杉並区清水1-15付近</div>
+                                                    </td>
+                                                    <td>普通車 1台</td>                                                    
+                                                    <td class="text-right">
+                                                        <button type="button" class="btn btn-sm btn-primary-light"><span class="oi oi-envelope-closed"></span> 送る</button>
+                                                        <button type="button" class="btn btn-sm btn-primary-light"><span class="oi oi-spreadsheet"></span> 詳細へ</button>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td><span class="badge bg-blue-sky badge-status">&nbsp;</span> 更新予定</td>
+                                                    <td>2018/10/28</td>
+                                                    <td>
+                                                        <div>鈴木 健太郎</div>          
+                                                    </td>
+                                                    <td>
+                                                        <div>JKK000000008</div>
+                                                        <div>小田急パーキング東村山駅前第1</div>
+                                                        <div class="smalltext text-secondary">東京都東村山市本町2-4-16付近</div>
+                                                    </td>
+                                                    <td>バイク 1台</td>                                                    
+                                                    <td class="text-right">
+                                                        <button type="button" class="btn btn-sm btn-primary-light"><span class="oi oi-envelope-closed"></span> 送る</button>
+                                                        <button type="button" class="btn btn-sm btn-primary-light"><span class="oi oi-spreadsheet"></span> 詳細へ</button>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td><span class="badge bg-red badge-status">&nbsp;</span> 決済不備</td>
+                                                    <td>2018/11/07</td>
+                                                    <td>
+                                                        <div>原田 敬</div>          
+                                                    </td>
+                                                    <td>
+                                                        <div>JKK000000009</div>
+                                                        <div>小田急パーキング原町田</div>
+                                                        <div class="smalltext text-secondary">東京都町田市原町田2-19付近</div>
+                                                    </td>
+                                                    <td>普通車 1台</td>                                                    
+                                                    <td class="text-right">
+                                                        <button type="button" class="btn btn-sm btn-primary-light"><span class="oi oi-envelope-closed"></span> 送る</button>
+                                                        <button type="button" class="btn btn-sm btn-primary-light"><span class="oi oi-spreadsheet"></span> 詳細へ</button>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td><span class="badge bg-blue-sea badge-status">&nbsp;</span> 初期費用待ち</td>
+                                                    <td>2018/10/14</td>
+                                                    <td>
+                                                        <div>田中商事 株式会社</div> 
+                                                        <div>田中 圭佑</div>         
+                                                    </td>
+                                                    <td>
+                                                        <div>JKK000000010</div>
+                                                        <div>小田急パーキング清水1丁目第1</div>
+                                                        <div class="smalltext text-secondary">東京都杉並区清水1-15付近</div>
+                                                    </td>
+                                                    <td>普通車 1台</td>                                                    
+                                                    <td class="text-right">
+                                                        <button type="button" class="btn btn-sm btn-primary-light"><span class="oi oi-envelope-closed"></span> 送る</button>
+                                                        <button type="button" class="btn btn-sm btn-primary-light"><span class="oi oi-spreadsheet"></span> 詳細へ</button>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td><span class="badge bg-red badge-status">&nbsp;</span> 決済不備</td>
+                                                    <td>2018/11/07</td>
+                                                    <td>
+                                                        <div>原田 敬</div>          
+                                                    </td>
+                                                    <td>
+                                                        <div>JKK000000009</div>
+                                                        <div>小田急パーキング原町田</div>
+                                                        <div class="smalltext text-secondary">東京都町田市原町田2-19付近</div>
+                                                    </td>
+                                                    <td>普通車 1台</td>                                                    
+                                                    <td class="text-right">
+                                                        <button type="button" class="btn btn-sm btn-primary-light"><span class="oi oi-envelope-closed"></span> 送る</button>
+                                                        <button type="button" class="btn btn-sm btn-primary-light"><span class="oi oi-spreadsheet"></span> 詳細へ</button>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td><span class="badge bg-blue-sea badge-status">&nbsp;</span> 初期費用待ち</td>
+                                                    <td>2018/10/14</td>
+                                                    <td>
+                                                        <div>田中商事 株式会社</div> 
+                                                        <div>田中 圭佑</div>         
+                                                    </td>
+                                                    <td>
+                                                        <div>JKK000000010</div>
+                                                        <div>小田急パーキング清水1丁目第1</div>
+                                                        <div class="smalltext text-secondary">東京都杉並区清水1-15付近</div>
+                                                    </td>
+                                                    <td>普通車 1台</td>                                                    
+                                                    <td class="text-right">
+                                                        <button type="button" class="btn btn-sm btn-primary-light"><span class="oi oi-envelope-closed"></span> 送る</button>
+                                                        <button type="button" class="btn btn-sm btn-primary-light"><span class="oi oi-spreadsheet"></span> 詳細へ</button>
+                                                    </td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                </div>
+                                <div class="tab-pane fade" id="pane-four" role="tabpanel" aria-labelledby="tab-four">
+                                    <div class="table-responsive">
+                                        <table id="table_d" class="table datatable" cellpadding="0" cellspacing="0">
+                                            <thead>
+                                                <tr>
+                                                    <th>ステータス</th>
+                                                    <th>受付日</th>
+                                                    <th>顧客情報</th>
+                                                    <th>駐車場</th>
+                                                    <th>利用予定車</th>                                                    
+                                                    <th>&nbsp;</th>  
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                <tr>
+                                                    <td><span class="badge bg-violet badge-status">&nbsp;</span> 解約予定</td>
+                                                    <td>2018/10/14</td>
+                                                    <td>
+                                                        <div>田中商事 株式会社</div>
+                                                        <div>田中 圭佑</div>
+                                                    </td>
+                                                    <td>
+                                                        <div>JKK000000001</div>
+                                                        <div>小田急パーキング清水1丁目第1</div>
+                                                        <div class="smalltext text-secondary">東京都杉並区清水1-15付近</div>
+                                                    </td>
+                                                    <td>普通車 1台</td>
+                                                    
+                                                    <td class="text-right">
+                                                        <button type="button" class="btn btn-sm btn-primary-light"><span class="oi oi-envelope-closed"></span> 送る</button>
+                                                        <button type="button" class="btn btn-sm btn-primary-light"><span class="oi oi-spreadsheet"></span> 詳細へ</button>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td><span class="badge bg-violet badge-status">&nbsp;</span> 解約予定</td>
+                                                    <td>2018/10/28</td>
+                                                    <td>
+                                                        <div>鈴木 健太郎</div>
+                                                    </td>
+                                                    <td>
+                                                        <div>JKK000000002</div>
+                                                        <div>小田急パーキング東村山駅前第1</div>
+                                                        <div class="smalltext text-secondary">東京都東村山市本町2-4-16付近</div>
+                                                    </td>
+                                                    <td>バイク 1台</td>                                                    
+                                                    <td class="text-right">
+                                                        <button type="button" class="btn btn-sm btn-primary-light"><span class="oi oi-envelope-closed"></span> 送る</button>
+                                                        <button type="button" class="btn btn-sm btn-primary-light"><span class="oi oi-spreadsheet"></span> 詳細へ</button>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td><span class="badge bg-violet badge-status">&nbsp;</span> 解約予定</td>
+                                                    <td>2018/11/07</td>
+                                                    <td>
+                                                        <div>原田 敬</div>
+                                                    </td>
+                                                    <td>
+                                                        <div>JKK000000003</div>
+                                                        <div>小田急パーキング原町田</div>
+                                                        <div class="smalltext text-secondary">東京都町田市原町田2-19付近</div>
+                                                    </td>
+                                                    <td>普通車 1台</td>                                                    
+                                                    <td class="text-right">
+                                                        <button type="button" class="btn btn-sm btn-primary-light"><span class="oi oi-envelope-closed"></span> 送る</button>
+                                                        <button type="button" class="btn btn-sm btn-primary-light"><span class="oi oi-spreadsheet"></span> 詳細へ</button>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td><span class="badge bg-violet badge-status">&nbsp;</span> 解約予定</td>
+                                                    <td>2018/10/14</td>
+                                                    <td>
+                                                        <div>田中商事 株式会社</div>
+                                                        <div>田中 圭佑</div>
+                                                    </td>
+                                                    <td>
+                                                        <div>JKK000000004</div>
+                                                        <div>小田急パーキング清水1丁目第1</div>
+                                                        <div class="smalltext text-secondary">東京都杉並区清水1-15付近</div>
+                                                    </td>
+                                                    <td>普通車 1台</td>                                                    
+                                                    <td class="text-right">
+                                                        <button type="button" class="btn btn-sm btn-primary-light"><span class="oi oi-envelope-closed"></span> 送る</button>
+                                                        <button type="button" class="btn btn-sm btn-primary-light"><span class="oi oi-spreadsheet"></span> 詳細へ</button>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td><span class="badge bg-violet badge-status">&nbsp;</span> 解約予定</td>
+                                                    <td>2018/10/28</td>
+                                                    <td>
+                                                        <div>鈴木 健太郎</div>                                   
+                                                    </td>
+                                                    <td>
+                                                        <div>JKK000000005</div>
+                                                        <div>小田急パーキング東村山駅前第1</div>
+                                                        <div class="smalltext text-secondary">東京都東村山市本町2-4-16付近</div>
+                                                    </td>
+                                                    <td>バイク 1台</td>                                                    
+                                                    <td class="text-right">
+                                                        <button type="button" class="btn btn-sm btn-primary-light"><span class="oi oi-envelope-closed"></span> 送る</button>
+                                                        <button type="button" class="btn btn-sm btn-primary-light"><span class="oi oi-spreadsheet"></span> 詳細へ</button>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td><span class="badge bg-gray badge-status">&nbsp;</span> 解約済み</td>
+                                                    <td>2018/11/07</td>
+                                                    <td>
+                                                        <div>原田 敬</div>                                   
+                                                    </td>
+                                                    <td>
+                                                        <div>JKK000000006</div>
+                                                        <div>小田急パーキング原町田</div>
+                                                        <div class="smalltext text-secondary">東京都町田市原町田2-19付近</div>
+                                                    </td>
+                                                    <td>普通車 1台</td>                                                    
+                                                    <td class="text-right">
+                                                        <button type="button" class="btn btn-sm btn-primary-light"><span class="oi oi-envelope-closed"></span> 送る</button>
+                                                        <button type="button" class="btn btn-sm btn-primary-light"><span class="oi oi-spreadsheet"></span> 詳細へ</button>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td><span class="badge bg-violet badge-status">&nbsp;</span> 解約予定</td>
+                                                    <td>2018/10/14</td>
+                                                    <td>
+                                                        <div>田中商事 株式会社</div>   
+                                                        <div>田中 圭佑</div>                                
+                                                    </td>
+                                                    <td>
+                                                        <div>JKK000000007</div>
+                                                        <div>小田急パーキング清水1丁目第1</div>
+                                                        <div class="smalltext text-secondary">東京都杉並区清水1-15付近</div>
+                                                    </td>
+                                                    <td>普通車 1台</td>                                                    
+                                                    <td class="text-right">
+                                                        <button type="button" class="btn btn-sm btn-primary-light"><span class="oi oi-envelope-closed"></span> 送る</button>
+                                                        <button type="button" class="btn btn-sm btn-primary-light"><span class="oi oi-spreadsheet"></span> 詳細へ</button>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td><span class="badge bg-gray badge-status">&nbsp;</span> 解約済み</td>
+                                                    <td>2018/10/28</td>
+                                                    <td>
+                                                        <div>鈴木 健太郎</div>          
+                                                    </td>
+                                                    <td>
+                                                        <div>JKK000000008</div>
+                                                        <div>小田急パーキング東村山駅前第1</div>
+                                                        <div class="smalltext text-secondary">東京都東村山市本町2-4-16付近</div>
+                                                    </td>
+                                                    <td>バイク 1台</td>                                                    
+                                                    <td class="text-right">
+                                                        <button type="button" class="btn btn-sm btn-primary-light"><span class="oi oi-envelope-closed"></span> 送る</button>
+                                                        <button type="button" class="btn btn-sm btn-primary-light"><span class="oi oi-spreadsheet"></span> 詳細へ</button>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td><span class="badge bg-gray badge-status">&nbsp;</span> 解約済み</td>
+                                                    <td>2018/11/07</td>
+                                                    <td>
+                                                        <div>原田 敬</div>          
+                                                    </td>
+                                                    <td>
+                                                        <div>JKK000000009</div>
+                                                        <div>小田急パーキング原町田</div>
+                                                        <div class="smalltext text-secondary">東京都町田市原町田2-19付近</div>
+                                                    </td>
+                                                    <td>普通車 1台</td>                                                    
+                                                    <td class="text-right">
+                                                        <button type="button" class="btn btn-sm btn-primary-light"><span class="oi oi-envelope-closed"></span> 送る</button>
+                                                        <button type="button" class="btn btn-sm btn-primary-light"><span class="oi oi-spreadsheet"></span> 詳細へ</button>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td><span class="badge bg-gray badge-status">&nbsp;</span> 解約済み</td>
+                                                    <td>2018/10/14</td>
+                                                    <td>
+                                                        <div>田中商事 株式会社</div> 
+                                                        <div>田中 圭佑</div>         
+                                                    </td>
+                                                    <td>
+                                                        <div>JKK000000010</div>
+                                                        <div>小田急パーキング清水1丁目第1</div>
+                                                        <div class="smalltext text-secondary">東京都杉並区清水1-15付近</div>
+                                                    </td>
+                                                    <td>普通車 1台</td>                                                    
+                                                    <td class="text-right">
+                                                        <button type="button" class="btn btn-sm btn-primary-light"><span class="oi oi-envelope-closed"></span> 送る</button>
+                                                        <button type="button" class="btn btn-sm btn-primary-light"><span class="oi oi-spreadsheet"></span> 詳細へ</button>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td><span class="badge bg-gray badge-status">&nbsp;</span> 解約済み</td>
+                                                    <td>2018/11/07</td>
+                                                    <td>
+                                                        <div>原田 敬</div>          
+                                                    </td>
+                                                    <td>
+                                                        <div>JKK000000011</div>
+                                                        <div>小田急パーキング原町田</div>
+                                                        <div class="smalltext text-secondary">東京都町田市原町田2-19付近</div>
+                                                    </td>
+                                                    <td>普通車 1台</td>                                                    
+                                                    <td class="text-right">
+                                                        <button type="button" class="btn btn-sm btn-primary-light"><span class="oi oi-envelope-closed"></span> 送る</button>
+                                                        <button type="button" class="btn btn-sm btn-primary-light"><span class="oi oi-spreadsheet"></span> 詳細へ</button>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td><span class="badge bg-gray badge-status">&nbsp;</span> 解約済み</td>
+                                                    <td>2018/10/14</td>
+                                                    <td>
+                                                        <div>田中商事 株式会社</div> 
+                                                        <div>田中 圭佑</div>         
+                                                    </td>
+                                                    <td>
+                                                        <div>JKK000000012</div>
+                                                        <div>小田急パーキング清水1丁目第1</div>
+                                                        <div class="smalltext text-secondary">東京都杉並区清水1-15付近</div>
+                                                    </td>
+                                                    <td>普通車 1台</td>                                                    
+                                                    <td class="text-right">
+                                                        <button type="button" class="btn btn-sm btn-primary-light"><span class="oi oi-envelope-closed"></span> 送る</button>
+                                                        <button type="button" class="btn btn-sm btn-primary-light"><span class="oi oi-spreadsheet"></span> 詳細へ</button>
+                                                    </td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+            </div>
+        </div>
+        <script type="text/javascript" src="includes/footer.js"></script>
+    </div>
+    <!-- start: MAIN JAVASCRIPTS -->
+    <script type="text/javascript" src="includes/js-libs.js"></script>  
+    <script src="js/main.js"></script>
+    <!-- end: MAIN JAVASCRIPTS -->
+    <script type="text/javascript">
+    jQuery(document).ready(function($) {
+        //Demo
+        $('.sidebar-nav .nav-item .nav-link').removeClass('active');
+        $('.sidebar-nav .nav-item:nth-child(3) .nav-link').addClass('active');
+
+        var table_a = $('#table_a').DataTable();
+        table_a.order(
+            [ 3, 'asc' ]
+        ).draw();
+
+        var table_b = $('#table_b').DataTable();
+        table_b.order(
+            [ 3, 'asc' ]
+        ).draw();
+
+        var table_c = $('#table_c').DataTable();
+        table_c.order(
+            [ 3, 'asc' ]
+        ).draw();
+
+        var table_d = $('#table_d').DataTable();
+        table_d.order(
+            [ 3, 'asc' ]
+        ).draw();
+        
+    });
+    </script>
+</body>
+
+</html>

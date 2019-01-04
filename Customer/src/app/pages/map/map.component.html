@@ -1,0 +1,101 @@
+<div id="site-content" class="site-content">
+  <div class="map-wrapper">
+    <div class="map-top">
+      <div class="card bg-primary">
+        <div class="card-body pt-0">
+          <div class="d-flex justify-content-between align-items-center">
+            <div class="mr-2">
+              <div class="input-button-group icon-inside icon-left icon-right">
+                <button type="submit" class="btn btn-none border-0 btn-icon left text-gray"><span class="icon-search"></span></button>
+                <input type="text" class="form-control border-0" placeholder="現在地">
+                <button type="button" class="btn btn-none border-0 btn-icon btn-text right text-primary smalltext">変更</button>
+              </div>
+            </div>
+            <div>
+              <button type="button" class="btn btn-o-light">一覧表示</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="google-maps" style="padding-bottom: 100%">
+      <!-- <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d7098.94326104394!2d78.0430654485247!3d27.172909818538997!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1sen!2s!4v1385710909804" width="600" height="450" frameborder="0" style="border:0"></iframe> -->
+
+      <agm-map #AgmMap style="width:600px; height:600px" [latitude]="latitude" [longitude]="longitude" [scrollwheel]="true" [zoom]="16" (mapClick)="mapClicked($event)">
+        <agm-marker *ngFor="let m of markers; let i = index" (markerClick)="clickedMarker(m.label, i)"
+              [latitude]="m.lat" [longitude]="m.lng" [markerDraggable]="m.draggable" [iconUrl]="m.iconUrl"
+              (dragEnd)="markerDragEnd(m, $event)">
+              <!-- <agm-info-window>
+                  <strong>{{m.label}}</strong>
+              </agm-info-window> -->
+          </agm-marker>
+      </agm-map>
+
+    </div>
+    <div class="map-bottom">
+      <div class="card">
+        <div *ngIf="showInfo == true" class="card-body pb-0 text-right" style="border-bottom: 2px solid #0056B0;">
+          <button (click)="hideInfo()" class="btn btn-primary btn-sm" style="border-bottom-right-radius: 0;border-bottom-left-radius: 0 "><span
+              class="oi oi-x"></span> 閉じる</button>
+        </div>
+        <div *ngIf="showInfo == true" class="card-body bg-white">
+          <div class="parking-item d-flex justify-content-between align-items-start">
+            <div class="item-info pr-2">
+              <h6 class="mb-0"><span class="badge badge-success">空き</span> <strong>小田急パーキング清水1丁目第1</strong></h6>
+              <div class="text-warning">21,600円／月（税込）{{selectedMarker.label}}</div>
+              <div class="text-secondary smalltext">東京都町田市玉川学園4-8付近</div>
+              <div class="text-secondary smalltext">総区画数 20台</div>
+            </div>
+            <div class="item-image-feature text-center align-top">
+              <img src="assets/parking/images/temp/parking-img-thumb.png" alt="">
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- <div id="message" class="p-3 rounded bg-dark text-center cursor-pointer text-white" style="position: absolute;width: 90%;left: 5%;top: 50%;margin-top: -60px;">
+    <span class="oi oi-warning"></span> 該当の駐車場は見つかりませんでした。
+  </div> -->
+</div>
+
+
+
+
+
+<!-- <div class="container">
+  <h1>Google Maps Places Autocomplete Using Angular 2</h1>
+  <br>
+  <button (click)="getPosition()">Searchh</button>
+  <div class="row">
+    <div class="col-md-12">
+      <div class="form-group">
+        <input id="pac-input" type="text" class="form-control" placeholder="Search for Location" autocorrect="off" autocapitalize="off"
+          spellcheck="off" class="form-control" #search [formControl]="searchControl">
+      </div>
+    </div>
+    <div class=""></div>
+  </div>
+  <div class="row">
+    <div class="col-md-12">
+      <agm-map #AgmMap [latitude]="latitude" [longitude]="longitude" [scrollwheel]="true" [zoom]="16" style="height: 500px">
+        <agm-marker *ngFor="let m of markers; let i = index" 
+          (markerClick)="clickedMarker(m.label, i)" 
+          [latitude]="m.lat"
+          [longitude]="m.lng" 
+          [markerDraggable]="m.draggable"
+          [iconUrl]="m.iconUrl" 
+          (dragEnd)="markerDragEnd(m, $event)">
+
+          <agm-info-window>
+            <strong>{{m.label}}</strong>
+          </agm-info-window>
+
+        </agm-marker>
+
+       <agm-direction *ngIf="selectedMarker.lat != ''" [origin]="originMarker" [destination]="selectedMarker">
+        </agm-direction> 
+      </agm-map>
+    </div>
+  </div>
+</div> -->

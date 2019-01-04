@@ -1,0 +1,19 @@
+.groupButton {
+    display: block; 
+    line-height: 40px;
+}
+.divButton {
+    float:right;
+}
+.mr-1, .mx-1 {
+    margin-right: 2.25rem !important;
+}
+.custom-select.is-invalid,
+.form-control.is-invalid {
+    border-color: #dc3545;
+}
+
+.is-invalid{
+    border: 1px solid!important;
+    border-color: #dc3545!important;
+}

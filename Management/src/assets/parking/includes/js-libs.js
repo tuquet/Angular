@@ -1,0 +1,10 @@
+// document.write( '<script src=\"js/jquery-3.3.1.min.js\"></script>\n' );
+document.write( '    <script src=\"/assets/parking/js/popper.min.js\"></script>\n' );
+document.write( '    <script src=\"/assets/parking/js/bootstrap.min.js\"></script>\n' );
+document.write( '    <script src=\"/assets/parking/js/anime.min.js\"></script>\n' );
+document.write( '    <script src=\"/assets/parking/js/jquery.smooth-scroll.js\"></script>' );
+document.write( '    <script src=\"/assets/parking/js/jquery.nicescroll.min.js\"></script>' );
+document.write( '    <script src=\"/assets/parking/js/icheck.min.js\"></script>' );
+document.write( '    <script src=\"/assets/parking/js/jquery.validate.min.js\"></script>' );
+document.write( '    <script src=\"/assets/parking/js/select2.full.min.js\"></script>' );
+document.write( '    <script src=\"/assets/parking/js/datatables.min.js\"></script>' );

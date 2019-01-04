@@ -1,0 +1,185 @@
+<div id="site-content" class="site-content">
+  <div class="card">
+    <div class="card-body pt-1 pb-1">
+      <form action="#" method="get">
+        <div class="d-flex">
+          <button class="btn btn-none pl-0"><span (click)="resetSearch()" class="oi oi-x"></span></button>
+          <div class="input-wrap flex-grow-1">
+            <input type="text" [(ngModel)]="search" [ngModelOptions]="{standalone: true}" (keyup)="searchInit()"
+              class="form-control" value="" placeholder="所・駅名・パーキング名 etc..">
+            <button class="btn btn-none btn-close"><span class="oi oi-x"></span></button>
+          </div>
+        </div>
+      </form>
+    </div>
+  </div>
+  <ng-container *ngIf="showDetail == false">
+    <div *ngIf="showNormalSearch == true" class="card bg-white mb-2" style="min-height: 240px">
+      <ul class="list-group flat">
+        <li class="list-group-item"><span class="oi oi-location icon text-primary"></span>現在地からさがす</li>
+        <li class="list-group-item"><span class="oi oi-map-marker icon text-primary"></span>エリアからさがす</li>
+        <li class="list-group-item"><span class="icon-bus icon text-primary"></span>沿線・駅からさがす</li>
+      </ul>
+    </div>
+    <div *ngIf="showNormalSearch == false" class="card bg-white mb-2" style="min-height: 240px">
+      <div class="card-body">
+        <ng-container *ngFor="let abc of searchResult1">
+          <button type="button" (click)="searchByBus()" class="btn text-secondary mb-1"><span class="icon-bus"></span>
+            現在地からさがす</button>&nbsp;
+        </ng-container>
+
+        <ng-container *ngFor="let abc of searchResult2">
+          <button type="button" (click)="searchByLocation()" class="btn text-secondary mb-1"><span class="oi oi-location"></span>
+            駅から</button>&nbsp;
+        </ng-container>
+
+        <ng-container *ngFor="let abc of searchResult3">
+          <button type="button" (click)="searchByCar()" class="btn text-secondary mb-1"><span class="icon-car icon"></span>
+            さがす</button>&nbsp;
+        </ng-container>
+      </div>
+    </div>
+  </ng-container>
+
+  <ng-container *ngIf="showDetail == true">
+    <div [formGroup]="searchForm" class="card bg-white mb-2" style="min-height: 240px">
+      <div class="card-body">
+        <div class="form-group">
+          <label><strong>賃料</strong></label>
+          <div class="d-flex align-items-center">
+            <div>
+              <select formControlName="rentType1" class="form-control">
+                <option value="1">下限なし</option>
+                <option value="2">下限なし 1</option>
+                <option value="2">下限なし 2</option>
+              </select>
+            </div>
+            <div class="pl-2 pr-2">~</div>
+            <div>
+              <select formControlName="rentType2" class="form-control">
+                <option value="1">上限なし</option>
+                <option value="2">上限なし 1</option>
+                <option value="2">下限なし 2</option>
+              </select>
+            </div>
+          </div>
+
+        </div>
+      
+        <div class="form-group">
+          <label><strong>収容サイズ</strong></label>
+          <div class="d-flex align-items-stretch border rounded mb-2">
+            <div class="p-2 container--checkbox" style="flex-basis: 50%">
+              <label class="container-checkbox">大型車
+                <input formControlName="size" type="radio" name="size" value="largeCar" checked="checked">
+                <span class="checkmark"></span>
+              </label>
+            </div>
+            <div class="p-2 container--checkbox border-left" style="flex-basis: 50%">
+              <label class="container-checkbox">ハイルーフ
+                <input formControlName="size" type="radio" name="size" value="highRoof">
+                <span class="checkmark"></span>
+              </label>
+            </div>
+          </div>
+        </div>
+
+
+        <div class="form-group">
+            <label><strong>屋内外</strong></label>
+            <div class="d-flex align-items-stretch border rounded mb-2">
+              <div class="p-2 container--checkbox" style="flex-basis: 50%">
+                <label class="container-checkbox">屋内
+                  <input formControlName="position" type="radio" name="position" value="inside" checked="checked">
+                  <span class="checkmark"></span>
+                </label>
+              </div>
+              <div class="p-2 container--checkbox border-left" style="flex-basis: 50%">
+                <label class="container-checkbox">屋外
+                  <input formControlName="position" type="radio" name="position" value="outside">
+                  <span class="checkmark"></span>
+                </label>
+              </div>
+            </div>
+          </div>
+
+
+        <div class="form-group">
+            <label><strong>設備</strong></label>
+            <div class="d-flex align-items-stretch border rounded mb-2">
+              <div class="p-2 container--checkbox" style="flex-basis: 50%">
+                <label class="container-checkbox">平面式
+                  <input formControlName="device" type="radio" name="device" value="flat" checked="checked">
+                  <span class="checkmark"></span>
+                </label>
+              </div>
+              <div class="p-2 container--checkbox border-left" style="flex-basis: 50%">
+                <label class="container-checkbox">機械式
+                  <input formControlName="device" type="radio" name="device" value="mechanicalType">
+                  <span class="checkmark"></span>
+                </label>
+              </div>
+            </div>
+          </div>
+
+
+        <div class="form-group">
+            <label><strong>駐車タイプ</strong></label>
+            <div class="d-flex align-items-stretch border rounded mb-2">
+              <div class="p-2 container--checkbox" style="flex-basis: 50%">
+                <label class="container-checkbox">車用
+                  <input formControlName="parkingType" type="radio" name="parkingType" value="carUse" checked="checked">
+                  <span class="checkmark"></span>
+                </label>
+              </div>
+              <div class="p-2 container--checkbox border-left" style="flex-basis: 50%">
+                <label class="container-checkbox">バイク用
+                  <input formControlName="parkingType" type="radio" name="parkingType" value="motocycles">
+                  <span class="checkmark"></span>
+                </label>
+              </div>
+            </div>
+          </div>
+
+          <div class="form-group">
+              <label><strong>利用時間</strong></label>
+              <div style="width:50%" class="d-flex align-items-stretch border rounded mb-2">
+                <div class="p-2 container--checkbox">
+                  <label class="container-checkbox">24時間利用可
+                    <input formControlName="parkingType" type="checkbox" name="parkingType" value="24h" checked="checked">
+                    <span class="checkmark"></span>
+                  </label>
+                </div>
+              </div>
+            </div>
+
+            <div class="form-group">
+                <label><strong>その他</strong></label>
+                <div style="width:50%" class="d-flex align-items-stretch border rounded mb-2">
+                  <div class="p-2 container--checkbox" >
+                    <label class="container-checkbox">満車を含める
+                      <input formControlName="other" type="checkbox" name="other" value="includeFullCar" checked="checked">
+                      <span class="checkmark"></span>
+                    </label>
+                  </div>
+                </div>
+              </div>
+          
+
+    
+
+        <div class="form-group">
+          <div class="row no-gutters">
+            <div class="col-4">
+              <button type="button" (click)="back()" class="btn btn-light btn-block">キャンセル</button>
+            </div>
+            <div class="col-8">
+              <button type="button" (click)="submit()" class="btn btn-primary btn-block ml-1">検索する</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </ng-container>
+
+</div>

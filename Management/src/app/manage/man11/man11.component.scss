@@ -1,0 +1,34 @@
+.row-w3col-sp {
+    position: relative;
+}
+.row-w3col-sp:before,
+.row-w3col-sp:after {
+    width: 1px;
+    height: 40%;
+    background: rgba(0,0,0,0.1);
+    content: '';
+    position: absolute;
+    top: 30%;
+}
+.row-w3col-sp:before{
+    left: 33.3333%;
+}
+.row-w3col-sp:after{
+    left: 66.6666%;
+}
+@media screen and (max-width: 540px){
+    .row-w3col-sp:before,
+    .row-w3col-sp:after{
+        display: none;
+    }
+}
+/* Demo Load more*/
+.tb-display-first-3rows tbody tr {
+    display: none;
+}
+.tb-display-first-3rows tbody tr:nth-child(1),
+.tb-display-first-3rows tbody tr:nth-child(2),
+.tb-display-first-3rows tbody tr:nth-child(3),
+.tb-display-first-3rows tbody tr:last-child {
+    display: table-row;
+}

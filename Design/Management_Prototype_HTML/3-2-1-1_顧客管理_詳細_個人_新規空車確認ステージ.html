@@ -1,0 +1,187 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="shortcut icon" href="favicon.ico" />
+    <!-- start: MAIN CSS -->
+    <link rel="stylesheet" href="includes/site-styles.css"> 
+    <!-- end: MAIN CSS -->
+    <!-- start: CSS REQUIRED FOR THIS PAGE ONLY -->
+    <!-- end: CSS REQUIRED FOR THIS PAGE ONLY -->
+    <title>3-2-1-1_顧客管理_詳細_個人_新規空車確認ステージ</title>
+</head>
+
+<body>
+    <div class="site-wrapper has-sidebar">
+        <div class="main-wrapper">
+            <script type="text/javascript" src="includes/sidebar.js"></script>
+            <script type="text/javascript" src="includes/header.js"></script>
+            <div class="site-content">
+                <div class="container-fluid bg-primary-hard-light">
+                    <a href="#" class="p-2 d-block"><span class="oi oi-caret-left"></span> 顧客管理一覧へ戻る</a>
+                </div>
+                <section class="pt-3">
+                    <div class="container-fluid">
+                        <div class="pl-2 pr-2">
+                            <div class="d-flex align-items-center mb-3">
+                                <div class="mr-2">
+                                    <div class="parking-avatar rounded-circle"><span class="oi oi-person"></span></div>
+                                </div>
+                                <div>
+                                    <h5 class="mb-0">鈴木 健太郎</h5>
+                                    <div class="text-secondary">個人</div>
+                                </div>
+                            </div>
+                            <ul class="nav nav-tabs" role="tablist">
+                               <li class="nav-item">
+                                    <a class="nav-link active" id="tab-one" data-toggle="tab" href="#pane-one" role="tab" aria-controls="顧客情報" aria-selected="true">顧客情報</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" id="tab-two" data-toggle="tab" href="#pane-two" role="tab" aria-controls="メッセージ" aria-selected="false">メッセージ</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link disabled" id="tab-three" data-toggle="tab" href="#pane-three" role="tab" aria-controls="支払い状況" aria-selected="false">支払い状況</a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </section>
+                <section class="bg-white pt-3 pb-3">
+                    <div class="container-fluid">
+                        <div class="pl-2 pr-2">
+                            <div class="tab-content">
+                                <div class="tab-pane fade show active" id="pane-one" role="tabpanel" aria-labelledby="tab-one">
+                                    <div class="d-flex justify-content-between align-items-center mb-3">
+                                        <select id="select" class="form-control status-select" style="max-width: 140px"></select>
+                                        <div>
+                                            <button class="btn btn-primary-light disabled" type="button"><span class="oi oi-file"></span> 契約書出力</button>
+                                            <button class="btn btn-primary-light" type="button"><span class="oi oi-pencil"></span> 編集する</button>
+                                        </div>
+                                    </div>
+                                    <section>
+                                        <div class="pt-2 pb-2 pr-3 pl-3  bg-gray-light mb-2">
+                                            <strong>基本情報</strong>
+                                        </div>
+                                        <div class="form-group">
+                                            <label class="text-secondary smalltext mb-0">受付日</label>
+                                            <p>2018/10/14</p>
+                                        </div>
+                                        <div class="form-group">
+                                            <label class="text-secondary smalltext mb-0">お名前</label>
+                                            <p>鈴木 健太郎</p>
+                                        </div>
+                                        <div class="form-group">
+                                            <label class="text-secondary smalltext mb-0">電話番号</label>
+                                            <p>09012345678</p>
+                                        </div>
+                                        <div class="form-group">
+                                            <label class="text-secondary smalltext mb-0">メールアドレス</label>
+                                            <p>sample@parkdrive.com</p>
+                                        </div>
+                                    </section>
+                                    <section>
+                                        <div class="pt-2 pb-2 pr-3 pl-3  bg-gray-light mb-2">
+                                            <strong>空車確認駐車場</strong>
+                                        </div>
+                                        <div class="form-group">
+                                            <label class="text-secondary smalltext mb-0">名称</label>
+                                            <p><a href="#">小田急パーキング清水1丁目第1 <span class="oi oi-external-link"></span></a></p>
+                                        </div>
+                                        <div class="form-group">
+                                            <label class="text-secondary smalltext mb-0">所在地</label>
+                                            <p>東京都東村山市本町2-4-16付近</p>
+                                        </div>
+                                    </section>
+                                    <section>
+                                        <div class="pt-2 pb-2 pr-3 pl-3  bg-gray-light mb-2">
+                                            <strong>利用予定</strong>
+                                        </div>
+                                        <div class="form-group">
+                                            <label class="text-secondary smalltext mb-0">利用開始時期</label>
+                                            <p>2018年11月頃</p>
+                                        </div>
+                                        <div class="form-group">
+                                            <label class="text-secondary smalltext mb-0">利用予定の車</label>
+                                            <div class="card border rounded mb-2" style="width: 260px">
+                                                <div class="card-header text-secondary">
+                                                    1件目
+                                                </div>
+                                                <div class="card-body">
+                                                    <table class="table no-border s-cell mb-0">
+                                                        <tbody>
+                                                            <tr>
+                                                                <td>普通車</td>
+                                                                <td>1台</td>
+                                                            </tr>
+                                                        </tbody>
+                                                    </table>
+                                                </div>
+                                            </div>
+                                            <p>その他 ご希望条件など<br>可能であれば端が良い</p>
+                                        </div>
+                                    </section>
+                                </div>
+                                <div class="tab-pane fade" id="pane-two" role="tabpanel" aria-labelledby="tab-two">
+                                    ---
+                                </div>
+                                <div class="tab-pane fade" id="pane-two" role="tabpanel" aria-labelledby="tab-three">
+                                    ---
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+            </div>
+        </div>
+        <script type="text/javascript" src="includes/footer.js"></script>
+    </div>
+    <!-- start: MAIN JAVASCRIPTS -->
+    <script type="text/javascript" src="includes/js-libs.js"></script>  
+    <script src="js/main.js"></script>
+    <!-- end: MAIN JAVASCRIPTS -->
+    <script type="text/javascript">
+    jQuery(document).ready(function($) {
+        //Demo
+        $('.sidebar-nav .nav-item .nav-link').removeClass('active');
+        $('.sidebar-nav .nav-item:nth-child(3) .nav-link').addClass('active');
+
+        var list_status_data = [{
+            id: 0,
+            text: '<span class="badge badge-success badge-status">&nbsp;</span> ご契約中',
+            html: '<span class="badge badge-success badge-status">&nbsp;</span> ご契約中'
+        }, {
+            id: 1,
+            text: '<span class="badge badge-warning-light badge-status">&nbsp;</span> 審査待ち',
+            html: '<span class="badge badge-warning-light badge-status">&nbsp;</span> 審査待ち'
+        },{
+            id: 2,
+            text: '<span class="badge badge-warning badge-status">&nbsp;</span> 新規',
+            html: '<span class="badge badge-warning badge-status">&nbsp;</span> 新規'
+        },{
+            id: 3,
+            text: '<span class="badge badge-secondary badge-status">&nbsp;</span> 解約済み',
+            html: '<span class="badge badge-secondary badge-status">&nbsp;</span> 解約済み'
+        }];
+
+        $(".status-select").select2({
+            data: list_status_data,
+            escapeMarkup: function(markup) {
+                return markup;
+            },
+            templateResult: function(data) {
+                return data.html;
+            },
+            templateSelection: function(data) {
+                return data.text;
+            }
+        });
+
+        $("#select").select2('val', '2');    
+    });
+    </script>
+</body>
+
+</html>

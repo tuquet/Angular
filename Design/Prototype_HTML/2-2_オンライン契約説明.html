@@ -1,0 +1,75 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="shortcut icon" href="favicon.ico" />
+    <!-- start: MAIN CSS -->
+    <link rel="stylesheet" href="includes/site-styles.css">    
+    <!-- end: MAIN CSS -->
+    <!-- start: CSS REQUIRED FOR THIS PAGE ONLY -->    
+    <!-- end: CSS REQUIRED FOR THIS PAGE ONLY -->
+    <title>Park Direct - Modal</title>
+  </head>
+  <body class="header-fixed">
+    <!-- BEGIN Site Wrapper -->
+    <div class="site-wrapper">
+      <script type="text/javascript" src="includes/header.js"></script>
+      <!-- BEGIN Site Wrapper -->
+      <div id="site-content" class="site-content">
+        <div class="card">
+          <div class="card-body">
+            <p>&nbsp;</p>
+            <p class="text-center">
+              <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#modal">
+                Launch demo modal
+              </button>
+            </p>
+            <p>&nbsp;</p>
+          </div>
+        </div>
+      </div><!-- END Site Wrapper -->
+      <script type="text/javascript" src="includes/footer.js"></script>
+      <script type="text/javascript" src="includes/site-menu.js"></script>
+    </div><!-- BEGIN Site Wrapper -->
+    <div class="modal modal-pk" tabindex="-1" role="dialog" id="modal">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title">ヘルプ</h5>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body scroll">
+            <h4 class="mb-1"><span class="badge badge-primary badge-round badge-normal">1</span> <strong>空車のある駐車場をさがす</strong></h4>
+            <p>
+              本サイトから契約可能な駐車場の検索およびお問い合わせいただけます。<br>空車状況および契約可能の可否を、最短n日でメールにてご連絡いたします。
+            </p>
+            <h4 class="mb-1"><span class="badge badge-primary badge-round badge-normal">2</span> <strong>申込・審査・契約</strong></h4>
+            <p>
+              契約可能な空きがある場合は、本サイトからお申込・審査・契約の順にお進みいただけます。
+            </p>
+            <h4 class="mb-1"><span class="badge badge-primary badge-round badge-normal">3</span> <strong>駐車場の利用開始</strong></h4>
+            <p>
+              契約完了後に駐車場をご利用いただけます。最短で翌日からご利用いただけます。
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- start: MAIN JAVASCRIPTS -->
+    <script type="text/javascript" src="includes/js-libs.js"></script>  
+    <script src="js/main.js"></script>
+    <!-- end: MAIN JAVASCRIPTS -->
+    <!-- start: JS REQUIRED FOR THIS PAGE ONLY -->    
+    <!-- end: JS REQUIRED FOR THIS PAGE ONLY -->
+    <script type="text/javascript">
+      jQuery(document).ready(function($){
+        //Open Modal
+        $('.modal').modal('show');
+      });
+    </script>
+  </body>
+</html>

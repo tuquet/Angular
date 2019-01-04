@@ -1,0 +1,105 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="shortcut icon" href="favicon.ico" />
+    <!-- start: MAIN CSS -->
+    <link rel="stylesheet" href="includes/site-styles.css"> 
+    <!-- end: MAIN CSS -->
+    <!-- start: CSS REQUIRED FOR THIS PAGE ONLY -->
+    <!-- end: CSS REQUIRED FOR THIS PAGE ONLY -->
+    <title>7-2_お知らせ詳細</title>
+</head>
+
+<body>
+    <div class="site-wrapper has-sidebar">
+        <div class="main-wrapper">
+            <script type="text/javascript" src="includes/sidebar.js"></script>
+            <script type="text/javascript" src="includes/header.js"></script>
+            <div class="site-content">
+                <div class="container-fluid bg-primary-hard-light">
+                    <a href="#" class="p-2 d-block"><span class="oi oi-caret-left"></span> お知らせ一覧へ戻る</a>
+                </div>
+                <section class="pt-3 pb-3">
+                    <div class="container-fluid">
+                        <div class="pl-2 pr-2">
+                            <h4 class="mb-0">【ブックマーク推奨】freeeの資金繰り改善サービスが拡充</h4>
+                            <div class="text-secondary">2018年11月21日</div>
+                        </div>          
+                    </div>
+                </section>
+                <section class="bg-white pt-3 pb-3">
+                    <div class="container-fluid">
+                        <div class="pl-2 pr-2">
+                            <p>
+                                freeeの資金繰り改善サービスに、銀行・ノンバンクの融資メニューを拡充し、ページがリニューアルしました。<br>
+                                ジャパンネット銀行のビジネスローンに加え、ライフカードのビジネスローンがfreee特別条件で利用可能です。
+                            </p>
+                            <p>
+                                資金調達のほかにも、入金を早めたり、支払いを遅らせるサービスもご利用できます。 <br>今月中には、横浜銀行のビジネスローンも追加される予定です。
+                            </p>
+                            <p>資金繰り改善の選択肢として、ブックマークに入れてご利用ください。</p>
+                            <p>
+                                freeeの資金繰り改善サービスに、銀行・ノンバンクの融資メニューを拡充し、ページがリニューアルしました。<br>
+                                ジャパンネット銀行のビジネスローンに加え、ライフカードのビジネスローンがfreee特別条件で利用可能です。
+                            </p>
+                            <p>
+                                資金調達のほかにも、入金を早めたり、支払いを遅らせるサービスもご利用できます。 <br>今月中には、横浜銀行のビジネスローンも追加される予定です。
+                            </p>
+                            <p>資金繰り改善の選択肢として、ブックマークに入れてご利用ください。</p>
+                            <p>
+                                freeeの資金繰り改善サービスに、銀行・ノンバンクの融資メニューを拡充し、ページがリニューアルしました。<br>
+                                ジャパンネット銀行のビジネスローンに加え、ライフカードのビジネスローンがfreee特別条件で利用可能です。
+                            </p>
+                            <p>
+                                資金調達のほかにも、入金を早めたり、支払いを遅らせるサービスもご利用できます。 <br>今月中には、横浜銀行のビジネスローンも追加される予定です。
+                            </p>
+                            <p>資金繰り改善の選択肢として、ブックマークに入れてご利用ください。</p>
+                        </div>
+                    </div>
+                </section>
+            </div>
+        </div>
+        <script type="text/javascript" src="includes/footer.js"></script>
+    </div>
+    <!-- start: MAIN JAVASCRIPTS -->
+    <script type="text/javascript" src="includes/js-libs.js"></script>  
+    <script src="js/main.js"></script>
+    <!-- end: MAIN JAVASCRIPTS -->
+    <script type="text/javascript">
+    jQuery(document).ready(function($) {
+        //Demo
+        $('.sidebar-nav .nav-item .nav-link').removeClass('active');
+        $('.sidebar-nav .nav-item:nth-child(2) .nav-link').addClass('active');
+
+
+        var status_data = [{
+          id: 0,
+          text: '<span class="badge badge-success badge-status">&nbsp;</span> 公開中',
+          html: '<span class="badge badge-success badge-status">&nbsp;</span> 公開中'
+        }, {
+          id: 1,
+          text: '<span class="badge badge-secondary badge-status">&nbsp;</span> 非公開',
+          html: '<span class="badge badge-secondary badge-status">&nbsp;</span> 非公開'
+        }];
+
+        $("#status_select").select2({
+          data: status_data,
+          escapeMarkup: function(markup) {
+            return markup;
+          },
+          templateResult: function(data) {
+            return data.html;
+          },
+          templateSelection: function(data) {
+            return data.text;
+          }
+        })
+    });
+    </script>
+</body>
+
+</html>

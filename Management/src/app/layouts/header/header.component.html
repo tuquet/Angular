@@ -1,0 +1,46 @@
+<div class="header-wrapper">
+  <nav class="navbar">
+    <button type="button" (click)="useSidebar()" class="btn btn-none pl-0 pr-0 btn-sidebar-toggle"><span class="icon--menu"><span> </span></span></button>
+    <ul class="nav ml-auto">
+      <li class="nav-item">
+        <a class="nav-link pl-2 pr-2" routerLink="/**">株式会社ニーリー不動産</a>
+      </li>
+      <li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle pl-2 pr-2" data-toggle="dropdown" href="#" role="button" aria-haspopup="true"
+          aria-expanded="false">伊藤千央</a>
+        <div class="dropdown-menu dropdown-menu-right">
+          <a class="dropdown-item" routerLink="/**">アカウント設定</a>
+          <a class="dropdown-item" routerLink="/**">パスワード変更</a>
+          <a class="dropdown-item" routerLink="/**">口座登録</a>
+          <a class="dropdown-item" (click)="logout();">ログアウト</a>
+        </div>
+      </li>
+      <li class="nav-item separate pr-1 pl-1">
+
+      </li>
+      <li class="nav-item dropdown">
+        <a class="nav-link pl-2 pr-2 nav-item-notification" data-toggle="dropdown" href="#" role="button" aria-haspopup="true"
+          aria-expanded="false">
+          <span class="oi oi-bell"></span><span class="badge badge-danger icon-notification"> </span></a>
+        <div class="dropdown-menu dropdown-menu-right dropdown-menu-alert">
+          <div class="dropdown-item title">
+            <strong>お知らせ</strong>
+          </div>
+          <a class="dropdown-item" routerLink="/**">
+            <span class="d-block">◯◯機能が追加されました。</span>
+            <span class="smalltext text-secondary">2018/10/23</span>
+          </a>
+          <a class="dropdown-item" routerLink="/**">
+            <span class="d-block">一部のブラウザでレイアウト表示が崩れる不具合を修正しました。</span>
+            <span class="smalltext text-secondary">2018/10/05</span>
+          </a>
+          <a class="dropdown-item" routerLink="/**">
+            <span class="d-block">◯◯の画面から直接△△ができるようになりました。</span>
+            <span class="smalltext text-secondary">2018/09/25</span>
+          </a>
+          <a class="dropdown-item text-center pt-2 pb-2 border-bottom-0" routerLink="#"><span class="text-primary">もっと見る</span></a>
+        </div>
+      </li>
+    </ul>
+  </nav>
+</div>

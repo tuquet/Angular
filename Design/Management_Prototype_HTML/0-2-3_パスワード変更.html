@@ -1,0 +1,129 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="shortcut icon" href="favicon.ico" />
+    <!-- start: MAIN CSS -->
+    <link rel="stylesheet" href="css/bootstrap.custom.min.css">
+    <link rel="stylesheet" href="css/open-iconic-bootstrap.css">
+    <link rel="stylesheet" href="css/parkdirect-icon.css">
+    <link rel="stylesheet" href="css/icheck-blue.css">
+    <link rel="stylesheet" href="css/select2.min.css">
+    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="css/custom.css">
+    <!-- end: MAIN CSS -->
+    <!-- start: CSS REQUIRED FOR THIS PAGE ONLY -->
+    <!-- end: CSS REQUIRED FOR THIS PAGE ONLY -->
+    <title>0-2-3_パスワード変更</title>
+</head>
+
+<body>
+    <div class="site-wrapper">
+        <div class="main-wrapper">
+            <div class="container login-container">
+                <div class="row align-items-center justify-content-center">
+                    <div class="col-md-7">
+                        <h2 class="text-center mb-1"><img src="images/logo.png" alt=""></h2>
+                        <p class="text-center text-secondary smalltext">拠点駐車場・顧客管理</p>
+                        <div class="card login-card mb-3">
+                            <div class="card-body">
+                                <form action="#" class="reset-password-form" method="post">
+                                    <div class="form-group">
+                                        <label class="mb-1" for="password">新しいパスワード</label>
+                                        <div class="input-button-group icon-inside icon-right">
+                                            <button type="button" class="btn btn-none btn-icon btn-password-showhide"><span class="oi oi-eye"></span></button>
+                                            <input type="password" class="form-control" id="password" name="password" value="" placeholder="">
+                                        </div>                                        
+                                    </div>
+                                    <div class="form-group">
+                                        <label class="mb-1" for="confirm_password">新しいパスワード</label>
+                                        <div class="input-button-group icon-inside icon-right">
+                                            <button type="button" class="btn btn-none btn-icon btn-password-showhide"><span class="oi oi-eye"></span></button>
+                                            <input type="password" class="form-control" id="confirm_password" name="confirm_password" value="" placeholder="">
+                                        </div>
+                                    </div>
+                                    <div class="text-center">
+                                        <button type="submit" class="btn btn-primary btn-block btn-submit" style="margin: 0 auto;max-width: 60%;">変更する</button>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <script type="text/javascript" src="includes/footer.js"></script>
+    </div>
+    <!-- start: MAIN JAVASCRIPTS -->
+    <script type="text/javascript" src="includes/js-libs.js"></script>  
+    <script src="js/main.js"></script>
+    <!-- end: MAIN JAVASCRIPTS -->
+    <script type="text/javascript">
+    jQuery(document).ready(function($) {
+        function login_layout() {
+            var height = $(window).height() - $('.footer-wrapper').outerHeight();
+            $('.login-container > .row.align-items-center').css('min-height', height);
+        }
+        login_layout();
+
+        $(window).resize(function() {
+            login_layout();
+        });
+
+        //Validate
+        $(".reset-password-form").validate({
+            rules: {
+                password: {
+                    required: true,
+                    minlength: 5
+                },
+                confirm_password: {
+                    required: true,
+                    minlength: 5,
+                    equalTo: "#password"
+                }
+            },
+            messages: {
+                password: {
+                    required: "Please provide a password",
+                    minlength: "Your password must be at least 5 characters long"
+                },
+                confirm_password: {
+                    required: "Please provide a password",
+                    minlength: "Your password must be at least 5 characters long",
+                    equalTo: "Please enter the same password as above"
+                }
+            },
+            submitHandler: function() {
+                alert("submitted!");
+            }
+        });
+
+        $('.btn-password-showhide').click(function(e) {
+            e.preventDefault();
+
+            if (!$(this).hasClass('show') && ($(this).parent().find('input[name=password]').attr('type') == 'password')) {
+                $(this).addClass('show');
+                $(this).parent().find('input[name=password]').attr('type', 'text');
+            } else {
+                $(this).removeClass('show');
+                $(this).parent().find('input[name=password]').attr('type', 'password')
+            }
+
+            if (!$(this).hasClass('show') && ($(this).parent().find('input[name=confirm_password]').attr('type') == 'password')) {
+                $(this).addClass('show');
+                $(this).parent().find('input[name=confirm_password]').attr('type', 'text');
+            } else {
+                $(this).removeClass('show');
+                $(this).parent().find('input[name=confirm_password]').attr('type', 'password')
+            }
+
+        })
+    });
+    </script>
+</body>
+
+</html>

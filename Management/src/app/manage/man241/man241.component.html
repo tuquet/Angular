@@ -1,0 +1,320 @@
+<div class="container-fluid bg-primary-hard-light">
+    <a routerLink="/manage/parkinglot-divisiongroup" class="p-2 d-block"><span class="oi oi-caret-left"></span> 小田急パーキング清水1丁目第1へ戻る</a>
+</div>
+<section class="pt-3 pb-3">
+    <div class="container-fluid">
+        <div class="pl-2 pr-2">
+            <h4 class="mb-0">区画グループの新規登録</h4>
+            <div class="text-secondary">必要事項を入力し、駐車場の区画グループを登録してください。</div>
+        </div>
+    </div>
+</section>
+<form [formGroup]="partitionGroupForm">
+    <section class="bg-white pt-3 pb-3">
+        <div class="container-fluid">
+            <div class="pl-2 pr-2">
+                <div class="form-group">
+                    <label><strong>自社区画グループ管理番号</strong>&nbsp;<span class="badge badge-danger">必須</span></label>
+                    <input [ngClass]="{'is-invalid': submitted && f.client_group_number?.errors}" formControlName="client_group_number"
+                        type="text" placeholder="A123456789" value="" class="form-control" style="max-width: 320px">
+                    <div *ngIf="submitted && f.client_group_number?.errors" class="invalid-feedback">
+                        <div *ngIf="f.client_group_number.errors?.Required">自社区画グループ管理番号を入力してください。</div>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label><strong>区画種別</strong>&nbsp;<span class="badge badge-danger">必須</span></label>
+                    <div class="mb-2">
+                        <label class="container-radio mr-1 mb-1">平置き<input type="radio" formControlName="partition_type"
+                                value="1" checked="checked"><span class="checkmark"></span></label>
+                        <label class="container-radio mr-1 mb-1">機械式<input type="radio" formControlName="partition_type"
+                                value="2"><span class="checkmark"></span></label>
+                        <label class="container-radio mr-1 mb-1">立体<input type="radio" formControlName="partition_type"
+                                value="3"><span class="checkmark"></span></label>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label><strong>タイプ</strong>&nbsp;<span class="badge badge-danger">必須</span></label>
+                    <div class="mb-2">
+                        <label class="container-radio mr-1 mb-1">車用<input type="radio" formControlName="type" value="1"
+                                checked="checked"><span class="checkmark"></span></label>
+                        <label class="container-radio mr-1 mb-1">バイク用<input type="radio" formControlName="type" value="2"><span
+                                class="checkmark"></span></label>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label><strong>収容サイズ</strong>&nbsp;<span class="badge badge-danger">必須</span></label>
+                    <div class="mb-2">
+                        <label class="container-radio mr-1 mb-1"> 小型車<input type="radio" formControlName="accommodation_size"
+                                value="1" checked="checked"><span class="checkmark"></span></label>
+                        <label class="container-radio mr-1 mb-1">中型車<input type="radio" formControlName="accommodation_size"
+                                value="2"><span class="checkmark"></span></label>
+                        <label class="container-radio mr-1 mb-1">大型車<input type="radio" formControlName="accommodation_size"
+                                value="3"><span class="checkmark"></span></label>
+                        <label class="container-radio mr-1 mb-1">ハイルーフ車<input type="radio" formControlName="accommodation_size"
+                                value="4"><span class="checkmark"></span></label>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label><strong>区画特徴</strong>&nbsp;<span class="badge badge-danger">必須</span></label>
+                    <div class="mb-2">
+                        <label style="line-height: 22px;width: 60px">屋根</label>
+                        <label class="container-radio mr-1 mb-1"> なし<input type="radio" formControlName="roof" value="1"
+                                checked="checked"><span class="checkmark"></span></label>
+                        <label class="container-radio mr-1 mb-1"> あり<input type="radio" formControlName="roof" value="2"><span
+                                class="checkmark"></span></label>
+                    </div>
+                    <div class="mb-2">
+                        <label style="line-height: 22px;width: 60px">地面</label>
+                        <label class="container-radio mr-1 mb-1"> アスファルト<input type="radio" fromControlName="ground"
+                                value="1" name="ground" checked="checked"><span class="checkmark"></span></label>
+                        <label class="container-radio mr-1 mb-1"> 砂利<input type="radio" fromControlName="ground" name="ground" value="2"><span
+                                class="checkmark"></span></label>
+                    </div>
+                    <div class="d-flex mb-2">
+                        <label style="line-height: 22px;width: 60px">屋根</label>
+                        <textarea cols="1" [ngClass]="{'is-invalid': submitted && f.note?.errors}" formControlName="note"
+                            rows="2" class="form-control" style="max-width: 480px"></textarea>
+                        <div *ngIf="submitted && f.note?.errors" class="invalid-feedback">
+                            <div *ngIf="f.note.errors?.Required">{{f.note.errors?.message}}</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label><strong>24時間利用</strong>&nbsp;<span class="badge badge-danger">必須</span></label>
+                    <div class="mb-2">
+                        <label class="container-radio mr-1 mb-1"> 利用可<input type="radio" name="use_24_hours" fromControlName="use_24_hours"
+                                value="1" checked="checked"><span class="checkmark"></span></label>
+                        <label class="container-radio mr-1 mb-1"> 利用不可<input type="radio" name="use_24_hours" fromControlName="use_24_hours"
+                                value="2"><span class="checkmark"></span></label>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label><strong>区画グループ内台数</strong>&nbsp;<span class="badge badge-danger">必須</span></label>
+                    <div class="d-flex align-items-center">
+                        <input type="text" class="form-control" [ngClass]="{'is-invalid': submitted && f.number_of_unit?.errors}"
+                            formControlName="number_of_unit" value="0" style="max-width: 200px;"><span class="pl-2 pr-2">台</span>
+                            <div *ngIf="submitted && f.number_of_unit?.errors?.Required" class="invalid-feedback"> 
+                                <div *ngIf="f.number_of_unit.errors?.Required">区画グループ内台数を入力してください。</div>
+                            </div>
+                            <div *ngIf="submitted && f.number_of_unit?.errors?.Salary" class="invalid-feedback"> 
+                                <div *ngIf="f.number_of_unit.errors?.Salary">区画グループ内台数は半角数字で入力してください。</div>
+                            </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-lg-3">
+                        <div class="form-group">
+                            <label><strong>賃料</strong>&nbsp;<span class="badge badge-danger">必須</span></label>
+                            <div class="d-flex align-items-center">
+                                <input type="text" class="form-control" [ngClass]="{'is-invalid': submitted && f.rent?.errors}"
+                                    formControlName="rent" value="0" style="max-width: 200px;"><span class="pl-2 pr-2">円／月（税込）</span>
+                                <div *ngIf="submitted && f.rent?.errors?.Required" class="invalid-feedback">
+                                    <div *ngIf="f.rent.errors?.Required">賃料を入力してください。</div>
+                                </div>
+                                <div *ngIf="submitted && f.rent?.errors?.Salary" class="invalid-feedback"> 
+                                    <div *ngIf="f.rent.errors?.Salary">賃料は半角数字で入力してください。</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-3">
+                        <div class="form-group">
+                            <label><strong>管理費/共益費</strong>&nbsp;<span class="badge badge-danger">必須</span></label>
+                            <div class="d-flex align-items-center">
+                                <input type="text" class="form-control" [ngClass]="{'is-invalid': submitted && f.manage_fee?.errors}"
+                                    formControlName="manage_fee" value="0" style="max-width: 200px;"><span class="pl-2 pr-2">円／月（税込）</span>
+                                <div *ngIf="submitted && f.manage_fee?.errors?.Required" class="invalid-feedback">
+                                    <div *ngIf="f.manage_fee.errors?.Required">管理費/共益費を入力してください。</div>
+                                </div>
+                                <div *ngIf="submitted && f.manage_fee?.errors?.Salary" class="invalid-feedback"> 
+                                    <div *ngIf="f.manage_fee.errors?.Salary">管理費/共益費は半角数字で入力してください。</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label><strong>更新料</strong>&nbsp;<span class="badge badge-danger">必須</span></label>
+                    <div class="d-flex align-items-center">
+                        <span class="mr-2">1年更新</span><input type="text" [ngClass]="{'is-invalid': submitted && f.update_fee?.errors}"
+                            formControlName="update_fee" class="form-control" value="0" style="max-width: 200px;"><span
+                            class="pl-2 pr-2">台</span>
+                        <div *ngIf="submitted && f.update_fee?.errors?.Required" class="invalid-feedback">
+                            <div *ngIf="f.update_fee.errors?.Required">更新料を入力してください。</div>
+                        </div>
+                        <div *ngIf="submitted && f.update_fee?.errors?.Salary" class="invalid-feedback"> 
+                            <div *ngIf="f.update_fee.errors?.Salary">更新料は半角数字で入力してください。</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-lg-3">
+                        <div class="form-group">
+                            <label><strong>敷金</strong>&nbsp;<span class="badge badge-danger">必須</span></label>
+                            <div class="d-flex align-items-center">
+                                <input id="test123" type="text" [ngClass]="{'is-invalid': submitted && f.security_deposit?.errors}"
+                                    class="form-control" formControlName="security_deposit" value="0" style="max-width: 200px;"><span
+                                    class="pl-2 pr-2">円（税込）</span>
+                                <div *ngIf="submitted && f.security_deposit?.errors?.Required" class="invalid-feedback">
+                                    <div *ngIf="f.security_deposit.errors?.Required">敷金を入力してください。</div>
+                                </div>
+                                <div *ngIf="submitted && f.security_deposit?.errors?.Salary" class="invalid-feedback"> 
+                                    <div *ngIf="f.security_deposit.errors?.Salary">敷金は半角数字で入力してください。</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-3">
+                        <div class="form-group">
+                            <label><strong>礼金</strong>&nbsp;<span class="badge badge-danger">必須</span></label>
+                            <div class="d-flex align-items-center">
+                                <input type="text" class="form-control" [ngClass]="{'is-invalid': submitted && f.key_money?.errors}"
+                                    formControlName="key_money" value="0" style="max-width: 200px;"><span class="pl-2 pr-2">円（税込）</span>
+                                <div *ngIf="submitted && f.key_money?.errors?.Required" class="invalid-feedback">
+                                    <div *ngIf="f.key_money.errors?.Required">礼金を入力してください。</div>
+                                </div>
+                                <div *ngIf="submitted && f.key_money?.errors?.Salary" class="invalid-feedback"> 
+                                    <div *ngIf="f.key_money.errors?.Salary">礼金は半角数字で入力してください。</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-lg-3">
+                        <div class="form-group">
+                            <label><strong>償却/敷引</strong>&nbsp;<span class="badge badge-danger">必須</span></label>
+                            <div class="d-flex align-items-center">
+                                <input type="text" class="form-control" [ngClass]="{'is-invalid': submitted && f.depreciation_or_cancellation_fee?.errors}"
+                                    value="0" formControlName="depreciation_or_cancellation_fee" style="max-width: 200px;"><span
+                                    class="pl-2 pr-2">円（税込）</span>
+                                <div *ngIf="submitted && f.depreciation_or_cancellation_fee?.errors?.Required" class="invalid-feedback">
+                                    <div *ngIf="f.depreciation_or_cancellation_fee.errors?.Required">償却/敷引を入力してください。</div>
+                                </div>
+                                <div *ngIf="submitted && f.key_money?.errors?.Salary" class="invalid-feedback"> 
+                                    <div *ngIf="f.depreciation_or_cancellation_fee.errors?.Salary">償却/敷引は半角数字で入力してください。</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-3">
+                        <div class="form-group">
+                            <label><strong>保証金</strong>&nbsp;<span class="badge badge-danger">必須</span></label>
+                            <div class="d-flex align-items-center">
+                                <input type="text" class="form-control" [ngClass]="{'is-invalid': submitted && f.deposit?.errors}"
+                                    formControlName="deposit" value="0" style="max-width: 200px;"><span class="pl-2 pr-2">円（税込）</span>
+                                <div *ngIf="submitted && f.deposit?.errors?.Required" class="invalid-feedback">
+                                    <div *ngIf="f.deposit.errors?.Required">保証金を入力してください。</div>
+                                </div>
+                                <div *ngIf="submitted && f.deposit?.errors?.Salary" class="invalid-feedback">
+                                    <div *ngIf="f.deposit.errors?.Salary">保証金は半角数字で入力してください。</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label><strong>契約書</strong>&nbsp;<span class="badge badge-danger">必須</span></label>
+                    <div class="card border rounded mb-2">
+                        <p-editor [(ngModel)]="text1" [style]="{'height':'320px'}" [ngModelOptions]="{standalone: true}">
+                            <p-header class="groupButton">
+                                <span class="ql-formats">
+                                    <!-- <select class="ql-header">
+                                                        <option selected></option>
+                                                        <option value="1"></option>
+                                                        <option value="2"></option>
+                                                        <option value="3"></option>
+                                                    </select> -->
+                                </span>
+                                <span class="ql-formats">
+                                    <button class="ql-bold" aria-label="Bold"></button>
+                                    <button class="ql-italic" aria-label="Italic"></button>
+                                    <button class="ql-underline" aria-label="Underline"></button>
+                                </span>
+                                <span class="ql-formats">
+                                    <button class="ql-list" value="ordered"></button>
+                                    <button class="ql-list" value="bullet"></button>
+                                </span>
+                                <span class="ql-formats">
+                                    <button class="ql-align" value="center"></button>
+                                    <button class="ql-align" value="right"></button>
+                                    <button class="ql-align"></button>
+                                    <button class="ql-align" value="justify"></button>
+                                </span>
+                                <div class="btn-group btn-group-toggle divButton" data-toggle="buttons">
+                                    <div class="btn btn-outline-light ">
+                                        <button style="width:70px;border: none" (click)="changeUser($event)" value="1">
+                                            個人向け</button>
+                                    </div>
+                                    <div class="btn btn-outline-light">
+                                        <button style="width:70px;border: none" (click)="changeUser($event)" value="2">
+                                            法人向け</button>
+                                    </div>
+                                </div>
+                            </p-header>
+                        </p-editor>
+                    </div>
+                    <div class="text-right">
+                        <a href="#">PDFでプレビュー&nbsp;<span class="oi oi-external-link"></span></a>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label><strong>利用規則</strong>&nbsp;<span class="badge badge-danger">必須</span></label>
+                    <div class="card border rounded mb-2">
+                        <p-editor [(ngModel)]="text2" formControlName="usage_rule" [style]="{'height':'320px'}">
+                            <p-header class="groupButton">
+                                <span class="ql-formats">
+                                    <!-- <select class="ql-header">
+                                                <option selected></option>
+                                                <option value="1"></option>
+                                                <option value="2"></option>
+                                                <option value="3"></option>
+                                            </select> -->
+                                </span>
+                                <span class="ql-formats">
+                                    <button class="ql-bold" aria-label="Bold"></button>
+                                    <button class="ql-italic" aria-label="Italic"></button>
+                                    <button class="ql-underline" aria-label="Underline"></button>
+                                </span>
+                                <span class="ql-formats">
+                                    <button class="ql-list" value="ordered"></button>
+                                    <button class="ql-list" value="bullet"></button>
+                                </span>
+                                <span class="ql-formats">
+                                    <button class="ql-align" value="center"></button>
+                                    <button class="ql-align" value="right"></button>
+                                    <button class="ql-align"></button>
+                                    <button class="ql-align" value="justify"></button>
+                                    <!-- <select class="ql-align">
+                                                <option selected></option>
+                                                <option class="ql-align" value="center"></option>
+                                                <option class="ql-align" value="right"></option>
+                                                <option class="ql-align" value="justify"></option>
+                                            </select> -->
+                                </span>
+                                <!-- <div style="float:right" class="btn-group btn-group-toggle divButton" data-toggle="buttons">
+                                            <label class="btn btn-outline-light active">
+                                                <input type="radio" name="options" id="option1" autocomplete="off" checked> 個人向け
+                                            </label>
+                                            <label class="btn btn-outline-light">
+                                                <input type="radio" name="options" id="option2" autocomplete="off"> 法人向け
+                                            </label>
+                                        </div> -->
+                            </p-header>
+                        </p-editor>
+                    </div>
+                    <div class="text-right">
+                        <a href="#">PDFでプレビュー&nbsp;<span class="oi oi-external-link"></span></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+    </section>
+</form>
+<div class="container-fluid">
+    <div class="p-2 mt-2 pb-3 text-right">
+        <button type="button" class="btn btn-warning" (click)="onSubmit()" style="min-width: 160px">保存する</button>
+    </div>
+</div>

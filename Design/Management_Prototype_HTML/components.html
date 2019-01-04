@@ -1,0 +1,190 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="shortcut icon" href="favicon.ico" />
+    <!-- start: MAIN CSS -->
+    <link rel="stylesheet" href="css/bootstrap.custom.min.css">
+    <link rel="stylesheet" href="css/open-iconic-bootstrap.css">
+    <link rel="stylesheet" href="css/parkdirect-icon.css">
+    <link rel="stylesheet" href="css/icheck-blue.css">
+    <link rel="stylesheet" href="css/select2.min.css">
+    <link rel="stylesheet" href="css/datatables.min.css">
+    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="css/custom.css">
+    <!-- end: MAIN CSS -->
+    <!-- start: CSS REQUIRED FOR THIS PAGE ONLY -->
+    <!-- end: CSS REQUIRED FOR THIS PAGE ONLY -->
+    <title>Components</title>
+</head>
+
+<body>
+    <div class="site-wrapper has-sidebar">
+        <div class="main-wrapper">
+            <div class="sidebar-wrapper scroll">
+                <h1 class="site-brand text-center"><img src="images/logo.png" alt="Park Direct" class="logo"><img src="images/small-logo.png" alt="Park Direct" class="small-logo"></h1>
+                <ul class="nav flex-column sidebar-nav mb-2">
+                    <li class="nav-item">
+                        <a class="nav-link active" href="#"><span class="oi oi-dashboard icon"></span> 実績・サマリー</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#"><span class="icon-car icon"></span> 拠点・駐車場管理</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#"><span class="icon-user icon"></span> 顧客管理</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#"><span class="oi oi-comment-square icon"></span> お問い合わせ管理</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#"><span class="oi oi-cog icon"></span> 設定</a>
+                    </li>
+                </ul>
+                <p class="smalltext text-secondary text-center pl-2 pr-2 not-small-sidebar">拠点駐車場・顧客管理</p>
+            </div>
+            <div class="header-wrapper">
+                <nav class="navbar">
+                    <button type="button" class="btn btn-none pl-0 pr-0 btn-sidebar-toggle"><span class="icon--menu"><span>&nbsp;</span></span></button>
+                    <ul class="nav ml-auto">
+                        <li class="nav-item">
+                            <a class="nav-link pl-2 pr-2" href="#">株式会社ニーリー不動産</a>
+                        </li>
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle pl-2 pr-2" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">伊藤千央</a>
+                            <div class="dropdown-menu dropdown-menu-right">
+                                <a class="dropdown-item" href="#">アカウント設定</a>
+                                <a class="dropdown-item" href="#">パスワード変更</a>
+                                <a class="dropdown-item" href="#">口座登録</a>
+                                <a class="dropdown-item" href="#">ログアウト</a>
+                            </div>
+                        </li>
+                        <li class="nav-item separate pr-1 pl-1">
+                            &nbsp;
+                        </li>
+                        <li class="nav-item dropdown">
+                            <a class="nav-link pl-2 pr-2 nav-item-notification" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">
+                            <span class="oi oi-bell"></span><span class="badge badge-danger icon-notification">&nbsp;</span></a>
+                            <div class="dropdown-menu dropdown-menu-right dropdown-menu-alert">
+                                <div class="dropdown-item title">
+                                    <strong>お知らせ</strong>
+                                </div>
+                                <a class="dropdown-item" href="#">
+                                    <span class="d-block">◯◯機能が追加されました。</span>
+                                    <span class="smalltext text-secondary">2018/10/23</span>
+                                  </a>
+                                <a class="dropdown-item" href="#">
+                                    <span class="d-block">一部のブラウザでレイアウト表示が崩れる不具合を修正しました。</span>
+                                    <span class="smalltext text-secondary">2018/10/05</span>
+                                  </a>
+                                <a class="dropdown-item" href="#">
+                                    <span class="d-block">◯◯の画面から直接△△ができるようになりました。</span>
+                                    <span class="smalltext text-secondary">2018/09/25</span>
+                                </a>
+                                <a class="dropdown-item text-center pt-2 pb-2 border-bottom-0" href="#"><span class="text-primary">もっと見る</span></a>
+                            </div>
+                        </li>
+                    </ul>
+                </nav>
+            </div>
+            <div class="site-content">
+                <div class="container-fluid pt-3 pb-3">
+                    <ul class="nav nav-tabs" id="myTab" role="tablist">
+                      <li class="nav-item">
+                        <a class="nav-link active" id="home-tab" data-toggle="tab" href="#home" role="tab" aria-controls="home" aria-selected="true">空車確認</a>
+                      </li>
+                      <li class="nav-item">
+                        <a class="nav-link" id="profile-tab" data-toggle="tab" href="#profile" role="tab" aria-controls="profile" aria-selected="false">お申込</a>
+                      </li>
+                      <li class="nav-item">
+                        <a class="nav-link" id="contact-tab" data-toggle="tab" href="#contact" role="tab" aria-controls="contact" aria-selected="false">ご契約</a>
+                      </li>
+                    </ul>
+                    <div class="tab-content" id="myTabContent">
+                      <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">...</div>
+                      <div class="tab-pane fade" id="profile" role="tabpanel" aria-labelledby="profile-tab">...</div>
+                      <div class="tab-pane fade" id="contact" role="tabpanel" aria-labelledby="contact-tab">...</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="footer-wrapper">
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="col-sm-6">
+                        <ul class="nav copyright">
+                            <li class="nav-item footer-logo">
+                                <a class="nav-link disabled" href="#"><img src="images/footer-copyright-logo.png" alt=""></a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link disabled" href="#">© PARK DIRECT</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link disabled" href="#">サポート/ver.1.0.0</a>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="col-sm-6">
+                        <ul class="nav justify-content-sm-end footer-nav">
+                            <li class="nav-item">
+                                <a class="nav-link" href="#">利用規約</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="#">プライバシーポリシー</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="#">サポート/フィードバック</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- start: MAIN JAVASCRIPTS -->
+    <script src="js/jquery-3.3.1.min.js"></script>
+    <script src="js/popper.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/anime.min.js"></script>
+    <script src="js/jquery.smooth-scroll.js"></script>
+    <script src="js/jquery.nicescroll.min.js"></script>
+    <script src="js/jquery.validate.min.js"></script>
+    <script src="js/icheck.min.js"></script>
+    <script src="js/select2.full.min.js"></script>
+    <script src="js/datatables.min.js"></script>
+    <script src="js/main.js"></script>
+    <!-- end: MAIN JAVASCRIPTS -->
+    <script type="text/javascript">
+    jQuery(document).ready(function($) {
+        function login_layout() {
+            var height = $(window).height() - $('.footer-wrapper').outerHeight();
+            $('.login-container > .row.align-items-center').css('min-height', height);
+        }
+        login_layout();
+
+        $(window).resize(function() {
+            login_layout();
+        });
+
+        //Validate
+        $(".forgot-form").validate({
+            rules: {
+                email: {
+                    required: true,
+                    email: true
+                }
+            },
+            messages: {
+                email: "Please enter a valid email address"
+            },
+            submitHandler: function() {
+                alert("submitted!");
+            }
+        });
+    });
+    </script>
+</body>
+
+</html>

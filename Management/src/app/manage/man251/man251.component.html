@@ -1,0 +1,45 @@
+<div class="container-fluid bg-primary-hard-light">
+    <a href="#" class="p-2 d-block"><span class="oi oi-caret-left"></span> 小田急パーキング清水1丁目第1へ戻る</a>
+</div>
+<section class="pt-3 pb-3">
+    <div class="container-fluid">
+        <div class="pl-2 pr-2">
+            <h4 class="mb-0">区画の新規登録</h4>
+            <div class="text-secondary">必要事項を入力し、駐車場の区画を登録してください。</div>
+        </div>
+    </div>
+</section>
+<section class="bg-white pt-3 pb-3">
+    <div [formGroup]="groupForm" class="container-fluid">
+        <div class="pl-2 pr-2">
+            <div class="form-group">
+                <label><strong>自社区画管理番号</strong>&nbsp;<span class="badge badge-danger">必須</span></label>
+                <input formControlName="client_parcel_number" [ngClass]="{'is-invalid': isSubmittedForm && groupForm.controls['client_parcel_number']?.errors}" type="text" placeholder="A123456789" value="" class="form-control"
+                    style="max-width: 220px">
+            </div>
+            <div class="form-group">
+                <label><strong>状況</strong></label>
+                <div>
+                    <select id="status_select" class="form-control" style="max-width: 140px"></select>
+                </div>
+            </div>
+            <div class="form-group">
+                <label><strong>拠点画像</strong></label>
+                <div class="d-flex">
+                    <div class="upload-area d-inline-flex align-items-center">
+                        <div class="text-center text-primary p-3 ml-auto mr-auto">
+                            <span class="icon-plus-circled icon"></span><br>
+                            メイン写真<br>追加
+                        </div>
+                        <input type="file" name="myfile1" class="input-file">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<div class="container-fluid">
+    <div class="p-2 mt-2 pb-3 text-right">
+        <button type="button" (click)="submitForm()" class="btn btn-warning" style="min-width: 160px">登録する</button>
+    </div>
+</div>

@@ -1,0 +1,1262 @@
+<form [formGroup]="appLicationForm">
+  <div>
+    <div id="step1" class="site-content">
+      <!-- BEGIN Title -->
+      <div class="card bg-primary-light">
+        <div class="card-body">
+          <strong>お申込みフォーム</strong>
+        </div>
+      </div><!-- END Title -->
+      <!-- BEGIN Steps -->
+      <div class="steps bg-white d-flex justify-content-between">
+        <div class="step-item text-center current">
+          <div class="step-number">1</div>
+          <div class="step-text">お客様<br>情報入力</div>
+        </div>
+        <div class="step-item text-center">
+          <div class="step-number">2</div>
+          <div class="step-text">車/お支払い<br>情報入力</div>
+        </div>
+        <div class="step-item text-center">
+          <div class="step-number">3</div>
+          <div class="step-text">確認</div>
+        </div>
+        <div class="step-item text-center">
+          <div class="step-number">4</div>
+          <div class="step-text">完了</div>
+        </div>
+      </div><!-- END Steps -->
+      <div id=step1>
+        <div class="card bg-primary-light">
+          <div class="card-body">
+            <strong>お申し込み日</strong>
+          </div>
+        </div><!-- END Title -->
+        <div class="card bg-white">
+          <div class="card-body">
+            2018年10月31日
+          </div>
+        </div>
+        <div class="card bg-primary-light">
+          <div class="card-body">
+            <strong>お申込み駐車場</strong>
+          </div>
+        </div><!-- END Title -->
+        <div class="card bg-white">
+          <div class="card-body">
+            <!-- BEGIN Parking Item -->
+            <div class="parking-item d-flex justify-content-between align-items-start mb-2">
+              <div class="item-info pr-2">
+                <h5><strong>小田急パーキング清水1丁目第1</strong></h5>
+                <p>東京都杉並区清水1-15付近<br>21,600円／月（税込）<br><small class="text-secondary">管理会社 : 小田急不動産株式会社</small></p>
+              </div>
+              <div class="item-image-feature text-center">
+                <img src="assets/parking/images/temp/parking-img-thumb.png" alt="">
+              </div>
+            </div><!-- END Parking Item -->
+          </div>
+        </div>
+        <div class="card bg-primary-light">
+          <div class="card-body">
+            <strong>お客様情報</strong>
+          </div>
+        </div>
+        <div class="card bg-white">
+          <div class="card-body">
+            <!-- BEGIN Checkbox -->
+            <div class="form-group">
+              <label><strong>個人／法人 </strong></label>
+              <div class="d-flex align-items-stretch border rounded mb-2">
+                <div class="p-2" style="flex-basis: 50%">
+                  <label class="container-radio mb-0 d-block">個人
+                    <input type="radio" formControlName="customer_type" (change)="checkCustomerType($event)" value=1 checked="checked">
+                    <span class="checkmark"></span>
+                  </label>
+                </div>
+                <div class="p-2 border-left" style="flex-basis: 50%">
+                  <label class="container-radio mb-0 d-block"> 法人
+                    <input type="radio" formControlName="customer_type" (change)="checkCustomerType($event)" value=2>
+                    <span class="checkmark"></span>
+                  </label>
+                </div>
+              </div>
+            </div><!-- END Checkbox -->
+            <div id="private_corporation_option_1" *ngIf="customerType == 1">
+              <div class="form-group">
+                <label><strong>お名前</strong>&nbsp;<span class="badge badge-danger">必須</span></label>
+                <input type="text" [ngClass]="{'is-invalid': submitted && f.pesonal_name?.errors}" formControlName="pesonal_name"
+                  value="鈴木太郎" class="form-control" placeholder="">
+                <div *ngIf="submitted && f.pesonal_name?.errors" class="invalid-feedback">
+                  <div *ngIf="f.pesonal_name.errors?.Required">{{f.pesonal_name.errors?.message}}</div>
+                </div>
+              </div>
+
+              <div class="form-group">
+                <label><strong>電話番号</strong>&nbsp;<span class="badge badge-danger">必須</span></label>
+                <p>自宅または携帯のどちらかは必ずご入力ください。</p>
+                <div class="row align-items-center mb-2">
+                  <div class="col-2">
+                    自宅
+                  </div>
+                  <div class="col-10">
+                    <input type="text" formControlName="home_phone_number" value="" [ngClass]="{'is-invalid': submitted && f.home_phone_number?.errors}"
+                      class="form-control" placeholder="0312345678">
+                      <div *ngIf="submitted && f.home_phone_number?.errors?.Required" class="invalid-feedback">
+                        <div *ngIf="f.home_phone_number.errors?.Required">会社または携帯どちらかの電場番号をしてください。</div>
+                      </div>
+                      <div *ngIf="submitted && f.home_phone_number?.errors?.Salary" class="invalid-feedback">
+                        <div *ngIf="f.home_phone_number.errors?.Salary">電話番号は半角数字で入力してください。</div>
+                      </div>
+                      <div *ngIf="submitted && f.home_phone_number?.errors?.SalaryLength" class="invalid-feedback">
+                        <div *ngIf="f.home_phone_number.errors?.SalaryLength">電話番号は10文字以上で入力してください。</div>
+                      </div>
+                      <div *ngIf="submitted && f.home_phone_number?.errors?.SalarySpecial" class="invalid-feedback">
+                        <div *ngIf="f.home_phone_number.errors?.SalarySpecial">電場番号はハイフン(-)なしで入力してください。</div>
+                      </div>
+                  </div>
+                </div>
+                <div class="row align-items-center">
+                  <div class="col-2">
+                    携帯
+                  </div>
+                  <div class="col-10">
+                    <input type="text" value="" formControlName="office_phone_number" [ngClass]="{'is-invalid': submitted && f.office_phone_number?.errors}"
+                      class="form-control" placeholder="09012345678">
+                      <div *ngIf="submitted && f.office_phone_number?.errors?.Required" class="invalid-feedback">
+                        <div *ngIf="f.office_phone_number.errors?.Required">会社または携帯どちらかの電場番号をしてください。</div>
+                      </div>
+                      <div *ngIf="submitted && f.office_phone_number?.errors?.Salary" class="invalid-feedback">
+                        <div *ngIf="f.office_phone_number.errors?.Salary">電話番号は半角数字で入力してください。</div>
+                      </div>
+                      <div *ngIf="submitted && f.office_phone_number?.errors?.SalaryLength" class="invalid-feedback">
+                        <div *ngIf="f.office_phone_number.errors?.SalaryLength">電話番号は10文字以上で入力してください。</div>
+                      </div>
+                      <div *ngIf="submitted && f.office_phone_number?.errors?.SalarySpecial" class="invalid-feedback">
+                        <div *ngIf="f.office_phone_number.errors?.SalarySpecial">電場番号はハイフン(-)なしで入力してください。</div>
+                      </div>
+                  </div>
+                </div>
+              </div>
+              <div class="form-group">
+                <label><strong>メールアドレス</strong>&nbsp;<span class="badge badge-danger">必須</span></label>
+                <input type="text" formControlName="email" [ngClass]="{'is-invalid': submitted && f.email?.errors}"
+                  value="sample@parkdrive.com" class="form-control" placeholder="">
+                <div *ngIf="submitted && f.email?.errors?.Required" class="invalid-feedback">
+                  <div *ngIf="f.email.errors?.Required">メールアドレスを入力してください。</div>
+                </div>
+                <div *ngIf="submitted && f.email?.errors?.Email" class="invalid-feedback">
+                  <div *ngIf="f.email.errors?.Email">メールアドレスが正しくありません。</div>
+                </div>
+              </div>
+              <div class="form-group">
+                <label><strong>職業</strong>&nbsp;<span class="badge badge-danger">必須</span></label>
+                <select (change)="onSelectCareer($event);" id="career_select" class="form-control" formControlName="profession" [ngClass]="{'is-invalid': submitted && f.profession?.errors}">
+                  <option value="">職業を選択してください</option>
+                  <option value="2">会社員</option>
+                  <option value="3">公務員</option>
+                  <option value="4">自営業・自由業</option>
+                  <option value="5">会社役員・経営者</option>
+                  <option value="6">パート・アルバイト</option>
+                  <option value="7">学生</option>
+                  <option value="8">専業主婦（夫）</option>
+                  <option value="9">無職</option>
+                </select>
+                <div *ngIf="submitted && f.profession?.errors?.Required" class="invalid-feedback">
+                  <div *ngIf="f.profession.errors?.Required">職業を選択してください</div>
+                </div>
+              </div>
+              <div id="career_company_info" style="display: none">
+                <div class="form-group">
+                  <label><strong>勤務先名</strong>&nbsp;<span class="badge badge-danger">必須</span></label>
+                  <input type="text" value="" formControlName="profession_company_name" [ngClass]="{'is-invalid': submitted && f.profession_company_name?.errors}"
+                    class="form-control" placeholder="例）株式会社パークダイレクト">
+                  <div *ngIf="submitted && f.profession_company_name?.errors" class="invalid-feedback">
+                    <div *ngIf="f.profession_company_name.errors?.Required">法人名を入力してください。</div>
+                  </div>
+                </div>
+                <div class="form-group">
+                  <label><strong>勤務先電話番号</strong>&nbsp;<span class="badge badge-danger">必須</span></label>
+                  <input type="text" value="" formControlName="profession_company_phone_number" [ngClass]="{'is-invalid': submitted && f.profession_company_phone_number?.errors}"
+                    class="form-control" placeholder="0312345678">
+                  <div *ngIf="submitted && f.profession_company_phone_number?.errors" class="invalid-feedback">
+                    <div *ngIf="f.profession_company_phone_number.errors?.Required">{{f.profession_company_phone_number.errors?.message}}</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div id="private_corporation_option_2" *ngIf="customerType == 2">
+              <div class="form-group">
+                <label><strong>法人名</strong>&nbsp;<span class="badge badge-danger">必須</span></label>
+                <input type="text" formControlName="corporate_name" [ngClass]="{'is-invalid': submitted && f.corporate_name?.errors}"
+                  class="form-control" value="" placeholder="株式会社パークダイレクト">
+                <div *ngIf="submitted && f.corporate_name?.errors" class="invalid-feedback">
+                  <div *ngIf="f.corporate_name.errors?.Required">法人名を入力してください。</div>
+                </div>
+              </div>
+              <div class="form-group">
+                <label><strong>部署名</strong>&nbsp;<span class="badge badge-secondary">任意</span></label>
+                <input type="text" class="form-control" formControlName="department_name" [ngClass]="{'is-invalid': submitted && f.department_name?.errors}"
+                  value="" placeholder="">
+                <div *ngIf="submitted && f.department_name?.errors" class="invalid-feedback">
+                  <div *ngIf="f.department_name.errors?.Required">{{f.department_name.errors?.message}}</div>
+                </div>
+              </div>
+              <div class="form-group">
+                <label><strong>担当者名</strong>&nbsp;<span class="badge badge-danger">必須</span></label>
+                <input type="text" class="form-control" formControlName="person_in_charge" [ngClass]="{'is-invalid': submitted && f.person_in_charge?.errors}"
+                  value="鈴木太郎" placeholder="">
+                <div *ngIf="submitted && f.person_in_charge?.errors?.Required" class="invalid-feedback">
+                  <div *ngIf="f.person_in_charge.errors?.Required">担当者名を入力してください。</div>
+                </div>
+              </div>
+              <div class="form-group">
+                <label><strong>郵便番号</strong>&nbsp;<span class="badge badge-danger">必須</span></label>
+                <div class="d-flex">
+                  <input type="text" formControlName="post_code" class="form-control mr-2" [ngClass]="{'is-invalid': submitted && f.post_code?.errors}"
+                    value="" style="width: 160px">
+                  <div *ngIf="submitted && f.post_code?.errors?.Required" class="invalid-feedback">
+                    <div *ngIf="f.post_code.errors?.Required">郵便番号を入力してください。</div>
+                  </div>
+                  <button type="button" class="btn btn-primary">住所反映</button>
+                </div>
+              </div>
+              <div class="form-group">
+                <label><strong>住所</strong>&nbsp;<span class="badge badge-danger">必須</span></label>
+                <input formControlName="address" type="text" class="form-control" [ngClass]="{'is-invalid': submitted && f.address?.errors}"
+                  value="" placeholder="">
+                <div *ngIf="submitted && f.address?.errors?.Required" class="invalid-feedback">
+                  <div *ngIf="f.address.errors?.Required">住所を入力してください。</div>
+                </div>
+                <div class="text-secondary">※ ビル名・マンション名・部屋番号までご入力ください。</div>
+              </div>
+              <div class="form-group">
+                <label><strong>電話番号</strong>&nbsp;<span class="badge badge-danger">必須</span></label>
+                <p class="text-secondary">会社または携帯のどちらかは必ずご入力ください。</p>
+                <div class="row align-items-center mb-3">
+                  <div class="col-3">
+                    会社
+                  </div>
+                  <div class="col-9">
+                    <input type="text" class="form-control" formControlName="home_phone_number" value="" [ngClass]="{'is-invalid': submitted && f.home_phone_number?.errors}"
+                      placeholder="0312345678">
+                      <div *ngIf="submitted && f.emergency_phone_number?.errors?.Required" class="invalid-feedback">
+                        <div *ngIf="f.home_phone_number.errors?.Required">会社または携帯どちらかの電場番号をしてください。</div>
+                      </div>
+                      <div *ngIf="submitted && f.emergency_phone_number?.errors?.Salary" class="invalid-feedback">
+                        <div *ngIf="f.home_phone_number.errors?.Salary">電話番号は半角数字で入力してください。</div>
+                      </div>
+                      <div *ngIf="submitted && f.emergency_phone_number?.errors?.SalaryLength" class="invalid-feedback">
+                        <div *ngIf="f.home_phone_number.errors?.SalaryLength">電話番号は10文字以上で入力してください。</div>
+                      </div>
+                      <div *ngIf="submitted && f.emergency_phone_number?.errors?.SalarySpecial" class="invalid-feedback">
+                        <div *ngIf="f.home_phone_number.errors?.SalarySpecial">電場番号はハイフン(-)なしで入力してください。</div>
+                      </div>
+                  </div>
+                </div>
+                <div class="row align-items-center">
+                  <div class="col-3">
+                    携帯
+                  </div>
+                  <div class="col-9">
+                    <input type="text" class="form-control" formControlName="office_phone_number" [ngClass]="{'is-invalid': submitted && f.office_phone_number?.errors}"
+                      value="" placeholder="09012345678">
+                      <div *ngIf="submitted && f.emergency_phone_number?.errors?.Required" class="invalid-feedback">
+                        <div *ngIf="f.office_phone_number.errors?.Required">会社または携帯どちらかの電場番号をしてください。</div>
+                      </div>
+                      <div *ngIf="submitted && f.emergency_phone_number?.errors?.Salary" class="invalid-feedback">
+                        <div *ngIf="f.office_phone_number.errors?.Salary">電話番号は半角数字で入力してください。</div>
+                      </div>
+                      <div *ngIf="submitted && f.emergency_phone_number?.errors?.SalaryLength" class="invalid-feedback">
+                        <div *ngIf="f.office_phone_number.errors?.SalaryLength">電話番号は10文字以上で入力してください。</div>
+                      </div>
+                      <div *ngIf="submitted && f.emergency_phone_number?.errors?.SalarySpecial" class="invalid-feedback">
+                        <div *ngIf="f.office_phone_number.errors?.SalarySpecial">電場番号はハイフン(-)なしで入力してください。</div>
+                      </div>
+                  </div>
+                </div>
+              </div>
+              <div class="form-group">
+                <label><strong>メールアドレス</strong>&nbsp;<span class="badge badge-danger">必須</span></label>
+                <input type="text" formControlName="email" class="form-control" [ngClass]="{'is-invalid': submitted && f.email?.errors}"
+                  value="sample@parkdrive.com" placeholder="">
+                  <div *ngIf="submitted && f.email?.errors?.Required" class="invalid-feedback">
+                    <div *ngIf="f.email.errors?.Required">メールアドレスを入力してください。</div>
+                  </div>
+              </div>
+              <div class="form-group">
+                <label><strong>法人URL</strong>&nbsp;<span class="badge badge-secondary">任意</span></label>
+                <input type="text" formControlName="corporate_url" class="form-control" [ngClass]="{'is-invalid': submitted && f.corporate_url?.errors}"
+                  value="" placeholder="http://park-d.com">
+                <div *ngIf="submitted && f.corporate_url?.errors" class="invalid-feedback">
+                  <div *ngIf="f.corporate_url.errors?.Required">{{f.corporate_url.errors?.message}}</div>
+                </div>
+              </div>
+            </div>
+            <div class="form-group">
+              <label><strong>利用者</strong></label>
+              <div class="d-flex align-items-stretch border rounded mb-2">
+                <div class="p-2" style="flex-basis: 50%">
+                  <label class="container-radio mb-0 d-block">本人
+                    <input type="radio" formControlName="user_type" (change)="checkUserType($event)" value=1 checked="checked">
+                    <span class="checkmark"></span>
+                  </label>
+                </div>
+                <div class="p-2 border-left" style="flex-basis: 50%">
+                  <label class="container-radio mb-0 d-block">本人以外
+                    <input type="radio" formControlName="user_type" (change)="checkUserType($event)" value=2>
+                    <span class="checkmark"></span>
+                  </label>
+                </div>
+              </div>
+            </div>
+            <div id="user_checkbox_option_1" *ngIf="userType ==1">
+              <div class="form-group">
+                <label><strong>緊急連絡先のお名前</strong>&nbsp;<span class="badge badge-danger">必須</span></label>
+                <input type="text" formControlName="emergency_contact_name" [ngClass]="{'is-invalid': submitted && f.emergency_contact_name?.errors}"
+                  value="" class="form-control" placeholder="パーク太郎">
+                <div *ngIf="submitted && f.emergency_contact_name?.errors?.Required" class="invalid-feedback">
+                  <div *ngIf="f.emergency_contact_name.errors?.Required">緊急連絡先のお名前を入力してください。</div>
+                </div>
+              </div>
+              <div class="form-group">
+                <label><strong>緊急連絡先の電話番号</strong>&nbsp;<span class="badge badge-danger">必須</span></label>
+                <input type="text" value="" formControlName="emergency_phone_number" class="form-control" [ngClass]="{'is-invalid': submitted && f.emergency_phone_number?.errors}"
+                  placeholder="09012345678">
+                <div *ngIf="submitted && f.emergency_phone_number?.errors?.Required" class="invalid-feedback">
+                  <div *ngIf="f.emergency_phone_number.errors?.Required">緊急連絡先の電話番号を入力してください。</div>
+                </div>
+                <div *ngIf="submitted && f.emergency_phone_number?.errors?.Salary" class="invalid-feedback">
+                  <div *ngIf="f.emergency_phone_number.errors?.Salary">緊急連絡先の電話番号は半角数字で入力してください。</div>
+                </div>
+                <div *ngIf="submitted && f.emergency_phone_number?.errors?.SalaryLength" class="invalid-feedback">
+                  <div *ngIf="f.emergency_phone_number.errors?.SalaryLength">緊急連絡先の電話番号は10文字以上で入力してください。</div>
+                </div>
+                <div *ngIf="submitted && f.emergency_phone_number?.errors?.SalarySpecial" class="invalid-feedback">
+                  <div *ngIf="f.emergency_phone_number.errors?.SalarySpecial">緊急連絡先の電話番号はハイフン(-)なしで入力してください。</div>
+                </div>
+              </div>
+            </div>
+            <div id="user_checkbox_option_2" *ngIf="userType ==2">
+              <div class="form-group">
+                <label><strong>利用者名</strong></label>
+                <input type="text" value="" formControlName="other_user_name" class="form-control" placeholder="">
+              </div>
+              <div class="form-group">
+                <label><strong>利用者電話番号</strong></label>
+                <input type="text" value="" formControlName="other_user_phone_number" class="form-control" placeholder="09012345678">
+              </div>
+            </div>
+          </div>
+          <!-- END STEP 1 -->
+          <div class="form-group">
+            <button type="button" (click)="onSubmitStep1()" class="btn btn-primary btn-block" style="margin: 0 auto;max-width: 70%">次へ</button>
+          </div>
+        </div>
+      </div>
+      <div class="card">
+        <div class="card-body text-center text-secondary">
+          © park direct
+        </div>
+      </div>
+    </div>
+    <div id="step2" class="site-content" *ngIf="submitStep ==1">
+      <!-- BEGIN Title -->
+      <ng-container formGroupName="payment_infor">
+        <div class="card bg-primary-light">
+          <div class="card-body">
+            <strong>お申込みフォーム</strong>
+          </div>
+        </div><!-- END Title -->
+        <!-- BEGIN Steps -->
+        <div class="steps bg-white d-flex justify-content-between">
+          <div class="step-item text-center done">
+            <div class="step-number">1</div>
+            <div class="step-text">お客様<br>情報入力</div>
+          </div>
+          <div class="step-item text-center current">
+            <div class="step-number">2</div>
+            <div class="step-text">車/お支払い<br>情報入力</div>
+          </div>
+          <div class="step-item text-center">
+            <div class="step-number">3</div>
+            <div class="step-text">確認</div>
+          </div>
+          <div class="step-item text-center">
+            <div class="step-number">4</div>
+            <div class="step-text">完了</div>
+          </div>
+        </div><!-- END Steps -->
+        <!-- BEGIN Title -->
+        <div class="card bg-primary-light">
+          <div class="card-body">
+            <strong>希望日</strong>
+          </div>
+        </div><!-- END Title -->
+        <div class="card bg-white">
+          <div class="card-body">
+            <div class="form-group">
+              <label>開始希望日 <span class="badge badge-danger">必須</span></label>
+              <div class="row no-gutters">
+                <div class="col-4">
+                  <div class="d-flex justify-content-between align-items-center">
+                    <select class="form-control" (change)="changeYear($event,1)">
+                      <option value=""></option>
+                      <option *ngFor="let d of arrYearStart" value="{{d}}">{{d}}</option>
+                    </select>
+                    <div class="pl-2 pr-2">年</div>
+                  </div>
+
+                </div>
+                <div class="col-sm-3 col-4">
+                  <div class="d-flex justify-content-between align-items-center">
+                    <select class="form-control" (change)="changeMonth($event,1)">
+                      <option value=""></option>
+                      <option *ngFor="let month of arrMonth" value="{{month}}">{{month}}</option>
+                    </select>
+                    <div class="pl-2 pr-2">月</div>
+                  </div>
+
+                </div>
+                <div class="col-sm-3 col-4">
+                  <div class="d-flex justify-content-between align-items-center">
+                    <select class="form-control" (change)="changeDay($event,1)">
+                      <option value=""></option>
+                      <option *ngFor="let day of arrDay" value="{{day}}">{{day}}</option>
+                    </select>
+                    <div class="pl-2 pr-2">日</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="form-group">
+              <label>解約予定日</label>
+              <div class="d-flex align-items-stretch border rounded mb-2">
+                <div class="p-2" style="flex-basis: 50%">
+                  <label class="container-radio mb-0 d-block">未定
+                    <input type="radio" (change)="changeDate($event)" name="cancel_date"
+                      value="1" checked="checked">
+                    <span class="checkmark"></span>
+                  </label>
+                </div>
+                <div class="p-2 border-left" style="flex-basis: 50%">
+                  <label class="container-radio mb-0 d-block">予定あり
+                    <input type="radio" (change)="changeDate($event)" value="2" name="cancel_date">
+                    <span class="checkmark"></span>
+                  </label>
+                </div>
+              </div>
+            </div>
+            <div id="cancel_date_option_2" class="form-group" style="display: none;">
+              <label>解約予定日 <span class="badge badge-danger">必須</span></label>
+              <div class="row no-gutters">
+                <div class="col-4">
+                  <div class="d-flex justify-content-between align-items-center">
+                    <select class="form-control" (change)="changeYear($event,2)">
+                      <option value=""></option>
+                      <option *ngFor="let d of arrDateEnd" value="{{d}}">{{d}}</option>
+                    </select>
+                    <div class="pl-2 pr-2">年</div>
+                  </div>
+
+                </div>
+                <div class="col-sm-3 col-4">
+                  <div class="d-flex justify-content-between align-items-center">
+                    <select class="form-control" (change)="changeMonth($event,2)">
+                      <option value=""></option>
+                      <option *ngFor="let month of arrMonth" value="{{month}}">{{month}}</option>
+                    </select>
+                    <div class="pl-2 pr-2">月</div>
+                  </div>
+
+                </div>
+                <div class="col-sm-3 col-4">
+                  <div class="d-flex justify-content-between align-items-center">
+                    <select class="form-control" (change)="changeDay($event,2)">
+                      <option value=""></option>
+                      <option *ngFor="let day of arrDayEnd" value="{{day}}">{{day}}</option>
+                    </select>
+                    <div class="pl-2 pr-2">日</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- BEGIN Title -->
+        <div class="card bg-primary-light">
+          <div class="card-body">
+            <strong>利用する車情報</strong>
+          </div>
+        </div>
+        <div class="card bg-white">
+          <div class="card-body">
+            <label><strong>利用予定の車</strong>&nbsp;<span class="badge badge-danger">必須</span></label>
+            <ng-container formArrayName="planned_car_list" *ngFor="let carList of appLicationForm.get('payment_infor')?.controls.planned_car_list?.controls;let i = index">
+              <div class="border mb-2" [formGroupName]="i">
+                <div class="pl-3 pr-3 pt-2 pb-2 bg-primary-light">
+                  <strong>{{i+1}}台目</strong>
+                </div>
+                <div class="pl-3 pr-3 pt-2 pb-2 bg-white">
+                  <div class="form-group">
+                    <label><strong>車種</strong>&nbsp;<span class="badge badge-danger">必須</span></label>
+                    <input type="text" class="form-control" formControlName="holding_status" value="" placeholder="メーカー、名称、色など">
+                  </div>
+                  <div class="form-group">
+                    <label><strong>車種</strong></label>
+                    <div class="d-flex align-items-stretch border rounded mb-2">
+                      <div class="p-2" style="flex-basis: 50%">
+                        <label class="container-radio mb-0 d-block">所有車
+                          <input type="radio" formControlName="car_model" (change)="checkModel($event,i)" value="1" checked="checked">
+                          <span class="checkmark"></span>
+                        </label>
+                      </div>
+                      <div class="p-2 border-left" style="flex-basis: 50%">
+                        <label class="container-radio mb-0 d-block">購入前
+                          <input type="radio" formControlName="car_model" (change)="checkModel($event,i)" value="2">
+                          <span class="checkmark"></span>
+                        </label>
+                      </div>
+                    </div>
+                  </div>
+                  <div id="car_model_option_1{{i}}">
+                    <div class="form-group">
+                      <label><strong>登録番号(ナンバー)</strong>&nbsp;<span class="badge badge-danger">必須</span></label>
+                      <input type="text" class="form-control" value="" fromControlName="registration_number" placeholder="渋谷０００　あ　１１−１１">
+                    </div>
+                    <div class="form-group">
+                      <label><strong>車検証</strong></label>
+                      <p class="text-center"><img src="assets/parking/images/icon-auto-certificate.png" alt=""></p>
+                      <p>自動車検査証をカメラで写真撮影する、または画像選択してアップロードしてくださいください。</p>
+                      <div class="border text-center p-3" style="border-style: dashed !important;">
+                        自動車検査証がアップロードされていません。
+                      </div>
+                      <hr>
+                      <div class="border text-center p-3" style="border-style: dashed !important;">
+                        <img id="output{{i}}" style="max-width:100%" src="assets/parking/images/temp/6e8ac19eeabc2c6857e1eedb840475c9.png" alt="">
+                      </div>
+                      <div id="title-img__{{i}}" class="text-center">IMG_181025.jpg</div>
+                    </div>
+                    <div class="form-group">
+                      <div class="btn-upload-wrapper">
+                        <button type="button" class="btn btn-primary btn-block" style="margin: 0 auto;max-width: 80%;"><span
+                            class="oi oi-camera-slr"></span> 車検証をアップロードする</button>
+                        <input type="file" (change)="uploadAll($event,1,i)" name="myfile" class="input-file" />
+                      </div>
+                    </div>
+                  </div>
+                  <div id="car_model_option_2{{i}}" style="display: none;">
+                    <p><strong>車検証・登録番号(ナンバー)</strong><br>購入後、自動車検査証および登録ナンバーをご提出ください。</p>
+                  </div>
+                </div>
+              </div>
+            </ng-container>
+            <div class="mb-2">
+              <button class="btn bg-primary-light btn-block border text-primary pt-2 pb-2" style="line-height: 20px;"
+                (click)="addCarList()"><span class="icon-circle-20"><span class="oi oi-plus"></span></span> 利用予定車を追加する</button>
+            </div>
+            <p>&nbsp;</p>
+            <div class="form-group">
+              <label><strong>保管場所使用承諾書発行</strong></label>
+              <div class="d-flex align-items-stretch border rounded mb-2">
+                <div class="p-2" style="flex-basis: 50%">
+                  <label class="container-radio mb-0 d-block">希望する
+                    <input type="radio" formControlName="issue_aggrement_flg" name="issue_aggrement_flg" value="1"
+                      checked="checked">
+                    <span class="checkmark"></span>
+                  </label>
+                </div>
+                <div class="p-2 border-left" style="flex-basis: 50%">
+                  <label class="container-radio mb-0 d-block">希望しない
+                    <input type="radio" formControlName="issue_aggrement_flg" value="2" name="issue_aggrement_flg">
+                    <span class="checkmark"></span>
+                  </label>
+                </div>
+              </div>
+              <div>※ 発行手数料として3,240円かかります。</div>
+              <div>※ 発行手数料は台数分の手数料がかかります。</div>
+              <div>※ 承諾書は後日郵送いたします。</div>
+            </div>
+            <div class="form-group">
+              <label>その他 備考 <span class="badge badge-secondary">任意</span></label>
+              <textarea cols="1" formControlName="note" rows="3" class="form-control"></textarea>
+            </div>
+          </div>
+        </div>
+        <div class="card bg-primary-light">
+          <div class="card-body">
+            <strong>運転免許書</strong>
+          </div>
+        </div>
+        <div class="card bg-white">
+          <div class="card-body">
+            <p class="text-center"><img src="assets/parking/images/icon-drive-license.png" alt=""></p>
+            <p>運転免許書をカメラで写真撮影する、または画像選択してアップロードしてくださいください。</p>
+            <div class="form-group">
+              <label>表面&nbsp;<span class="badge badge-danger">必須</span></label>
+              <div class="border text-center p-3" style="border-style: dashed !important;">
+                運転免許証の表面がアップロードされていません。
+              </div>
+              <hr>
+              <div class="border text-center p-3" style="border-style: dashed !important;">
+                <img id="frontSide"  style="max-width:100%" src="assets/parking/images/temp/36944107.png" alt="">
+              </div>
+              <div id="title-img__front" class="text-center">IMG_181023.jpg</div>
+            </div>
+            <div class="form-group">
+              <div class="btn-upload-wrapper">
+                <button type="button" class="btn btn-primary btn-block" style="margin: 0 auto;max-width: 80%;"><span
+                    class="oi oi-camera-slr"></span>
+                  車検証をアップロードする</button>
+                <input type="file" (change)="uploadAll($event,2)" name="frontSide" class="input-file" />
+
+              </div>
+            </div>
+            <div class="form-group">
+              <label>裏面&nbsp;<span class="badge badge-danger">必須</span></label>
+              <div class="border text-center p-3" style="border-style: dashed !important;">
+                運転免許証の裏面がアップロードされていません。
+              </div>
+              <hr>
+              <div class="border text-center p-3" style="border-style: dashed !important;">
+                <img id="backSide" style="max-width:100%" src="assets/parking/images/temp/honnin_a_02.png" alt="">
+              </div>
+              <div id="title-img__back" class="text-center">IMG_181024.jpg</div>
+            </div>
+            <div class="form-group">
+              <div class="btn-upload-wrapper">
+                <button type="button" class="btn btn-primary btn-block" style="margin: 0 auto;max-width: 80%;"><span
+                    class="oi oi-camera-slr"></span>
+                  車検証をアップロードする</button>
+                <input type="file" (change)="uploadAll($event,3)" name="backSide" class="input-file" />
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="card bg-primary-light">
+          <div class="card-body">
+            <strong>初月お支払い</strong>
+          </div>
+        </div>
+              <div class="card bg-white">
+                  <div class="card-body">
+                    <div class="form-group">
+                      <label>お支払い方法の選択&nbsp;<span class="badge badge-danger">必須</span></label>
+                      <ul class="list-group">
+                        <li class="d-flex align-items-stretch border rounded mb-2">
+                          <div class="p-2" style="flex-basis: 50%">
+                            <label class="container-radio mb-0 d-block">クレジットカード
+                              <input type="radio" (change)="changePayType($event)"  name="payment_type"
+                                value="1" checked="checked">
+                              <span class="checkmark"></span>
+                            </label>
+                          </div>
+                        </li>
+                        <li class="d-flex align-items-stretch border rounded mb-2">
+                          <div class="p-2" style="flex-basis: 50%">
+                            <label class="container-radio mb-0 d-block">口座振込
+                              <input type="radio" (change)="changePayType($event)"  name="payment_type"
+                                value="2">
+                              <span class="checkmark"></span>
+                            </label>
+                          </div>
+                        </li>
+                        <li class="d-flex align-items-stretch border rounded mb-2">
+                          <div class="p-2" style="flex-basis: 50%">
+                            <label class="container-radio mb-0 d-block">コンビニ決済
+                              <input type="radio" (change)="changePayType($event)"  name="payment_type"
+                                value="3">
+                              <span class="checkmark"></span>
+                            </label>
+                          </div>
+                        </li>
+                      </ul>
+                    </div>
+                    <div id="payment_method_option_1" class="payment_method_option">
+                      <p><img src="assets/parking/images/payment_logo_list.png" alt=""></p>
+                      <div class="form-group">
+                        <label>カード名義人&nbsp;<span class="badge badge-danger">必須</span></label>
+                        <input type="text" class="form-control" value="" placeholder="TARO PARK">
+                      </div>
+                      <div class="form-group">
+                        <label>カード番号&nbsp;<span class="badge badge-danger">必須</span></label>
+                        <input type="text" class="form-control" value="" placeholder="1111222233334444">
+                      </div>
+                      <div class="form-group">
+                        <label>有効期限&nbsp;<span class="badge badge-danger">必須</span></label>
+                        <div class="row no-gutters">
+                          <div class="col-6 pr-2">
+                            <select class="form-control">
+                              <option value="1">月</option>
+                            </select>
+                          </div>
+                          <div class="col-6 pl-2">
+                            <select class="form-control">
+                              <option value="1">年</option>
+                            </select>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="form-group">
+                        <label>セキュリティコード&nbsp;<span class="badge badge-danger">必須</span></label>
+                        <div class="row no-gutters">
+                          <div class="col-6 pr-2">
+                            <input type="text" class="form-control" value="">
+                          </div>
+                        </div>
+                      </div>
+                      <div class="p-3 bg-gray-light">
+                        <div class="mb-1" style="line-height: 20px;"><span class="icon-circle-20 bg-secondary"><span class="oi oi-question-mark"></span></span>
+                          セキュリティコードとは？</div>
+                        <div class="d-flex">
+                          <div class="mr-2"><img src="assets/parking/images/card-digit.png" alt=""></div>
+                          <div class="text-secondary">セキュリティーコードとは、カード裏面の署名欄に印字してある7桁の数字のうち、右側の3桁です。</div>
+                        </div>
+                      </div>
+                    </div>
+                    <div id="payment_method_option_2" class="payment_method_option" style="display: none;">
+                      <div class="form-group">
+                        <label>銀行&nbsp;<span class="badge badge-danger">必須</span></label>
+                        <input type="text" value="" class="form-control" placeholder="銀行を選択してください">
+                      </div>
+                      <div class="form-group">
+                        <label>口座名義(カタカナ)&nbsp;<span class="badge badge-danger">必須</span></label>
+                        <input type="text" value="" class="form-control" placeholder="">
+                      </div>
+                      <div class="form-group">
+                        <label>支店コード&nbsp;<span class="badge badge-danger">必須</span></label>
+                        <input type="text" value="" class="form-control" placeholder="">
+                      </div>
+                      <div class="form-group">
+                        <label>預金種目</label>
+                        <div class="d-flex align-items-stretch border rounded mb-2">
+                          <div class="p-2" style="flex-basis: 50%">
+                            <label class="container-radio mb-0 d-block">普通預金
+                              <input type="radio" (change)="changeDepositCategory($event)" value="1" name="deposit_category"
+                                checked="checked">
+                              <span class="checkmark"></span>
+                            </label>
+                          </div>
+                          <div class="p-2 border-left" style="flex-basis: 50%">
+                            <label class="container-radio mb-0 d-block">当座預金
+                              <input type="radio" (change)="changeDepositCategory($event)" value="2" name="deposit_category">
+                              <span class="checkmark"></span>
+                            </label>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="form-group">
+                        <label>口座番号&nbsp;<span class="badge badge-danger">必須</span></label>
+                        <input type="text" value="" class="form-control" placeholder="">
+                      </div>
+                    </div>
+                    <div id="payment_method_option_3" class="payment_method_option" style="display: none;">
+                      <div class="form-group">
+                        <label>お支払いするコンビニの選択&nbsp;<span class="badge badge-danger">必須</span></label>
+                        <ul class="list-group">
+                          <li class="d-flex align-items-stretch border rounded mb-2">
+                            <div class="p-2" style="flex-basis: 50%">
+                              <label class="container-radio mb-0 d-block"><span class="img-place"><img src="assets/parking/images/places/place_1.png"
+                                    alt=""></span> セブンイレブン
+                                <input type="radio" (change)="changePayType($event)" (change)="changeCombiniCode($event)" name="combini_code"
+                                  value="bank1">
+                                <span class="checkmark"></span>
+                              </label>
+                            </div>
+                          </li>
+                          <li class="d-flex align-items-stretch border rounded mb-2">
+                            <div class="p-2" style="flex-basis: 50%">
+                              <label class="container-radio mb-0 d-block"><span class="img-place"><img src="assets/parking/images/places/place_2.png"
+                                    alt=""></span> ローソン
+                                <input type="radio" (change)="changePayType($event)" (change)="changeCombiniCode($event)" name="combini_code"
+                                  value="bank2">
+                                <span class="checkmark"></span>
+                              </label>
+                            </div>
+                          </li>
+                          <li class="d-flex align-items-stretch border rounded mb-2">
+                            <div class="p-2" style="flex-basis: 50%">
+                              <label class="container-radio mb-0 d-block"><span class="img-place"><img src="assets/parking/images/places/place_3.png"
+                                    alt=""></span> ファミリーマート
+                                <input type="radio" (change)="changePayType($event)" (change)="changeCombiniCode($event)" name="combini_code"
+                                  value="bank3">
+                                <span class="checkmark"></span>
+                              </label>
+                            </div>
+                          </li>
+                          <li class="d-flex align-items-stretch border rounded mb-2">
+                            <div class="p-2" style="flex-basis: 50%">
+                              <label class="container-radio mb-0 d-block"><span class="img-place"><img src="assets/parking/images/places/place_4.png"
+                                    alt=""></span> デイリーヤマザキ
+                                <input type="radio" (change)="changePayType($event)" (change)="changeCombiniCode($event)" name="combini_code"
+                                  value="bank4">
+                                <span class="checkmark"></span>
+                              </label>
+                            </div>
+                          </li>
+                          <li class="d-flex align-items-stretch border rounded mb-2">
+                            <div class="p-2" style="flex-basis: 50%">
+                              <label class="container-radio mb-0 d-block"><span class="img-place"><img src="assets/parking/images/places/place_5.png"
+                                    alt=""></span> ミニストップ
+                                <input type="radio" (change)="changePayType($event)" (change)="changeCombiniCode($event)" name="combini_code"
+                                  value="bank5">
+                                <span class="checkmark"></span>
+                              </label>
+                            </div>
+                          </li>
+                          <li class="d-flex align-items-stretch border rounded mb-2">
+                            <div class="p-2" style="flex-basis: 50%">
+                              <label class="container-radio mb-0 d-block"><span class="img-place"><img src="assets/parking/images/places/place_6.png"
+                                    alt=""></span> セイコーマート
+                                <input type="radio" (change)="changePayType($event)" (change)="changeCombiniCode($event)" name="combini_code"
+                                  value="bank6">
+                                <span class="checkmark"></span>
+                              </label>
+                            </div>
+                          </li>
+                        </ul>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="card bg-primary-light">
+                  <div class="card-body">
+                    <strong>2ヶ月目以降のお支払い</strong>
+                  </div>
+                </div>
+                <div class="card bg-white">
+                  <div class="card-body">
+                    <div class="form-group">
+                      <label>お支払い方法の選択&nbsp;<span class="badge badge-danger">必須</span></label>
+                      <ul class="list-group">
+                        <li class="d-flex align-items-stretch border rounded mb-2">
+                          <div class="p-2" style="flex-basis: 50%">
+                            <label class="container-radio mb-0 d-block">クレジットカード
+                              <input type="radio" (change)="changeUpdateUser($event)" name="updated_user" value="1" checked="checked">
+                              <span class="checkmark"></span>
+                            </label>
+                          </div>
+                        </li>
+                        <li class="d-flex align-items-stretch border rounded mb-2">
+                          <div class="p-2" style="flex-basis: 50%">
+                            <label class="container-radio mb-0 d-block">口座振替
+                              <input type="radio" (change)="changeUpdateUser($event)" name="updated_user" value="2">
+                              <span class="checkmark"></span>
+                            </label>
+                          </div>
+                        </li>
+                      </ul>
+                    </div>
+                  </div>
+                </div>
+        
+        <!-- BEGIN Title -->
+        <div class="card bg-white">
+          <div class="card-body">
+            <div class="row no-gutters">
+              <div class="col-4">
+                <button type="button" class="btn btn-light btn-block text-primary" (click)="backHome(1)"><span class="oi oi-chevron-left"></span>
+                  戻る</button>
+              </div>
+              <div class="col-8">
+                <button type="button" class="btn btn-primary btn-block ml-1" (click)="onSubmitStep2()">確認画面へ</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </ng-container>
+    </div>
+  </div>
+
+</form>
+<div id="step3" class="site-content" style="display:none">
+  <div class="card bg-primary-hard-light">
+    <div class="card-body">
+      <strong>契約フォーム</strong>
+    </div>
+  </div>
+  <!-- BEGIN Steps -->
+  <div class="steps bg-white d-flex justify-content-between">
+    <div class="step-item text-center done">
+      <div class="step-number">1</div>
+      <div class="step-text">お客様<br>情報入力</div>
+    </div>
+    <div class="step-item text-center done">
+      <div class="step-number">2</div>
+      <div class="step-text">車/お支払い<br>情報入力</div>
+    </div>
+    <div class="step-item text-center current">
+      <div class="step-number">3</div>
+      <div class="step-text">確認</div>
+    </div>
+    <div class="step-item text-center">
+      <div class="step-number">4</div>
+      <div class="step-text">完了</div>
+    </div>
+  </div><!-- END Steps -->
+  <div class="card bg-white">
+    <div class="card-body">
+      <div class="text-center">
+        <div class="text-center mb-3 pt-2 pb-2 pl-4 pr-4 bg-warning-light text-warning rounded-3x d-inline-block"><span
+            class="oi oi-question-mark"></span> まだお申込みは完了していません。</div>
+      </div>
+      <div>内容をご確認し、ページ下部にある「この内容で送信する」ボタンを押してください。</div>
+    </div>
+  </div>
+  <div class="card bg-primary-light">
+    <div class="card-body">
+      <strong>お申し込み日</strong>
+    </div>
+  </div>
+  <div class="card bg-white">
+    <div class="card-body">
+      2018年10月31日
+    </div>
+  </div>
+  <div class="card bg-primary-light">
+    <div class="card-body">
+      <strong>お申込み駐車場</strong>
+    </div>
+  </div><!-- END Title -->
+  <div class="card bg-white">
+    <div class="card-body">
+      <!-- BEGIN Parking Item -->
+      <div class="parking-item d-flex justify-content-between align-items-start mb-2">
+        <div class="item-info pr-2">
+          <h5><strong>小田急パーキング清水1丁目第1</strong></h5>
+          <p>東京都杉並区清水1-15付近<br>21,600円／月（税込）<br><small class="text-secondary">管理会社 : 小田急不動産株式会社</small></p>
+        </div>
+        <div class="item-image-feature text-center">
+          <img src="assets/parking/images/temp/parking-img-thumb.png" alt="">
+        </div>
+      </div><!-- END Parking Item -->
+    </div>
+  </div>
+  <div class="card bg-primary-light">
+    <div class="card-body">
+      <div class="d-flex justify-content-between">
+        <strong>お客様情報</strong>
+        <a href="#"><span class="oi oi-pencil"></span> 修正する</a>
+      </div>
+    </div>
+  </div>
+  <div class="card pb-0 bg-white">
+    <table class="table mb-0" cellspacing="0" cellpadding="0">
+      <tbody>
+        <tr>
+          <td class="text-secondary border-top-0" width="35%">個人／法人</td>
+          <td class="border-top-0">個人</td>
+        </tr>
+        <tr>
+          <td class="text-secondary">お名前</td>
+          <td>鈴木太郎</td>
+        </tr>
+        <tr>
+          <td class="text-secondary">生年月日</td>
+          <td>1978年4月1日</td>
+        </tr>
+        <tr>
+          <td class="text-secondary">住所</td>
+          <td>〒123-4567<br>東京都渋谷区渋谷123</td>
+        </tr>
+        <tr>
+          <td class="text-secondary">電話番号</td>
+          <td>自宅：<br>携帯：080-1234-5678</td>
+        </tr>
+        <tr>
+          <td class="text-secondary">メールアドレス</td>
+          <td>sample@parkdrive.com</td>
+        </tr>
+        <tr>
+          <td class="text-secondary">勤務先</td>
+          <td>株式会社パークダイレクト</td>
+        </tr>
+        <tr>
+          <td class="text-secondary">勤務先電話番号</td>
+          <td>03-1234-5678</td>
+        </tr>
+        <tr>
+          <td class="text-secondary">利用者</td>
+          <td>-</td>
+        </tr>
+        <tr>
+          <td class="text-secondary">利用者電話番号</td>
+          <td>080-1234-5678</td>
+        </tr>
+        <tr>
+          <td class="text-secondary">緊急連絡先のお名前</td>
+          <td>鈴木太郎</td>
+        </tr>
+        <tr>
+          <td class="text-secondary">緊急連絡先の電話番号</td>
+          <td>080-1234-5678</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  <div class="card bg-primary-light">
+    <div class="card-body">
+      <div class="d-flex justify-content-between">
+        <strong>利用する車情報</strong>
+        <a href="#"><span class="oi oi-pencil"></span> 修正する</a>
+      </div>
+    </div>
+  </div>
+  <div class="card pb-0 bg-white">
+    <table class="table mb-0" cellspacing="0" cellpadding="0">
+      <tbody>
+        <tr>
+          <td class="text-secondary border-top-0" width="35%">開始希望日</td>
+          <td class="border-top-0">2018年12月31日</td>
+        </tr>
+        <tr>
+          <td class="text-secondary">利用予定の車</td>
+          <td>1台目<br>車種：プリウス白<br>ナンバー：12-34<br>保有状況：所有車</td>
+        </tr>
+        <tr>
+          <td class="text-secondary">保管場所使用承諾書発行</td>
+          <td>希望しない</td>
+        </tr>
+        <tr>
+          <td class="text-secondary">その他備考</td>
+          <td>-</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  <div class="card bg-primary-light">
+    <div class="card-body">
+      <div class="d-flex justify-content-between">
+        <strong>運転免許書</strong>
+        <a href="#"><span class="oi oi-pencil"></span> 修正する</a>
+      </div>
+    </div>
+  </div>
+  <div class="card pb-0 bg-white">
+    <table class="table mb-0" cellspacing="0" cellpadding="0">
+      <tbody>
+        <tr>
+          <td class="text-secondary border-top-0" width="35%">表面</td>
+          <td class="border-top-0">
+            <div><img src="assets/parking/images/temp/drive-license-front.png" alt=""></div>
+            <div>IMG_181023.jpg</div>
+          </td>
+        </tr>
+        <tr>
+          <td class="text-secondary">裏面</td>
+          <td>
+            <div><img src="assets/parking/images/temp/drive-license-back.png" alt=""></div>
+            <div>IMG_181024.jpg</div>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  <div class="card bg-primary-light">
+    <div class="card-body">
+      <div class="d-flex justify-content-between">
+        <strong>車検証</strong>
+        <a href="#"><span class="oi oi-pencil"></span> 修正する</a>
+      </div>
+    </div>
+  </div>
+  <div class="card pb-0 bg-white">
+    <table class="table mb-0" cellspacing="0" cellpadding="0">
+      <tbody>
+        <tr>
+          <td class="text-secondary border-top-0" width="35%">自動車検査証</td>
+          <td class="border-top-0">
+            <div><img src="assets/parking/images/temp/auto-certificate-thumb.png" alt=""></div>
+            <div>IMG_181023.jpg</div>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  <div class="card bg-primary-light">
+    <div class="card-body">
+      <div class="d-flex justify-content-between">
+        <strong>お支払い方法</strong>
+        <a href="#"><span class="oi oi-pencil"></span> 修正する</a>
+      </div>
+    </div>
+  </div>
+  <div class="card pb-0 bg-white">
+    <table class="table mb-0" cellspacing="0" cellpadding="0">
+      <tbody>
+        <tr>
+          <td class="text-secondary border-top-0" width="35%">お支払い方法</td>
+          <td class="border-top-0">クレジットカード</td>
+        </tr>
+        <tr>
+          <td class="text-secondary">番号</td>
+          <td>
+            <div>xxxx-xxxx-xxxx-1234</div>
+            <div class="text-secondary">セキュリティ上、下4桁のみ表示しています。</div>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  <div class="card bg-white">
+    <div class="card-body">
+      <div class="row no-gutters">
+        <div class="col-4">
+          <button type="button" class="btn btn-light btn-block text-primary" (click)="backHome(2)">戻る</button>
+        </div>
+        <div class="col-8">
+          <button type="button" class="btn btn-warning btn-block ml-1" (click)="onSubmitStep3()">この内容で申し込む</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div><!-- END Site Wrapper -->
+
+
+<!-- Start Step4 -->
+<div id="step4" class="site-content" style="display:none">
+  <!-- BEGIN Title -->
+  <div class="card bg-primary-light">
+    <div class="card-body">
+      <strong>お申込みフォーム</strong>
+    </div>
+  </div><!-- END Title -->
+  <!-- BEGIN Steps -->
+  <div class="steps bg-white d-flex justify-content-between">
+    <div class="step-item text-center done">
+      <div class="step-number">1</div>
+      <div class="step-text">お客様<br>情報入力</div>
+    </div>
+    <div class="step-item text-center done">
+      <div class="step-number">2</div>
+      <div class="step-text">車/お支払い<br>情報入力</div>
+    </div>
+    <div class="step-item text-center done">
+      <div class="step-number">3</div>
+      <div class="step-text">確認</div>
+    </div>
+    <div class="step-item text-center current">
+      <div class="step-number">4</div>
+      <div class="step-text">完了</div>
+    </div>
+  </div><!-- END Steps -->
+  <div class="card bg-white">
+    <div class="card-body">
+      <div class="text-center text-success mb-1" style="line-height: 1;"><i class="icon-check-circle" style="font-size: 64px;"></i></div>
+      <h4 class="text-center"><strong>お申込みを受け付けました。</strong></h4>
+      <p>審査に数日お時間を頂く可能性がございます。審査完了までお待ち下さい。</p>
+    </div>
+  </div>
+  <div class="card bg-primary-light">
+    <div class="card-body">
+      <strong>今後の手続きの流れ</strong>
+    </div>
+  </div>
+  <div class="card bg-white">
+    <div class="card-body">
+      <p>今後の手続きの流れと現状のステータスです。ご確認ください。</p>
+      <div class="p-3 mb-2 bg-gray-light d-flex justify-content-between rounded">
+        <div>
+          <strong class="text-secondary text-uppercase">STEP 1</strong><br>
+          お申込みフォームの入力・送信
+        </div>
+        <div class="text-success text-center small-text" style="line-height: 1;">
+          <i class="icon-check-circle" style="font-size: 22px;"></i><br>
+          <strong>完了</strong>
+        </div>
+      </div>
+      <div class="p-3 mb-2 bg-gray-light d-flex justify-content-between rounded">
+        <div>
+          <strong class="text-secondary text-uppercase">STEP 2</strong><br>
+          審査
+        </div>
+
+      </div>
+      <div class="p-3 mb-2 bg-gray-light d-flex justify-content-between rounded">
+        <div>
+          <strong class="text-secondary text-uppercase">STEP 3</strong><br>
+          ご契約フォームの入力・送信
+        </div>
+      </div>
+      <div class="p-3 mb-2 bg-gray-light d-flex justify-content-between rounded">
+        <div>
+          <strong class="text-secondary text-uppercase">STEP 4</strong><br>
+          入金
+        </div>
+      </div>
+      <div class="p-3 mb-2 bg-gray-light d-flex justify-content-between rounded">
+        <div>
+          <strong class="text-secondary text-uppercase">STEP 5</strong><br>
+          ご契約完了・利用開始
+        </div>
+      </div>
+    </div>
+  </div>
+</div><!-- END Site Wrapper -->
+
+<!-- Start 4-6-2 -->
+<div id="site-content" class="site-content" style="display:none">
+  <div class="message-wrapper d-flex flex-column">
+    <div class="message-header">
+      <a href="#" class="btn-close"><span class="oi oi-x"></span></a>
+      <div class="card bg-primary-hard-light">
+        <div class="card-body text-center">
+          <strong>お申込みについて質問する</strong>
+        </div>
+      </div>
+    </div>
+    <div class="message-content scroll">
+      <div class="card">
+        <div class="card-body">
+          <p class="text-secondary text-center">お申込みについて気になる点などありましたら、<br>お気軽にお問い合わせください。</p>
+          <div class="message-item right mb-3">
+            <div class="p-2 bg-primary text-white text-right rounded">
+              緊急連絡先は、自分にしてもよいでしょうか？
+            </div>
+            <div class="text-right text-secondary">
+              <small>11/01 11:41</small>
+            </div>
+          </div>
+          <div class="card-body border bg-white mb-3">
+            <h6><strong>通知を受け取る</strong></h6>
+            <div>管理会社から返信があった場合に通知を受け取ることができます。ご希望の連絡先を入力してください。</div>
+            <form action="#">
+              <nav class="nav nav-bottom-line mb-3">
+                <a class="nav-link active pl-0 pr-0 mr-2" href="#">メール</a>
+                <a class="nav-link pl-0 pr-0" href="#">SMS</a>
+              </nav>
+              <div class="input-button-group d-flex align-items-center">
+                <input type="text" class="form-control" placeholder="email@example.com">
+                <button type="submit" class="btn btn-outline-light"><span class="oi oi-magnifying-glass"></span></button>
+              </div>
+            </form>
+          </div>
+          <div class="message-item left mb-3">
+            <div class="p-2 bg-white rounded">
+              緊急連絡先は、自分にしてもよいでしょうか？
+            </div>
+            <div class="text-secondary">
+              <small>11/01 11:41</small>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="message-footer mt-auto">
+      <div class="card bg-white">
+        <div class="card-body">
+          <div class="row no-gutters">
+            <div class="col-9 pr-2">
+              <input type="text" class="form-control pl-0 pr-0 border-none" value="" placeholder="メッセージを入力する">
+            </div>
+            <div class="col-3">
+              <button type="button" class="btn btn-primary btn-block">送信</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div><!-- END Site Wrapper -->
+<!-- END 4-6-2 -->

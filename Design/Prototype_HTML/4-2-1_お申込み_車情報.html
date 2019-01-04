@@ -1,0 +1,248 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="shortcut icon" href="favicon.ico" />
+    <!-- start: MAIN CSS -->
+    <link rel="stylesheet" href="includes/site-styles.css">    
+    <!-- end: MAIN CSS -->
+    <!-- start: CSS REQUIRED FOR THIS PAGE ONLY -->    
+    <!-- end: CSS REQUIRED FOR THIS PAGE ONLY -->
+    <title>4-2-1_お申込み_車情報</title>
+  </head>
+  <body class="header-fixed">
+    <!-- BEGIN Site Wrapper -->
+    <div class="site-wrapper">
+      <script type="text/javascript" src="includes/header.js"></script>
+      <!-- BEGIN Site Wrapper -->
+      <div id="site-content" class="site-content">
+        <!-- BEGIN Title -->
+        <div class="card bg-primary-light">
+          <div class="card-body">
+            <strong>お申込みフォーム</strong>
+          </div>
+        </div><!-- END Title -->
+        <!-- BEGIN Steps -->             
+        <div class="steps bg-white d-flex justify-content-between">
+          <div class="step-item text-center done">
+            <div class="step-number">1</div>
+            <div class="step-text">お客様<br>情報入力</div>
+          </div>
+          <div class="step-item text-center current">
+            <div class="step-number">2</div>
+            <div class="step-text">車/お支払い<br>情報入力</div>
+          </div>
+          <div class="step-item text-center">
+            <div class="step-number">3</div>
+            <div class="step-text">確認</div>
+          </div>
+          <div class="step-item text-center">
+            <div class="step-number">4</div>
+            <div class="step-text">完了</div>
+          </div>
+        </div><!-- END Steps -->  
+        <!-- BEGIN Title -->
+        <div class="card bg-primary-light">
+          <div class="card-body">
+            <strong>希望日</strong>
+          </div>
+        </div><!-- END Title -->
+        <div class="card bg-white">
+          <div class="card-body">
+            <div class="form-group">
+              <label>開始希望日 <span class="badge badge-danger">必須</span></label>
+              <div class="row no-gutters">
+                  <div class="col-4">
+                    <div class="d-flex justify-content-between align-items-center">
+                      <select class="form-control">
+                        <option value="1">2018</option>
+                        <option value="2">2017</option>
+                        <option value="2">2016</option>
+                      </select>
+                      <div class="pl-2 pr-2">年</div>
+                    </div>
+                    
+                  </div>
+                  <div class="col-sm-3 col-4">
+                    <div class="d-flex justify-content-between align-items-center">
+                      <select class="form-control">
+                        <option value="1">09</option>
+                        <option value="2">08</option>
+                        <option value="2">07</option>
+                      </select>
+                      <div class="pl-2 pr-2">月</div>
+                    </div>
+                    
+                  </div>
+                  <div class="col-sm-3 col-4">
+                    <div class="d-flex justify-content-between align-items-center">
+                      <select class="form-control">
+                        <option value="1">30</option>
+                        <option value="2">29</option>
+                        <option value="2">28</option>
+                      </select>
+                      <div class="pl-2 pr-2">日</div>
+                    </div>
+                  </div>
+                </div>
+            </div>
+            <div class="form-group">
+              <label>解約予定日</label>
+              <div class="d-flex justify-content-between">
+                <label class="label-icheck current flex-grow-1 mb-0 border border-right-0 rounded-left p-2" style="flex-basis: 50%"><input type="radio" name="iCheck" checked> 未定</label>
+                <label class="label-icheck flex-grow-1 mb-0 border rounded-right p-2" style="flex-basis: 50%"><input type="radio" name="iCheck"> 予定あり</label>
+              </div>
+            </div>            
+          </div>
+        </div>
+        <!-- BEGIN Title -->
+        <div class="card bg-primary-light">
+          <div class="card-body">
+            <strong>利用する車情報</strong>
+          </div>
+        </div>
+        <div class="card bg-white">
+          <div class="card-body">
+            <label><strong>利用予定の車</strong> <span class="badge badge-danger">必須</span></label>
+            <div class="border mb-2">
+              <div class="pl-3 pr-3 pt-2 pb-2 bg-primary-light">
+                <strong>1台目</strong>
+              </div>
+              <div class="pl-3 pr-3 pt-2 pb-2 bg-white">
+                <div class="form-group">
+                  <label><strong>車種</strong> <span class="badge badge-danger">必須</span></label>
+                  <input type="text" class="form-control" value="" placeholder="メーカー、名称、色など">
+                </div>
+                <div class="form-group">
+                  <label><strong>車種</strong></label>
+                  <div class="d-flex justify-content-between">
+                    <label class="label-icheck current flex-grow-1 mb-0 border border-right-0 rounded-left p-2" style="flex-basis: 50%"><input type="radio" name="iCheck2" checked> 所有車</label>
+                    <label class="label-icheck flex-grow-1 mb-0 border rounded-right p-2" style="flex-basis: 50%"><input type="radio" name="iCheck2"> 購入前</label>
+                  </div>
+                </div>
+                <div class="form-group">
+                  <label><strong>登録番号(ナンバー)</strong> <span class="badge badge-danger">必須</span></label>
+                  <input type="text" class="form-control" value="" placeholder="渋谷０００　あ　１１−１１">
+                </div>
+                <div class="form-group">
+                  <label><strong>車検証</strong></label>
+                  <p class="text-center"><img src="images/icon-auto-certificate.png" alt=""></p>
+                  <p>自動車検査証をカメラで写真撮影する、または画像選択してアップロードしてくださいください。</p>
+                  <div class="border text-center p-3" style="border-style: dashed !important;">
+                    自動車検査証がアップロードされていません。
+                  </div>
+                </div>
+                <div class="form-group">
+                  <button type="button" class="btn btn-primary btn-block" style="margin: 0 auto;max-width: 80%;"><span class="oi oi-camera-slr"></span> 車検証をアップロードする</button>
+                </div>
+              </div>
+            </div>
+            <div class="mb-2">
+              <button class="btn bg-primary-light btn-block border text-primary pt-2 pb-2" style="line-height: 20px;"><span class="icon-circle-20"><span class="oi oi-plus"></span></span> 利用予定車を追加する</button>
+            </div>
+            <p>&nbsp;</p>
+            <div class="form-group">
+              <label><strong>保管場所使用承諾書発行</strong></label>
+              <div class="d-flex justify-content-between mb-2">
+                <label class="label-icheck current flex-grow-1 mb-0 border border-right-0 rounded-left p-2" style="flex-basis: 50%"><input type="radio" name="iCheck3" checked> 希望する</label>
+                <label class="label-icheck flex-grow-1 mb-0 border rounded-right p-2" style="flex-basis: 50%"><input type="radio" name="iCheck3"> 希望しない</label>
+              </div>
+              <div>※ 発行手数料として3,240円かかります。</div>
+              <div>※ 発行手数料は台数分の手数料がかかります。</div>
+              <div>※ 承諾書は後日郵送いたします。</div>
+            </div>
+            <div class="form-group">
+              <label>その他 備考 <span class="badge badge-secondary">任意</span></label>
+              <textarea cols="1" rows="3" class="form-control"></textarea>  
+            </div>
+          </div>
+        </div>
+        <div class="card bg-primary-light">
+          <div class="card-body">
+            <strong>運転免許書</strong>
+          </div>
+        </div>
+        <div class="card bg-white">
+          <div class="card-body">
+            <p class="text-center"><img src="images/icon-drive-license.png" alt=""></p>
+            <p>運転免許書をカメラで写真撮影する、または画像選択してアップロードしてくださいください。</p>
+            <div class="form-group">
+              <label>表面 <span class="badge badge-danger">必須</span></label>
+              <div class="border text-center p-3" style="border-style: dashed !important;">
+                運転免許証の表面がアップロードされていません。
+              </div>
+            </div>
+            <div class="form-group">
+              <button type="button" class="btn btn-primary btn-block" style="margin: 0 auto;max-width: 80%;"><span class="oi oi-camera-slr"></span> 表面をアップロードする</button>
+            </div>
+            <div class="form-group">
+              <label>裏面 <span class="badge badge-danger">必須</span></label>
+              <div class="border text-center p-3" style="border-style: dashed !important;">
+                運転免許証の裏面がアップロードされていません。
+              </div>
+            </div>
+            <div class="form-group">
+              <button type="button" class="btn btn-primary btn-block" style="margin: 0 auto;max-width: 80%;"><span class="oi oi-camera-slr"></span> 裏面をアップロードする</button>
+            </div>
+          </div>
+        </div>
+        <div class="card bg-primary-light">
+          <div class="card-body">
+            <strong>初月お支払い</strong>
+          </div>
+        </div>
+        <div class="card bg-white">
+          <div class="card-body">
+            <div class="form-group">
+              <label>お支払い方法の選択 <span class="badge badge-danger">必須</span></label>
+              <ul class="list-group">
+                <li class="list-group-item label-icheck current"><input type="radio" name="list-radio-demo" checked> クレジットカード</li>
+                <li class="list-group-item label-icheck"><input type="radio" name="list-radio-demo"> 口座振込</li>
+                <li class="list-group-item label-icheck"><input type="radio" name="list-radio-demo"> コンビニ決済</li>                  
+              </ul>
+            </div>
+          </div>
+        </div>
+        <div class="card bg-primary-light">
+          <div class="card-body">
+            <strong>2ヶ月目以降のお支払い</strong>
+          </div>
+        </div>
+        <div class="card bg-white">
+          <div class="card-body">
+            <div class="form-group">
+              <label>お支払い方法の選択 <span class="badge badge-danger">必須</span></label>
+              <ul class="list-group">
+                <li class="list-group-item label-icheck"><input type="radio" name="list-radio-demo"> クレジットカード</li>
+                <li class="list-group-item label-icheck"><input type="radio" name="list-radio-demo"> 口座振替</li>                 
+              </ul>
+            </div>
+          </div>
+        </div>
+        <div class="card bg-white">
+          <div class="card-body">
+           <div class="row no-gutters">
+              <div class="col-4">
+                <button type="button" class="btn btn-light btn-block text-primary"><span class="oi oi-chevron-left"></span> 戻る</a>
+              </div>
+              <div class="col-8">
+                <button type="button" class="btn btn-primary btn-block ml-1">確認画面へ</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div><!-- END Site Wrapper -->
+      <script type="text/javascript" src="includes/footer.js"></script>
+      <script type="text/javascript" src="includes/site-menu.js"></script>
+    </div><!-- BEGIN Site Wrapper -->
+
+    <!-- start: MAIN JAVASCRIPTS -->
+    <script type="text/javascript" src="includes/js-libs.js"></script>  
+    <script src="js/main.js"></script>
+    <!-- end: MAIN JAVASCRIPTS -->
+    <!-- start: JS REQUIRED FOR THIS PAGE ONLY -->    
+    <!-- end: JS REQUIRED FOR THIS PAGE ONLY -->
+  </body>
+</html>

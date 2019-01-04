@@ -1,0 +1,346 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="shortcut icon" href="favicon.ico" />
+    <!-- start: MAIN CSS -->
+    <link rel="stylesheet" href="includes/site-styles.css"> 
+    <!-- end: MAIN CSS -->
+    <!-- start: CSS REQUIRED FOR THIS PAGE ONLY -->
+    <!-- end: CSS REQUIRED FOR THIS PAGE ONLY -->
+    <title>2-1_駐車場管理</title>
+</head>
+
+<body>
+    <div class="site-wrapper has-sidebar">
+        <div class="main-wrapper">
+            <script type="text/javascript" src="includes/sidebar.js"></script>
+            <script type="text/javascript" src="includes/header.js"></script>
+            <div class="site-content">
+                <section class="pt-3 pb-3">
+                    <div class="container-fluid">
+                        <div class="d-flex justify-content-between align-items-center pl-2 pr-2 mb-3">
+                            <div>
+                                <h4 class="mb-0">拠点・駐車場管理</h4>
+                                <div class="text-secondary">駐車場の新規登録・編集・削除ができます。</div>
+                            </div>
+                            <div>
+                                <a href="#" class="btn btn-primary"><span class="icon-plus-circled"></span> 拠点新規登録</a>
+                            </div>
+                        </div>   
+                        <div class="pl-2 pr-2">
+                            <div class="row">
+                                <div class="col-lg-2">
+                                    <div class="form-group">
+                                        <select class="form-control">
+                                            <option value="1">すべてのステータス</option>
+                                        </select>
+                                    </div>
+                                </div>
+                                <div class="col-lg-4">
+                                    <div class="form-group">
+                                        <div class="input-button-group icon-inside icon-left">
+                                          <button type="submit" class="btn btn-none btn-icon"><span class="icon-search"></span></button>
+                                          <input type="text" class="form-control" placeholder="住所・駅名・駐車場名で検索">
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-lg-6">
+                                    <div class="form-group d-flex align-items-center">
+                                        <div class="input-button-group icon-inside icon-right" style="flex-basis: 170px">
+                                          <button type="submit" class="btn btn-none btn-icon"><span class="oi oi-calendar"></span></button>
+                                          <input type="text" class="form-control" placeholder="" value="2018/10/01">
+                                        </div>
+                                        <div class="pr-3 pl-3"><span style="font-size: 150%;">~</span></div>
+                                        <div class="input-button-group icon-inside icon-right" style="flex-basis: 170px">
+                                          <button type="submit" class="btn btn-none btn-icon"><span class="oi oi-calendar"></span></button>
+                                          <input type="text" class="form-control" placeholder="" value="2018/11/30">
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>                 
+                    </div>
+                </section>
+                <section class="bg-white pt-3 pb-3">
+                    <div class="container-fluid">
+                        <div class="table-responsive">
+                            <table class="table datatable" cellpadding="0" cellspacing="0">
+                                <thead>
+                                    <tr>
+                                        <th>ステータス</th>
+                                        <th>自社拠点管理番号</th>
+                                        <th>拠点</th>
+                                        <th>総台数</th>
+                                        <th>空き台数</th>
+                                        <th>登録／更新日</th>
+                                        <th>&nbsp;</th>  
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td><span class="badge badge-success badge-status">&nbsp;</span> 公開中</td>
+                                        <td>JKK000000001</td>
+                                        <td>
+                                            <div>小田急パーキング清水1丁目第1</div>
+                                            <div class="text-secondary smalltext">
+                                                東京都杉並区清水1-15付近
+                                            </div>
+                                        </td>
+                                        <td>20台</td>
+                                        <td>3台</td>
+                                        <td>2018/10/14</td>
+                                        <td class="text-right">
+                                            <button type="button" class="btn btn-sm btn-primary-light"><span class="oi oi-spreadsheet"></span> 詳細へ</button>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td><span class="badge badge-success badge-status">&nbsp;</span> 公開中</td>
+                                        <td>JKK000000002</td>
+                                        <td>
+                                            <div>小田急パーキング東村山駅前第1</div>
+                                            <div class="text-secondary smalltext">
+                                                東京都東村山市本町2-4-16付近-15付近
+                                            </div>
+                                        </td>
+                                        <td>20台</td>
+                                        <td>3台</td>
+                                        <td>2018/10/28</td>
+                                        <td class="text-right">
+                                            <button type="button" class="btn btn-sm btn-primary-light"><span class="oi oi-spreadsheet"></span> 詳細へ</button>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td><span class="badge badge-success badge-status">&nbsp;</span> 公開中</td>
+                                        <td>JKK000000003</td>
+                                        <td>
+                                            <div>小田急パーキング原町田</div>
+                                            <div class="text-secondary smalltext">
+                                                東京都町田市原町田2-19付近
+                                            </div>
+                                        </td>
+                                        <td>20台</td>
+                                        <td>3台</td>
+                                        <td>2018/11/07</td>
+                                        <td class="text-right">
+                                            <button type="button" class="btn btn-sm btn-primary-light"><span class="oi oi-spreadsheet"></span> 詳細へ</button>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td><span class="badge badge-success badge-status">&nbsp;</span> 公開中</td>
+                                        <td>JKK000000004</td>
+                                        <td>
+                                            <div>小田急パーキング清水1丁目第1</div>
+                                            <div class="text-secondary smalltext">
+                                                東京都杉並区清水1-15付近
+                                            </div>
+                                        </td>
+                                        <td>20台</td>
+                                        <td>3台</td>
+                                        <td>2018/10/14</td>
+                                        <td class="text-right">
+                                            <button type="button" class="btn btn-sm btn-primary-light"><span class="oi oi-spreadsheet"></span> 詳細へ</button>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td><span class="badge badge-success badge-status">&nbsp;</span> 公開中</td>
+                                        <td>JKK000000005</td>
+                                        <td>
+                                            <div>小田急パーキング東村山駅前第1</div>
+                                            <div class="text-secondary smalltext">
+                                                東京都東村山市本町2-4-16付近-15付近
+                                            </div>
+                                        </td>
+                                        <td>20台</td>
+                                        <td>3台</td>
+                                        <td>2018/10/28</td>
+                                        <td class="text-right">
+                                            <button type="button" class="btn btn-sm btn-primary-light"><span class="oi oi-spreadsheet"></span> 詳細へ</button>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td><span class="badge badge-success badge-status">&nbsp;</span> 公開中</td>
+                                        <td>JKK000000006</td>
+                                        <td>
+                                            <div>小田急パーキング原町田</div>
+                                            <div class="text-secondary smalltext">
+                                                東京都町田市原町田2-19付近
+                                            </div>
+                                        </td>
+                                        <td>20台</td>
+                                        <td>3台</td>
+                                        <td>2018/11/07</td>
+                                        <td class="text-right">
+                                            <button type="button" class="btn btn-sm btn-primary-light"><span class="oi oi-spreadsheet"></span> 詳細へ</button>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td><span class="badge badge-success badge-status">&nbsp;</span> 公開中</td>
+                                        <td>JKK000000007</td>
+                                        <td>
+                                            <div>小田急パーキング清水1丁目第1</div>
+                                            <div class="text-secondary smalltext">
+                                                東京都杉並区清水1-15付近
+                                            </div>
+                                        </td>
+                                        <td>20台</td>
+                                        <td>3台</td>
+                                        <td>2018/10/14</td>
+                                        <td class="text-right">
+                                            <button type="button" class="btn btn-sm btn-primary-light"><span class="oi oi-spreadsheet"></span> 詳細へ</button>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td><span class="badge badge-secondary badge-status">&nbsp;</span> 公開中</td>
+                                        <td>JKK000000008</td>
+                                        <td>
+                                            <div>小田急パーキング東村山駅前第1</div>
+                                            <div class="text-secondary smalltext">
+                                                東京都東村山市本町2-4-16付近-15付近
+                                            </div>
+                                        </td>
+                                        <td>20台</td>
+                                        <td>3台</td>
+                                        <td>2018/10/28</td>
+                                        <td class="text-right">
+                                            <button type="button" class="btn btn-sm btn-primary-light"><span class="oi oi-spreadsheet"></span> 詳細へ</button>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td><span class="badge badge-secondary badge-status">&nbsp;</span> 公開中</td>
+                                        <td>JKK000000009</td>
+                                        <td>
+                                            <div>小田急パーキング原町田</div>
+                                            <div class="text-secondary smalltext">
+                                                東京都町田市原町田2-19付近
+                                            </div>
+                                        </td>
+                                        <td>20台</td>
+                                        <td>3台</td>
+                                        <td>2018/11/07</td>
+                                        <td class="text-right">
+                                            <button type="button" class="btn btn-sm btn-primary-light"><span class="oi oi-spreadsheet"></span> 詳細へ</button>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td><span class="badge badge-success badge-status">&nbsp;</span> 公開中</td>
+                                        <td>JKK000000010</td>
+                                        <td>
+                                            <div>小田急パーキング清水1丁目第1</div>
+                                            <div class="text-secondary smalltext">
+                                                東京都杉並区清水1-15付近
+                                            </div>
+                                        </td>
+                                        <td>20台</td>
+                                        <td>3台</td>
+                                        <td>2018/10/14</td>
+                                        <td class="text-right">
+                                            <button type="button" class="btn btn-sm btn-primary-light"><span class="oi oi-spreadsheet"></span> 詳細へ</button>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td><span class="badge badge-success badge-status">&nbsp;</span> 公開中</td>
+                                        <td>JKK000000011</td>
+                                        <td>
+                                            <div>小田急パーキング東村山駅前第1</div>
+                                            <div class="text-secondary smalltext">
+                                                東京都東村山市本町2-4-16付近-15付近
+                                            </div>
+                                        </td>
+                                        <td>20台</td>
+                                        <td>3台</td>
+                                        <td>2018/10/28</td>
+                                        <td class="text-right">
+                                            <button type="button" class="btn btn-sm btn-primary-light"><span class="oi oi-spreadsheet"></span> 詳細へ</button>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td><span class="badge badge-success badge-status">&nbsp;</span> 公開中</td>
+                                        <td>JKK000000012</td>
+                                        <td>
+                                            <div>小田急パーキング原町田</div>
+                                            <div class="text-secondary smalltext">
+                                                東京都町田市原町田2-19付近
+                                            </div>
+                                        </td>
+                                        <td>20台</td>
+                                        <td>3台</td>
+                                        <td>2018/11/07</td>
+                                        <td class="text-right">
+                                            <button type="button" class="btn btn-sm btn-primary-light"><span class="oi oi-spreadsheet"></span> 詳細へ</button>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td><span class="badge badge-success badge-status">&nbsp;</span> 公開中</td>
+                                        <td>JKK000000013</td>
+                                        <td>
+                                            <div>小田急パーキング清水1丁目第1</div>
+                                            <div class="text-secondary smalltext">
+                                                東京都杉並区清水1-15付近
+                                            </div>
+                                        </td>
+                                        <td>20台</td>
+                                        <td>3台</td>
+                                        <td>2018/10/14</td>
+                                        <td class="text-right">
+                                            <button type="button" class="btn btn-sm btn-primary-light"><span class="oi oi-spreadsheet"></span> 詳細へ</button>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td><span class="badge badge-secondary badge-status">&nbsp;</span> 公開中</td>
+                                        <td>JKK000000014</td>
+                                        <td>
+                                            <div>小田急パーキング東村山駅前第1</div>
+                                            <div class="text-secondary smalltext">
+                                                東京都東村山市本町2-4-16付近-15付近
+                                            </div>
+                                        </td>
+                                        <td>20台</td>
+                                        <td>3台</td>
+                                        <td>2018/10/28</td>
+                                        <td class="text-right">
+                                            <button type="button" class="btn btn-sm btn-primary-light"><span class="oi oi-spreadsheet"></span> 詳細へ</button>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td><span class="badge badge-success badge-status">&nbsp;</span> 公開中</td>
+                                        <td>JKK000000015</td>
+                                        <td>
+                                            <div>小田急パーキング原町田</div>
+                                            <div class="text-secondary smalltext">
+                                                東京都町田市原町田2-19付近
+                                            </div>
+                                        </td>
+                                        <td>20台</td>
+                                        <td>3台</td>
+                                        <td>2018/11/07</td>
+                                        <td class="text-right">
+                                            <button type="button" class="btn btn-sm btn-primary-light"><span class="oi oi-spreadsheet"></span> 詳細へ</button>
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </section>
+            </div>
+        </div>
+        <script type="text/javascript" src="includes/footer.js"></script>
+    </div>
+    <!-- start: MAIN JAVASCRIPTS -->
+    <script type="text/javascript" src="includes/js-libs.js"></script>  
+    <script src="js/main.js"></script>
+    <!-- end: MAIN JAVASCRIPTS -->
+    <script type="text/javascript">
+    jQuery(document).ready(function($) {
+        //Demo
+        $('.sidebar-nav .nav-item .nav-link').removeClass('active');
+        $('.sidebar-nav .nav-item:nth-child(2) .nav-link').addClass('active');
+    });
+    </script>
+</body>
+
+</html>

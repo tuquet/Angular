@@ -1,0 +1,186 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="shortcut icon" href="favicon.ico" />
+    <!-- start: MAIN CSS -->
+    <link rel="stylesheet" href="includes/site-styles.css"> 
+    <!-- end: MAIN CSS -->
+    <!-- start: CSS REQUIRED FOR THIS PAGE ONLY -->
+    <!-- end: CSS REQUIRED FOR THIS PAGE ONLY -->
+    <title>2-1_駐車場管理 - 2-2-2_駐車場編集</title>
+</head>
+
+<body>
+    <div class="site-wrapper has-sidebar">
+        <div class="main-wrapper">
+            <script type="text/javascript" src="includes/sidebar.js"></script>
+            <script type="text/javascript" src="includes/header.js"></script>
+            <div class="site-content">
+                <div class="container-fluid bg-primary-hard-light">
+                    <a href="#" class="p-2 d-block"><span class="oi oi-caret-left"></span> 駐車場管理一覧へ戻る</a>
+                </div>
+                <section class="pt-3 pb-3">
+                    <div class="container-fluid">
+                        <div class="pl-2 pr-2">
+                            <h4 class="mb-0">拠点新規登録</h4>
+                            <div class="text-secondary">必要事項を入力し、駐車場の新規登録をしてください。</div>
+                        </div>          
+                    </div>
+                </section>
+                <section class="bg-white pt-3 pb-3">
+                    <div class="container-fluid">
+                        <div class="pl-2 pr-2">
+                            <div class="form-group">
+                                <label><strong>公開ステータス</strong></label>
+                                <div>
+                                    <select id="status_select" class="form-control" style="max-width: 180px"></select>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label><strong>自社拠点管理番号</strong>&nbsp;<span class="badge badge-danger">必須</span></label>
+                                <input type="text" placeholder="A123456789" value="" class="form-control" style="max-width: 480px">
+                            </div>
+                            <div class="form-group">
+                                <label><strong>拠点名</strong>&nbsp;<span class="badge badge-danger">必須</span></label>
+                                <input type="text" placeholder="小田急第一駐車場" value="" class="form-control" style="max-width: 480px">
+                            </div>
+                            <div class="form-group">
+                                <label><strong>拠点画像</strong></label>
+                                <div class="d-flex">
+                                    <div class="upload-area d-inline-flex align-items-center">
+                                        <div class="text-center text-primary p-3 ml-auto mr-auto">
+                                            <span class="icon-plus-circled icon"></span><br>
+                                            メイン写真<br>追加
+                                        </div>
+                                        <input type="file" name="myfile1" class="input-file">
+                                    </div>
+                                    <div class="upload-area d-inline-flex align-items-center">
+                                        <div class="text-center text-primary p-3 ml-auto mr-auto">
+                                            <span class="icon-plus-circled icon"></span><br>
+                                            メイン写真<br>追加
+                                        </div>
+                                        <input type="file" name="myfile2" class="input-file">
+                                    </div>
+                                    <div class="upload-area d-inline-flex align-items-center">
+                                        <div class="text-center text-primary p-3 ml-auto mr-auto">
+                                            <span class="icon-plus-circled icon"></span><br>
+                                            メイン写真<br>追加
+                                        </div>
+                                        <input type="file" name="myfile3" class="input-file">
+                                    </div>
+                                </div>
+                                <div>&nbsp;</div>
+                                <div class="d-flex">
+                                    <div class="upload-area uploaded d-inline-flex align-items-center">
+                                        <button type="button" class="btn btn-danger rounded-circle btn-close"><span class="oi oi-x"></span></button>
+                                        <img src="images/temp/preview-1a.jpg" alt="" class="preview">
+                                    </div>
+                                    <div class="upload-area uploaded d-inline-flex align-items-center">
+                                        <button type="button" class="btn btn-danger rounded-circle btn-close"><span class="oi oi-x"></span></button>
+                                        <img src="images/temp/preview-1b.jpg" alt="" class="preview">
+                                    </div>
+                                    <div class="upload-area uploaded d-inline-flex align-items-center">
+                                        <button type="button" class="btn btn-danger rounded-circle btn-close"><span class="oi oi-x"></span></button>
+                                        <img src="images/temp/preview-1c.jpg" alt="" class="preview">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label><strong>郵便番号</strong>&nbsp;<span class="badge badge-danger">必須</span></label>
+                                <div class="d-flex">
+                                    <input type="text" placeholder="" value="" class="form-control mr-2" style="max-width: 180px">
+                                    <button type="button" class="btn btn-primary">住所反映</button>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label><strong>都道府県</strong>&nbsp;<span class="badge badge-danger">必須</span></label>
+                                <div>
+                                    <select id="status_select" class="form-control" style="max-width: 180px">
+                                        <option value="1">選択してください</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label><strong>市区町村</strong>&nbsp;<span class="badge badge-danger">必須</span></label>
+                                <input type="text" placeholder="" value="" class="form-control" style="max-width: 480px">
+                            </div>
+                            <div class="form-group">
+                                <label><strong>番地以降</strong>&nbsp;<span class="badge badge-danger">必須</span></label>
+                                <input type="text" placeholder="" value="" class="form-control" style="max-width: 480px">
+                            </div>
+                            <div class="form-group">
+                                <label><strong>ピンの位置を登録する</strong>&nbsp;<span class="badge badge-danger">必須</span></label>
+                                <div class="mb-3">
+                                    <button type="button" class="btn btn-primary">上記の所在地にピンを刺す</button>
+                                </div>
+                                <div style="max-width:600px">
+                                    <div class="google-maps">
+                                        <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d7098.94326104394!2d78.0430654485247!3d27.172909818538997!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1sen!2s!4v1385710909804" width="600" height="450" frameborder="0" style="border:0"></iframe>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label><strong>更新期間</strong>&nbsp;<span class="badge badge-danger">必須</span></label>
+                                <div>
+                                    <label class="label-icheck mr-3 mb-0"><input type="radio" name="radio" checked> 1年</label>
+                                    <label class="label-icheck mr-3 mb-0"><input type="radio" name="radio"> 2年</label>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label><strong>備考</strong></label>
+                                <textarea cols="1" rows="3" class="form-control" style="max-width: 600px"></textarea>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+                <div class="container-fluid">
+                    <div class="p-2 mt-2 pb-3 text-right">
+                        <button type="button" class="btn btn-warning" style="min-width: 160px">登録する</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <script type="text/javascript" src="includes/footer.js"></script>
+    </div>
+    <!-- start: MAIN JAVASCRIPTS -->
+    <script type="text/javascript" src="includes/js-libs.js"></script>  
+    <script src="js/main.js"></script>
+    <!-- end: MAIN JAVASCRIPTS -->
+    <script type="text/javascript">
+    jQuery(document).ready(function($) {
+        //Demo
+        $('.sidebar-nav .nav-item .nav-link').removeClass('active');
+        $('.sidebar-nav .nav-item:nth-child(2) .nav-link').addClass('active');
+
+
+        var status_data = [{
+          id: 0,
+          text: '<span class="badge badge-success badge-status">&nbsp;</span> 公開中',
+          html: '<span class="badge badge-success badge-status">&nbsp;</span> 公開中'
+        }, {
+          id: 1,
+          text: '<span class="badge badge-secondary badge-status">&nbsp;</span> 非公開',
+          html: '<span class="badge badge-secondary badge-status">&nbsp;</span> 非公開'
+        }];
+
+        $("#status_select").select2({
+          data: status_data,
+          escapeMarkup: function(markup) {
+            return markup;
+          },
+          templateResult: function(data) {
+            return data.html;
+          },
+          templateSelection: function(data) {
+            return data.text;
+          }
+        })
+    });
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,284 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="shortcut icon" href="favicon.ico" />
+    <!-- start: MAIN CSS -->
+    <link rel="stylesheet" href="includes/site-styles.css">    
+    <!-- end: MAIN CSS -->
+    <!-- start: CSS REQUIRED FOR THIS PAGE ONLY -->    
+    <!-- end: CSS REQUIRED FOR THIS PAGE ONLY -->
+    <title>4-1-Full</title>
+  </head>
+  <body class="header-fixed">
+    <!-- BEGIN Site Wrapper -->
+    <div class="site-wrapper">
+      <script type="text/javascript" src="includes/header.js"></script>
+      <!-- BEGIN Site Wrapper -->
+      <div id="site-content" class="site-content">
+        <!-- BEGIN Title -->
+        <div class="card bg-primary-light">
+          <div class="card-body">
+            <strong>お申込みフォーム</strong>
+          </div>
+        </div><!-- END Title -->
+        <!-- BEGIN Steps -->             
+        <div class="steps bg-white d-flex justify-content-between">
+          <div class="step-item text-center current">
+            <div class="step-number">1</div>
+            <div class="step-text">お客様<br>情報入力</div>
+          </div>
+          <div class="step-item text-center">
+            <div class="step-number">2</div>
+            <div class="step-text">車/お支払い<br>情報入力</div>
+          </div>
+          <div class="step-item text-center">
+            <div class="step-number">3</div>
+            <div class="step-text">確認</div>
+          </div>
+          <div class="step-item text-center">
+            <div class="step-number">4</div>
+            <div class="step-text">完了</div>
+          </div>
+        </div><!-- END Steps -->        
+        <!-- BEGIN Title -->
+        <div class="card bg-primary-light">
+          <div class="card-body">
+            <strong>お申し込み日</strong>
+          </div>
+        </div><!-- END Title -->
+        <div class="card bg-white">
+          <div class="card-body">
+            2018年10月31日
+          </div>
+        </div>
+        <div class="card bg-primary-light">
+          <div class="card-body">
+            <strong>お申込み駐車場</strong>
+          </div>
+        </div><!-- END Title -->
+        <div class="card bg-white">
+          <div class="card-body">
+            <!-- BEGIN Parking Item -->
+            <div class="parking-item d-flex justify-content-between align-items-start mb-2">
+              <div class="item-info pr-2">
+                <h5><strong>小田急パーキング清水1丁目第1</strong></h5>
+                <p>東京都杉並区清水1-15付近<br>21,600円／月（税込）<br><small class="text-secondary">管理会社 : 小田急不動産株式会社</small></p>
+              </div>
+              <div class="item-image-feature text-center">
+                <img src="images/temp/parking-img-thumb.png" alt="">
+              </div>
+            </div><!-- END Parking Item -->
+          </div>
+        </div>
+        <div class="card bg-primary-light">
+          <div class="card-body">
+            <strong>お客様情報</strong>
+          </div>
+        </div>
+        <div class="card bg-white">
+          <div class="card-body">
+            <!-- BEGIN Checkbox -->
+            <div class="form-group">
+              <label><strong>個人／法人</strong></label>
+              <div class="d-flex justify-content-between">
+                <label class="label-icheck current flex-grow-1 mb-0 border border-right-0 rounded-left p-2"><input type="radio" value="1" name="private_corporation" checked> 個人</label>
+                <label class="label-icheck flex-grow-1 mb-0 border rounded-right p-2"><input type="radio"  value="2" name="private_corporation"> 法人</label>
+              </div>
+            </div><!-- END Checkbox -->
+            <div id="private_corporation_option_1">
+              <div class="form-group">
+                <label><strong>お名前</strong> <span class="badge badge-danger">必須</span></label>
+                <input type="text" value="鈴木太郎" class="form-control" placeholder="">
+              </div>
+              <div class="form-group">
+                <label><strong>電話番号</strong> <span class="badge badge-danger">必須</span></label>
+                <p>自宅または携帯のどちらかは必ずご入力ください。</p>
+                <div class="row align-items-center mb-2">
+                  <div class="col-2">
+                    自宅
+                  </div>
+                  <div class="col-10">
+                    <input type="text" value="" class="form-control" placeholder="0312345678">
+                  </div>
+                </div>
+                <div class="row align-items-center">
+                  <div class="col-2">
+                    携帯
+                  </div>
+                  <div class="col-10">
+                    <input type="text" value="" class="form-control" placeholder="09012345678">
+                  </div>
+                </div>              
+              </div>
+              <div class="form-group">
+                <label><strong>メールアドレス</strong> <span class="badge badge-danger">必須</span></label>
+                <input type="text" value="sample@parkdrive.com" class="form-control" placeholder=""> 
+              </div>
+              <div class="form-group">
+                <label><strong>職業</strong> <span class="badge badge-danger">必須</span></label>
+                <select id="career_select" class="form-control">
+                  <option value="-1" >職業を選択してください</option>
+                  <option value="2">会社員</option>
+                  <option value="3">公務員</option>
+                  <option value="4">自営業・自由業</option>
+                  <option value="5">会社役員・経営者</option>
+                  <option value="6">パート・アルバイト</option>
+                  <option value="7">学生</option>
+                  <option value="8">専業主婦（夫）</option>
+                  <option value="9">無職</option>
+                </select> 
+              </div> 
+              <div id="career_company_info" style="display: none">
+                <div class="form-group">
+                  <label><strong>勤務先名</strong> <span class="badge badge-danger">必須</span></label>
+                  <input type="text" value="" class="form-control" placeholder="例）株式会社パークダイレクト"> 
+                </div>
+                <div class="form-group">
+                  <label><strong>勤務先電話番号</strong> <span class="badge badge-danger">必須</span></label>
+                  <input type="text" value="" class="form-control" placeholder="0312345678"> 
+                </div>
+              </div>           
+            </div>
+            <div id="private_corporation_option_2" style="display: none">
+              <div class="form-group">
+                <label><strong>法人名</strong> <span class="badge badge-danger">必須</span></label>
+                <input type="text" class="form-control" value="" placeholder="株式会社パークダイレクト">
+              </div>
+              <div class="form-group">
+                <label><strong>部署名</strong> <span class="badge badge-secondary">任意</span></label>
+                <input type="text" class="form-control" value="" placeholder="">
+              </div>
+              <div class="form-group">
+                <label><strong>担当者名</strong> <span class="badge badge-danger">必須</span></label>
+                <input type="text" class="form-control" value=鈴木太郎" placeholder="">
+              </div>
+              <div class="form-group">
+                <label><strong>郵便番号</strong> <span class="badge badge-danger">必須</span></label>
+                <div class="d-flex">
+                  <input type="text" class="form-control mr-2" value="" style="width: 160px"><button type="button" class="btn btn-primary">住所反映</button>
+                </div>
+              </div>
+              <div class="form-group">
+                <label><strong>住所</strong> <span class="badge badge-danger">必須</span></label>
+                <input type="text" class="form-control" value="" placeholder="">
+                <div class="text-secondary">※ ビル名・マンション名・部屋番号までご入力ください。</div>
+              </div>
+              <div class="form-group">
+                <label><strong>電話番号</strong> <span class="badge badge-danger">必須</span></label>              
+                <p class="text-secondary">会社または携帯のどちらかは必ずご入力ください。</p>
+                <div class="row align-items-center mb-3">
+                  <div class="col-3">
+                    会社
+                  </div>
+                  <div class="col-9">
+                    <input type="text" class="form-control" value="" placeholder="0312345678">
+                  </div>
+                </div>
+                <div class="row align-items-center">
+                  <div class="col-3">
+                    携帯
+                  </div>
+                  <div class="col-9">
+                    <input type="text" class="form-control" value="" placeholder="09012345678">
+                  </div>
+                </div>
+              </div>
+              <div class="form-group">
+                <label><strong>メールアドレス</strong> <span class="badge badge-danger">必須</span></label>
+                <input type="text" class="form-control" value="sample@parkdrive.com" placeholder="">
+              </div>
+              <div class="form-group">
+                <label><strong>法人URL</strong> <span class="badge badge-secondary">任意</span></label>
+                <input type="text" class="form-control" value="" placeholder="http://park-d.com">
+              </div>
+            </div>
+            <div class="form-group">
+              <label><strong>利用者</strong> <span class="badge badge-danger">必須</span></label>
+              <div class="d-flex justify-content-between">
+                <label class="label-icheck flex-grow-1 mb-0 border border-right-0 rounded-left p-2"><input type="radio" value="1" name="user_checkbox" checked> 本人</label>
+                <label class="label-icheck current flex-grow-1 mb-0 border rounded-right p-2"><input type="radio" value="2" name="user_checkbox"> 本人以外</label>
+              </div>
+            </div>
+            <div id="user_checkbox_option_1">
+              <div class="form-group">
+                <label><strong>緊急連絡先のお名前</strong> <span class="badge badge-danger">必須</span></label>
+                <input type="text" value="" class="form-control" placeholder="パーク太郎"> 
+              </div>
+              <div class="form-group">
+                <label><strong>緊急連絡先の電話番号</strong> <span class="badge badge-danger">必須</span></label>
+                <input type="text" value="" class="form-control" placeholder="09012345678"> 
+              </div>
+            </div>
+            <div id="user_checkbox_option_2" style="display: none">
+              <div class="form-group">
+                <label><strong>利用者名</strong></label>
+                <input type="text" value="" class="form-control" placeholder=""> 
+              </div>
+              <div class="form-group">
+                <label><strong>利用者電話番号</strong></label>
+                <input type="text" value="" class="form-control" placeholder="09012345678"> 
+              </div>
+            </div>
+            <div class="form-group">
+              <button type="button" class="btn btn-primary btn-block" style="margin: 0 auto;max-width: 70%">次へ</button>
+            </div>
+          </div>
+        </div>
+        <div class="card">
+          <div class="card-body text-center text-secondary">
+            © park direct
+          </div>
+        </div>
+      </div><!-- END Site Wrapper -->
+      <!-- <script type="text/javascript" src="includes/footer.js"></script> -->
+      <script type="text/javascript" src="includes/site-menu.js"></script>
+    </div><!-- BEGIN Site Wrapper -->
+
+    <!-- start: MAIN JAVASCRIPTS -->
+    <script type="text/javascript" src="includes/js-libs.js"></script>  
+    <script src="js/main.js"></script>
+    <!-- end: MAIN JAVASCRIPTS -->
+    <!-- start: JS REQUIRED FOR THIS PAGE ONLY -->    
+    <!-- end: JS REQUIRED FOR THIS PAGE ONLY -->
+    <script type="text/javascript">
+      jQuery(document).ready(function($){
+
+        //Demo        
+        $('input[type=radio][name=private_corporation]').on('ifChecked', function(event){
+          if (this.value == '1') {
+            $('#private_corporation_option_1').show();
+            $('#private_corporation_option_2').hide();
+          }
+          else if (this.value == '2') {
+            $('#private_corporation_option_1').hide();
+            $('#private_corporation_option_2').show();
+          }
+        });
+
+        $('input[type=radio][name=user_checkbox]').on('ifChecked', function(event){
+          if (this.value == '1') {
+            $('#user_checkbox_option_1').show();
+            $('#user_checkbox_option_2').hide();
+          }
+          else if (this.value == '2') {
+            $('#user_checkbox_option_1').hide();
+            $('#user_checkbox_option_2').show();
+          }
+        });
+
+        $('#career_select').on('change', function() {
+          if(this.value != '-1'){
+            $('#career_company_info').show();
+          }else{
+            $('#career_company_info').hide();
+          }
+        });
+        
+        
+      });
+    </script>
+  </body>
+</html>

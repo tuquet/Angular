@@ -1,0 +1,30 @@
+<div class="container login-container">
+    <div class="row align-items-center justify-content-center">
+        <div class="col-md-7">
+            <h2 class="text-center mb-1"><img src="assets/parking/images/logo.png" alt=""></h2>
+            <p class="text-center text-secondary smalltext">拠点駐車場・顧客管理</p>
+            <div class="card login-card mb-3">
+                <div class="card-body">
+                    <form class="forgot-form" (ngSubmit)="onSubmit();" [formGroup]="formForgot">
+                        <h6 class="text-center mb-0">パスワードを忘れてしまった場合</h6>
+                        <p class="text-center">
+                            ご登録されているメールアドレスをご入力ください。<br>パスワード再設定用のメールをお送りいたします。
+                        </p>
+                        <div>&nbsp;</div>
+                        <div class="form-group">
+                            <label class="mb-1" for="email">メールアドレス</label>
+                            <input type="text" formControlName="email" class="form-control" id="email" name="email"
+                                value="" placeholder="sample@example.com" [ngClass]="{'is-invalid': isSubmited && formForgot.controls['email'].errors}">
+                        </div>
+                        <div class="text-center">
+                            <button type="submit" class="btn btn-primary btn-block btn-submit" style="margin: 0 auto;max-width: 60%;">送信する</button>
+                        </div>
+                    </form>
+                </div>
+                <div class="card-footer bg-white">
+                    <a routerLink="/login">« ログインへ戻る</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

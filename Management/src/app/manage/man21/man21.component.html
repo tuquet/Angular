@@ -1,0 +1,85 @@
+<section class="pt-3 pb-3">
+    <div class="container-fluid">
+        <div class="d-flex justify-content-between align-items-center pl-2 pr-2 mb-3">
+            <div>
+                <h4 class="mb-0">拠点・駐車場管理</h4>
+                <div class="text-secondary">駐車場の新規登録・編集・削除ができます。</div>
+            </div>
+            <div>
+                <a routerLink="/manage/register_parkinglot" class="btn btn-primary"><span class="icon-plus-circled"></span> 拠点新規登録</a>
+            </div>
+        </div>
+        <div class="pl-2 pr-2">
+            <div class="row">
+                <div class="col-lg-2">
+                    <div class="form-group">
+                        <select class="form-control">
+                            <option value="1">すべてのステータス</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="col-lg-4">
+                    <div class="form-group">
+                        <div class="input-button-group icon-inside icon-left">
+                            <button type="submit" class="btn btn-none btn-icon"><span class="icon-search"></span></button>
+                            <input type="text" class="form-control" placeholder="住所・駅名・駐車場名で検索">
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-6">
+                    <div class="form-group d-flex align-items-center">
+                        <div class="input-button-group icon-inside icon-right" style="flex-basis: 170px">
+                            <button type="submit" class="btn btn-none btn-icon"><span class="oi oi-calendar"></span></button>
+                            <input type="text" class="form-control" placeholder="" value="2018/10/01">
+                        </div>
+                        <div class="pr-3 pl-3"><span style="font-size: 150%;">~</span></div>
+                        <div class="input-button-group icon-inside icon-right" style="flex-basis: 170px">
+                            <button type="submit" class="btn btn-none btn-icon"><span class="oi oi-calendar"></span></button>
+                            <input type="text" class="form-control" placeholder="" value="2018/11/30">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<section class="bg-white pt-3 pb-3">
+    <div class="container-fluid">
+        <div class="table-responsive">
+            <table class="table datatable" cellpadding="0" cellspacing="0">
+                <thead>
+                    <tr>
+                        <th>ステータス</th>
+                        <th>自社拠点管理番号</th>
+                        <th>拠点</th>
+                        <th>総台数</th>
+                        <th>空き台数</th>
+                        <th>登録／更新日</th>
+                        <th>&nbsp;</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr *ngFor="let item of listParkingLot">
+                        <td><span class="badge badge-success badge-status">&nbsp;</span> 公開中</td>
+                        <td>{{item.post_code}}</td>
+                        <td>
+                            <div>{{item.management_number}}</div>
+                            <div class="text-secondary smalltext">
+                                東京都杉並区清水1-15付近
+                            </div>
+                        </td>
+                        <td>{{item.updated_datetime}}</td>
+                        <td>{{item.municipality}}</td>
+                        <td>{{item.created_datetime}}</td>
+                        <td class="text-right">
+                            <a [routerLink]="['/manage/parkinglot_divisiongroup']" [queryParams]="{parking_lot_id: item.id}">
+                                    <button type="button" class="btn btn-sm btn-primary-light"><span class="oi oi-spreadsheet"></span>
+                                        詳細へ</button>
+                            </a>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</section>

@@ -1,0 +1,148 @@
+<!-- <div id="site-content" class="site-content">
+  <div class="map-wrapper">
+    <div class="map-top">
+      <div class="card bg-white">
+        <div class="card-body">
+          <div class="d-flex justify-content-between align-items-center">
+            <div>
+              <div>現在地付近</div>
+              <div class="text-secondary">条件指定なし</div>
+            </div>
+            <div>
+              <a href="#" class="btn btn-primary">条件変更</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="google-maps" style="padding-bottom: 100%">
+      <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d7098.94326104394!2d78.0430654485247!3d27.172909818538997!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1sen!2s!4v1385710909804" width="600" height="450" frameborder="0" style="border:0"></iframe>
+      <agm-map #AgmMap [latitude]="latitude" [longitude]="longitude" [scrollwheel]="true" [zoom]="16"  style="height: 500px; width: 600">
+        <agm-marker *ngFor="let latlong of latlongs" [latitude]="latlong.latitude" [longitude]="latlong.longitude"></agm-marker>
+      </agm-map>
+    </div>
+    <div class="map-bottom">
+      <div class="card bg-white">
+        <div class="card-body">
+          ---
+        </div>
+      </div>
+    </div>
+  </div>
+</div> -->
+
+
+<!-- <sebm-google-map-marker *ngFor="let m of markers; let i = index" 
+[latitude]="m.latitude" 
+[longitude]="m.longitude"
+[iconUrl]="m.iconUrl">
+
+<sebm-google-map-info-window>
+  <strong>InfoWindow content</strong>
+</sebm-google-map-info-window>
+
+</sebm-google-map-marker> -->
+
+<!-- <agm-marker *ngFor="let latlong of latlongs" [latitude]="latlong.latitude" [longitude]="latlong.longitude"></agm-marker> -->
+
+
+<!-- TestMapVer11111111111111111111111111111111 -->
+<!-- <div class="container">
+  <h1>Google Maps Places Autocomplete Using Angular 2</h1>
+  <br>
+  <button (click)="Search()">Searchh</button>
+  <div class="row">
+    <div class="col-md-12">
+      <div class="form-group">
+        <input id="pac-input" type="text" class="form-control" placeholder="Search for Location" autocorrect="off" autocapitalize="off"
+          spellcheck="off" class="form-control" #search [formControl]="searchControl">
+      </div>
+    </div>
+    <div class=""></div>
+  </div>
+  <div class="row">
+    <div class="col-md-12">
+      <agm-map #AgmMap [latitude]="latitude" [longitude]="longitude" [scrollwheel]="true" [zoom]="16" style="height: 500px">
+     
+        <agm-marker *ngFor="let m of markers; let i = index" 
+          (markerClick)="clickedMarker(m.label, i)" 
+          [latitude]="m.lat"
+          [longitude]="m.lng" 
+          [markerDraggable]="m.draggable"
+          [iconUrl]="m.iconUrl" 
+          (dragEnd)="markerDragEnd(m, $event)">
+
+          <agm-info-window>
+            <strong>{{m.label}}</strong>
+          </agm-info-window>
+
+        </agm-marker>
+
+       <agm-direction *ngIf="selectedMarker.lat != ''" [origin]="originMarker" [destination]="selectedMarker">
+        </agm-direction> 
+
+      
+
+
+      </agm-map>
+    </div>
+  </div>
+</div> -->
+
+
+
+
+<!-- TestMapVer222222222222222222222222222222222222222222 -->
+<div class="container">
+  <h1>Google Maps Places Autocomplete Using Angular 2</h1>
+  <br>
+  <button (click)="SearchFormSubmmit()">Searchh</button>
+
+  <div class="row">
+    <form [formGroup]="searchForm">
+      <div class="col-md-12">
+        <div class="form-group">
+          <input id="pac-input" (keyup)="changeInput1($event)" formControlName="searchCity" type="text" class="form-control" placeholder="Search for City" >
+        </div>
+        <div class="form-group">
+          <input id="pac-input" (keyup)="changeInput2($event)" formControlName="searchTown" type="text" class="form-control" placeholder="Search for Town">
+        </div>
+        <!-- <div class="form-group">
+          <input id="pac-input" formControlName="searchAddress" type="text" class="form-control" placeholder="Search for Address">
+        </div> -->
+      </div>
+    </form>
+    <div class=""></div>
+  </div>
+  <div class="row">
+    <div class="col-md-12">
+      <agm-map #AgmMap [latitude]="latitude" [longitude]="longitude" [scrollwheel]="true" [zoom]="18" (mapClick)="mapClicked($event)"  style="height: 500px">
+
+        <agm-marker *ngFor="let m of markers; let i = index" (markerClick)="clickedMarker(m.label, i)" [latitude]="m.lat"
+          [longitude]="m.lng" [markerDraggable]="m.draggable" [iconUrl]="m.iconUrl" (dragEnd)="markerDragEnd(m, $event)">
+
+          <agm-info-window>
+            <strong>{{m.label}}</strong>
+          </agm-info-window>
+
+        </agm-marker>
+
+         <!-- <agm-marker (markerClick)="clickedMarker(originMarker.label, i)" [latitude]="originMarker.lat"
+          [longitude]="originMarker.lng" [markerDraggable]="originMarker.draggable" [iconUrl]="originMarker.iconUrl" (dragEnd)="markerDragEnd(originMarker, $event)">
+
+          <agm-info-window>
+            <strong>{{originMarker.label}}</strong>
+          </agm-info-window>
+
+        </agm-marker> -->
+
+        <agm-direction *ngIf="selectedMarker.lat != ''" [origin]="originMarker" [destination]="selectedMarker">
+        </agm-direction>
+
+
+
+
+      </agm-map>
+    </div>
+  </div>
+</div>

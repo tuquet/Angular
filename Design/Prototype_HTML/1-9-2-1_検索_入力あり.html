@@ -1,0 +1,75 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="shortcut icon" href="favicon.ico" />
+    <!-- start: MAIN CSS -->
+    <link rel="stylesheet" href="includes/site-styles.css">    
+    <!-- end: MAIN CSS -->
+    <!-- start: CSS REQUIRED FOR THIS PAGE ONLY -->    
+    <!-- end: CSS REQUIRED FOR THIS PAGE ONLY -->
+    <title>1-9-2-1_検索_入力あり</title>
+  </head>
+  <body>
+    <!-- BEGIN Site Wrapper -->
+    <div class="site-wrapper">      
+      <div id="site-content" class="site-content">
+        <div class="card">
+          <div class="card-body pt-1 pb-1">
+            <form action="#" method="get">
+              <div class="d-flex">
+                <button class="btn btn-none pl-0"><span class="oi oi-x"></span></button>
+                <div class="input-wrap flex-grow-1">
+                  <input type="text" class="form-control" value="飯田" placeholder="">
+                  <button class="btn btn-none btn-close" style="display: block;"><span class="oi oi-x"></span></button>
+                </div>
+              </div>
+            </form>
+          </div>
+        </div>
+        <div class="card bg-white mb-2" style="min-height: 240px">
+          <div class="card-body">
+            <button type="button" class="btn text-secondary mb-1"><span class="icon-car icon"></span> 飯田橋第一駐車場</button> <button type="button" class="btn text-secondary mb-1"><span class="icon-car icon"></span> 飯田橋１丁目駐車場</button> <button type="button" class="btn text-secondary mb-1"><span class="oi oi-location"></span> 飯田橋</button> <button type="button" class="btn text-secondary mb-1"><span class="icon-bus"></span> 飯田橋駅</button> <button type="button" class="btn text-secondary mb-1"><span class="icon-bus"></span> 下飯田駅</button> <button type="button" class="btn text-secondary mb-1"><span class="icon-bus"></span> 飯田岡駅</button>
+          </div>
+        </div>
+        <div class="keyboard-wrapper text-center">
+          <img src="images/temp/keyboard-fake.png" alt="" style="width: 100%">
+        </div>
+      </div>
+    </div><!-- BEGIN Site Wrapper -->
+
+    <!-- start: MAIN JAVASCRIPTS -->
+    <script type="text/javascript" src="includes/js-libs.js"></script>  
+    <script src="js/main.js"></script>
+    <!-- end: MAIN JAVASCRIPTS -->
+    <!-- start: JS REQUIRED FOR THIS PAGE ONLY -->    
+    <!-- end: JS REQUIRED FOR THIS PAGE ONLY -->
+    <script type="text/javascript">
+      jQuery(document).ready(function($){
+
+        function view(){
+          var window_height = $(window).height();        
+          var keyboard_height = $('.keyboard-wrapper').height();
+          $('#site-content').css({
+            'min-height': window_height,
+            'padding-bottom':keyboard_height
+          });
+
+          $('.keyboard-wrapper').css({
+            'position':'absolute',
+            'left':'0',
+            'bottom':'0',
+            'width':'100%'
+          });
+        }
+        view();        
+
+        $(window).resize(function(){
+          view();
+        })
+      })
+    </script>
+  </body>
+</html>

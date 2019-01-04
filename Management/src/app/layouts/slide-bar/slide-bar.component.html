@@ -1,0 +1,22 @@
+<div class="sidebar-wrapper scroll">
+  <h1 class="site-brand text-center"><img src="assets/parking/images/logo.png" alt="Park Direct" class="logo"><img src="assets/parking/images/small-logo.png"
+      alt="Park Direct" class="small-logo"></h1>
+  <ul class="nav flex-column sidebar-nav mb-2">
+    <li class="nav-item">
+      <a (click)="activeHome()" class={{navLinkHome}} routerLink="/manage/home"><span class="oi oi-dashboard icon"></span> 実績・サマリー</a>
+    </li>
+    <li class="nav-item">
+      <a (click)="activeManagement()" class={{navLinkManagement}} routerLink="/manage/newparking_management"><span class="icon-car icon"></span> 拠点・駐車場管理</a>
+    </li>
+    <li class="nav-item">
+      <a (click)="activeCustomer()" class={{navLinkCustomer}} routerLink="/manage/customer_page"><span class="icon-user icon"></span> 顧客管理</a>
+    </li>
+    <li class="nav-item">
+      <a (click)="activeMessage()" class={{navLinkMessage}} routerLink="/manage/**"><span class="oi oi-comment-square icon"></span> お問い合わせ管理</a>
+    </li>
+    <li class="nav-item">
+      <a (click)="activeSetting()" class={{navLinkSetting}} routerLink="/manage/setting"><span class="oi oi-cog icon"></span> 設定</a>
+    </li>
+  </ul>
+  <p class="smalltext text-secondary text-center pl-2 pr-2 not-small-sidebar">拠点駐車場・顧客管理</p>
+</div>

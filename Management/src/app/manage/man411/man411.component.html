@@ -1,0 +1,204 @@
+
+<section class="pt-3">
+    <div class="container-fluid">
+        <div class="pl-2 pr-2">
+            <div class="mb-3">
+                <h4 class="mb-0">設定</h4>
+                <div class="text-secondary">空車自動返答・支払い方法・契約書や利用規則のテンプレート編集が行なえます。</div>
+            </div>
+            <ul class="nav nav-tabs" role="tablist">
+                <li class="nav-item">
+                    <a class="nav-link active" id="tab-one" data-toggle="tab" href="#pane-one" role="tab" aria-controls="空車自動返信有無"
+                        aria-selected="true">空車自動返信有無</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" id="tab-two" data-toggle="tab" href="#pane-two" role="tab" aria-controls="支払い方法"
+                        aria-selected="false">支払い方法</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" id="tab-three" data-toggle="tab" href="#pane-three" role="tab" aria-controls="契約書テンプレート"
+                        aria-selected="false">契約書テンプレート</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" id="tab-four" data-toggle="tab" href="#pane-four" role="tab" aria-controls="利用規則テンプレート"
+                        aria-selected="false">利用規則テンプレート</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</section>
+<section class="bg-white pt-3 pb-3">
+    <div class="container-fluid">
+        <div class="pl-2 pr-2">
+            <div class="tab-content">
+                <div class="tab-pane fade show active" id="pane-one" role="tabpanel" aria-labelledby="tab-one">
+                    <div class="form-group">
+                        <label><strong>自動返信</strong>&nbsp;<span class="badge badge-danger">必須</span></label>
+                        <div class="mb-2">
+                            <label class="container-radio mr-1 mb-1"> ON<input type="radio" name="renewalPeriod" value="1"
+                                    checked="checked"><span class="checkmark"></span></label>
+                            <label class="container-radio mr-1 mb-1">OFF<input type="radio" name="renewalPeriod" value="2"><span
+                                    class="checkmark"></span></label>
+                        </div>
+                    </div>
+                    <div class="on-wrapper">
+                        <div class="form-group">
+                            <label><strong>自動返信メッセージ：空車あり</strong>&nbsp;<span class="badge badge-danger">必須</span></label>
+                            <div class="card border rounded">
+                                <input type="text" value="[PARK DIRECT] お申込みへお進みください。" placeholder="件名" class="form-control pl-3 pr-3 pt-2 pb-2 border-0 rounded-0">
+                                <div class="card-header d-flex align-items-center border-top">
+                                    <label class="mr-2 mb-0">変数挿入</label>
+                                    <button type="button" class="btn btn-outline-light bg-white text-secondary mr-2">ユーザー名</button>
+                                    <button type="button" class="btn btn-outline-light bg-white text-secondary mr-2">ユーザーメールアドレス</button>
+                                    <button type="button" class="btn btn-outline-light bg-white text-secondary mr-2">法人名</button>
+                                    <button type="button" class="btn btn-outline-light bg-white text-secondary mr-2">店舗名</button>
+                                    <button type="button" class="btn btn-outline-light bg-white text-secondary mr-2">法人住所</button>
+                                    <button type="button" class="btn btn-outline-light bg-white text-secondary mr-2">責任者名</button>
+                                    <button type="button" class="btn btn-outline-light bg-white text-secondary mr-2">担当者名</button>
+                                    <button type="button" class="btn btn-outline-light bg-white text-secondary mr-2">連絡先TEL</button>
+                                    <button type="button" class="btn btn-outline-light bg-white text-secondary mr-2">申込用URL</button>
+                                </div>
+                                <div class="card-body " style="height: 360px;overflow-y:auto">
+                                    <textarea [innerHTML]="text4" rows="15" cols="165"></textarea>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label><strong>自動返信メッセージ：空車なし</strong>&nbsp;<span class="badge badge-danger">必須</span></label>
+                            <div class="card border rounded">
+                                <input type="text" value="[PARK DIRECT] 空車お問い合わせありがとうございました。" placeholder="件名" class="form-control pl-3 pr-3 pt-2 pb-2 border-0 rounded-0">
+                                <div class="card-header d-flex align-items-center border-top">
+                                    <label class="mr-2 mb-0">変数挿入</label>
+                                    <button type="button" class="btn btn-outline-light bg-white text-secondary mr-2">ユーザー名</button>
+                                    <button type="button" class="btn btn-outline-light bg-white text-secondary mr-2">ユーザーメールアドレス</button>
+                                    <button type="button" class="btn btn-outline-light bg-white text-secondary mr-2">法人名</button>
+                                    <button type="button" class="btn btn-outline-light bg-white text-secondary mr-2">店舗名</button>
+                                    <button type="button" class="btn btn-outline-light bg-white text-secondary mr-2">法人住所</button>
+                                    <button type="button" class="btn btn-outline-light bg-white text-secondary mr-2">責任者名</button>
+                                    <button type="button" class="btn btn-outline-light bg-white text-secondary mr-2">担当者名</button>
+                                    <button type="button" class="btn btn-outline-light bg-white text-secondary mr-2">連絡先TEL</button>
+                                    <button type="button" class="btn btn-outline-light bg-white text-secondary mr-2">申込用URL</button>
+                                </div>
+                                <div class="card-body " style="height: 360px;overflow-y:auto">
+                                    <textarea innerHTML="text3" rows="15" cols="165"></textarea>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label><strong>受信用メールアドレス</strong></label>
+                        <input type="text" class="form-control" value="" placeholder="sample@p-direct.com" style="max-width: 480px">
+                    </div>
+                </div>
+                <div class="tab-pane fade" id="pane-two" role="tabpanel" aria-labelledby="tab-two">
+                    <div class="form-group">
+                        <label><strong>クレジットカード</strong>&nbsp;<span class="badge badge-danger">必須</span></label>
+                        <div class="mb-2">
+                            <label class="container-radio mr-1 mb-1"> 有効<input type="radio" name="renewalPeriod" value="1"
+                                    checked="checked"><span class="checkmark"></span></label>
+                            <label class="container-radio mr-1 mb-1">無効<input type="radio" name="renewalPeriod" value="2"><span
+                                    class="checkmark"></span></label>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label><strong>口座振替</strong>&nbsp;<span class="badge badge-danger">必須</span></label>
+                        <div class="mb-2">
+                            <label class="container-radio mr-1 mb-1"> 有効<input type="radio" name="renewalPeriod" value="1"
+                                    checked="checked"><span class="checkmark"></span></label>
+                            <label class="container-radio mr-1 mb-1">無効<input type="radio" name="renewalPeriod" value="2"><span
+                                    class="checkmark"></span></label>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label><strong>コンビニ決済</strong>&nbsp;<span class="badge badge-danger">必須</span></label>
+                        <div class="mb-2">
+                            <label class="container-radio mr-1 mb-1"> 有効<input type="radio" name="renewalPeriod" value="1"
+                                    checked="checked"><span class="checkmark"></span></label>
+                            <label class="container-radio mr-1 mb-1">無効<input type="radio" name="renewalPeriod" value="2"><span
+                                    class="checkmark"></span></label>
+                        </div>
+                    </div>
+                </div>
+                <div class="tab-pane fade" id="pane-three" role="tabpanel" aria-labelledby="tab-three">
+                    <div class="card border rounded mb-2">
+                        <p-editor [(ngModel)]="text1" [style]="{'height':'320px'}">
+                            <p-header class="groupButton">
+                                <span class="ql-formats">
+
+                                </span>
+                                <span class="ql-formats">
+                                    <button class="ql-bold" aria-label="Bold"></button>
+                                    <button class="ql-italic" aria-label="Italic"></button>
+                                    <button class="ql-underline" aria-label="Underline"></button>
+                                </span>
+                                <span class="ql-formats">
+                                    <button class="ql-list" value="ordered"></button>
+                                    <button class="ql-list" value="bullet"></button>
+                                </span>
+                                <span class="ql-formats">
+                                    <button class="ql-align" value="center"></button>
+                                    <button class="ql-align" value="right"></button>
+                                    <button class="ql-align"></button>
+                                    <button class="ql-align" value="justify"></button>
+
+                                </span>
+                                <div style="float:right" class="btn-group btn-group-toggle divButton" data-toggle="buttons">
+                                    <label class="btn btn-outline-light active">
+                                        <button style="width:70px;border: none" (click)="changeUser($event)" value="1">
+                                            個人向け</button>
+                                    </label>
+                                    <label class="btn btn-outline-light">
+                                        <button style="width:70px;border: none" (click)="changeUser($event)" value="2">
+                                            法人向け</button>
+                                    </label>
+                                </div>
+                            </p-header>
+                        </p-editor>
+                    </div>
+                </div>
+                <div class="tab-pane fade" id="pane-four" role="tabpanel" aria-labelledby="tab-four">
+                    <div class="card border rounded mb-2">
+                        <p-editor [(ngModel)]="text2" [style]="{'height':'320px'}">
+                            <p-header class="groupButton">
+                                <span class="ql-formats">
+
+                                </span>
+                                <span class="ql-formats">
+                                    <button class="ql-bold" aria-label="Bold"></button>
+                                    <button class="ql-italic" aria-label="Italic"></button>
+                                    <button class="ql-underline" aria-label="Underline"></button>
+                                </span>
+                                <span class="ql-formats">
+                                    <button class="ql-list" value="ordered"></button>
+                                    <button class="ql-list" value="bullet"></button>
+                                </span>
+                                <span class="ql-formats">
+                                    <button class="ql-align" value="center"></button>
+                                    <button class="ql-align" value="right"></button>
+                                    <button class="ql-align"></button>
+                                    <button class="ql-align" value="justify"></button>
+
+                                </span>
+                                <div style="float:right" class="btn-group btn-group-toggle divButton" data-toggle="buttons">
+                                    <label class="btn btn-outline-light active">
+                                        <button style="width:70px;border: none" (click)="changeUser($event)" value="1">
+                                            個人向け</button>
+                                    </label>
+                                    <label class="btn btn-outline-light">
+                                        <button style="width:70px;border: none" (click)="changeUser($event)" value="2">
+                                            法人向け</button>
+                                    </label>
+                                </div>
+                            </p-header>
+                        </p-editor>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<div class="container-fluid">
+    <div class="p-2 mt-2 pb-3 text-right">
+        <button type="button" class="btn btn-warning" (click)="onSubmit()" style="min-width: 160px">保存する</button>
+    </div>
+</div>
